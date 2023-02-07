@@ -45,7 +45,7 @@ body{
 .r1{
     height: 630px;
    
-    background-color:brown;
+    background-color:#128c73;
    
 }
 .left img:first-child{
@@ -186,10 +186,10 @@ i{
       .chat{
         background-color: aliceblue;
         position: absolute;
-        left: 45%;
-        top:25% ;
-        width: 50%;
-        height: 400px;
+        left: 30%;
+        /* top:25% ; */
+        width: 65%;
+        height: 522px;
         overflow-y: auto;
         
         padding-left: 80px;
@@ -240,4 +240,20 @@ i{
   .inpname{
     width: 30px;
     height: 40px;
+  }
+
+  #logout {
+ 
+    margin-top: 23px;
+   text-decoration: none;
+    float: right;
+    height: 20px;
+    width: 70px;
+   border-radius: 15px;
+   text-align: center;
+   cursor: pointer;
+    background-color: aliceblue;
+  }
+  #logout:hover{
+    background-color: red;
   }

@@ -27,9 +27,10 @@
                     <i class="uil uil-comment-alt-lines"></i>
                 </div>
                 
-               
-                    <img src="./2319174.png"   height="40px" width= "40px"alt="">
-                
+               <a id="logout" href="logout.php">Log out</a>
+                    
+                 
+  
                 
             </div>
             <div class="right">
@@ -145,7 +146,7 @@ endwhile; ?>
                    -->
                     <form action="inputmsg.php" method="post"  >
                    <input type="text" class="inpname"  name="uname" >
-                    <input type="text" class="inpmessage" name="msg" placeholder="Search">
+                    <input type="text" class="inpmessage" name="msg" placeholder="Type a message">
                     <input type="submit" class="sub_">
                   </form >
                   <!-- <div class="iaud">
