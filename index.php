@@ -145,7 +145,7 @@ endwhile; ?>
                     </div>
                    -->
                     <form action="inputmsg.php" method="post"  >
-                   <input type="text" class="inpname"  name="uname" >
+                   <input type="text" class="inpname"  name="uname" value="u1">
                     <input type="text" class="inpmessage" name="msg" placeholder="Type a message">
                     <input type="submit" class="sub_">
                   </form >
