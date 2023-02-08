@@ -19,11 +19,14 @@
 input[type="text"] {
     border-radius: 20px;
     padding: 10px 22px;
+    border: none;
 }
 input[type="password"] {
     border-radius: 20px;
     margin-top: 12px;
     padding: 10px 22px;
+    border: none;
+   
 
 }input[type="submit"] {
     border-radius: 20px;
@@ -32,5 +35,6 @@ input[type="password"] {
     cursor: pointer;
     display: inline;
     background-color: #4caf50;
+    border: none;
 
 }
