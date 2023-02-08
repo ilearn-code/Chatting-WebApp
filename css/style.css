@@ -273,4 +273,8 @@ i{
     cursor: pointer;
   }
 
- 
+  .listscroll{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 570px;
+  }
