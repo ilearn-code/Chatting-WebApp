@@ -38,7 +38,7 @@
     width: 30%;
    
 
-   background-color: white;
+   background-color:  #F2E9EA;
 }
 .r1{
     height: 630px;
@@ -109,6 +109,14 @@ i{
             
 
         }
+        .listuser{
+          height: 100px;
+          width: 98%;
+          border: 5px solid white;
+          background-color: #4caf50;
+          text-align: center;
+          
+      }
         button{
             float: left;
             width:48px ;
@@ -186,7 +194,7 @@ i{
         position: absolute;
         left: 30.2%;
         /* top:25% ; */
-        width: 62%;
+        width: 64.1%;
         height: 522px;
         overflow-y: auto;
         
@@ -264,3 +272,5 @@ i{
     border: none;
     cursor: pointer;
   }
+
+ 

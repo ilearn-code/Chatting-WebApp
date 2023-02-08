@@ -46,8 +46,32 @@
                     <form class="searchform">
                     <button type="submit"><i class="fa fa-search"></i></button>
                     <input type="text" placeholder="Search">
-                    
                   </form>
+                  
+                  </div>
+                  <div >
+                   
+<?php
+require "db_conn.php";
+ 
+$query = "SELECT * FROM `user`";
+ $run = $conn->query($query);
+ 
+  
+ while($row = $run->fetch_array()) :
+ if($_SESSION["username"]!=$row['user']){
+?>
+<div class="listuser">
+    <?php echo $row['user']; ?>
+</div>
+  <?php      
+ }
+ 
+
+endwhile; ?>
+</div>
+
+                    
                   </div>
             </div>
             <div class="r1">

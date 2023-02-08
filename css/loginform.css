@@ -36,5 +36,7 @@ input[type="password"] {
     display: inline;
     background-color: #4caf50;
     border: none;
+    color: white;
 
 }
+
