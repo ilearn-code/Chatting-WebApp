@@ -1,12 +1,10 @@
 .main{
-    margin: 0;
+    
    height: 700px;
    width: 100%;
    background-color: #128c7e;
 }
-body{
-    margin: 0;
-}
+
 .container{
     /* display: flex; */
     width: 100%;
@@ -186,9 +184,9 @@ i{
       .chat{
         background-color: #ece5dd;
         position: absolute;
-        left: 30%;
+        left: 30.2%;
         /* top:25% ; */
-        width: 65%;
+        width: 64.02%;
         height: 522px;
         overflow-y: auto;
         
@@ -217,7 +215,7 @@ i{
         background-color:#dcf8c6;
         line-height:20px;
         max-width:90%;
-        /* display:inline-block; */
+        display:inline-block;
         text-align:left;
         border-radius:5px;
         float:right;

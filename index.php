@@ -87,7 +87,7 @@ else
 
 ?>
  
- <div id="message1" class="message1">
+ <div id="message1" class="message1" >
  <span style="color:black;float:right;">
  <?php echo $row['msg']; ?></span> <br/>
  <div>
