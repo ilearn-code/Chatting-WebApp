@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>Login</title>
-    
+    <title>Log in</title>
+    <link rel="stylesheet" href="css/loginform.css">
 </head>
 <body>
 <?php
@@ -36,7 +36,9 @@
 <form  method="post" name="login">
         <h1>Login</h1>
         <input type="text"  name="username" placeholder="Username" />
+        <br>
         <input type="password" name="password" placeholder="Password"/>
+        <br>
         <input type="submit"  name="submit"/>
         
   </form>

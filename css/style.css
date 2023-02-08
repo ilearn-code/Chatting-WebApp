@@ -186,7 +186,7 @@ i{
         position: absolute;
         left: 30.2%;
         /* top:25% ; */
-        width: 64.02%;
+        width: 62%;
         height: 522px;
         overflow-y: auto;
         
@@ -216,7 +216,7 @@ i{
         line-height:20px;
         max-width:90%;
         display:inline-block;
-        text-align:left;
+        text-align:right;
         border-radius:5px;
         float:right;
         clear:both;
@@ -254,4 +254,13 @@ i{
   }
   #logout:hover{
     background-color: red;
+  }
+
+  .linkk{
+    margin-top: 10px;
+    float:right;
+    background: none;
+    padding: 0px;
+    border: none;
+    cursor: pointer;
   }

@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
@@ -22,7 +22,7 @@
     <div class="main">
         <div class="continer">
             <div class="left">
-                <img src="./Smiling-Man-PNG-Download-Image.png" alt="" >
+                <img src="img/Smiling-Man-PNG-Download-Image.png" alt="" >
                 <div class="ic">
                     <i class="uil uil-comment-alt-lines"></i>
                 </div>
@@ -34,9 +34,9 @@
                 
             </div>
             <div class="right">
-                <img src="./Smiling-Man-PNG-Download-Image.png" alt="" >
+                <img src="img/Smiling-Man-PNG-Download-Image.png" alt="" >
                 <h3 id="h3" >&nbsp;&nbsp;Rohan Sharama</h3>
-                <img src="./2319174.png"   height="40px" width= "40px"alt="">
+                <img src="img/2319174.png"   height="40px" width= "40px"alt="">
             </div>
 
         </div>
@@ -125,8 +125,8 @@ endwhile; ?>
                    -->
                     <form action="inputmsg.php" method="post"  >
                    <!-- <input type="text" class="inpname"  name="uname"> -->
-                    <input type="text" class="inpmessage" name="msg" placeholder="Type a message">
-                    <input type="submit" class="sub_">
+                    <input type="text" class="inpmessage" name="msg" placeholder="&nbsp;&nbsp;Type a message">
+                    <button type="submit" class="linkk"><i class="uil uil-message" style="color:white; margin-top: 15px;"></i></a>
                   </form >
                   <!-- <div class="iaud">
                     <img src="./mike.png" height="25px" width= "30px" alt="">
