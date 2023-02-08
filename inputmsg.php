@@ -1,10 +1,10 @@
 <?php 
 	require "db_conn.php";
-
+	session_start();
 	// Escape user inputs for security
 	// $un= mysqli_real_escape_string(
 	// 		$link, $_REQUEST['uname']);
-       $un = $_POST['uname'];
+       $un = $_SESSION["username"];
 	   $m = $_POST['msg'];
 			
 	    date_default_timezone_set('Asia/Kolkata');

@@ -69,7 +69,7 @@ $query = "SELECT * FROM `gp_chat_db`";
  ?>
  
  <div id="message" class="message">
- <span style="color:green;float:left;">
+ <span style="color:black;float:left;">
   <?php echo $row['msg']; ?>
  </span> <br/>
  <div>
@@ -88,7 +88,7 @@ else
 ?>
  
  <div id="message1" class="message1">
- <span style="color:yellow;float:right;">
+ <span style="color:black;float:right;">
  <?php echo $row['msg']; ?></span> <br/>
  <div>
   <span style="color:black;float:left;
@@ -124,7 +124,7 @@ endwhile; ?>
                     </div>
                    -->
                     <form action="inputmsg.php" method="post"  >
-                   <input type="text" class="inpname"  name="uname" value="u1">
+                   <!-- <input type="text" class="inpname"  name="uname"> -->
                     <input type="text" class="inpmessage" name="msg" placeholder="Type a message">
                     <input type="submit" class="sub_">
                   </form >
