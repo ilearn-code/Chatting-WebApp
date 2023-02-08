@@ -62,20 +62,18 @@ require "db_conn.php";
  
 $query = "SELECT * FROM `gp_chat_db`";
  $run = $conn->query($query);
- $i=0;
+ 
   
  while($row = $run->fetch_array()) :
- if($i==0){
- $i=5;
- $first=$row;
+ if($_SESSION["username"]!=$row['uname']){
  ?>
  
- <div id="message1" class="message1">
- <span style="color:white;float:right;">
+ <div id="message" class="message">
+ <span style="color:green;float:left;">
   <?php echo $row['msg']; ?>
  </span> <br/>
  <div>
-  <span style="color:black;float:left;
+  <span style="color:black;float:right;
    font-size:10px;clear:both;">
    <?php echo $row['uname']; ?>, <?php echo $row['dt']; ?>
  </span>
@@ -86,15 +84,14 @@ $query = "SELECT * FROM `gp_chat_db`";
  }
 else
 {
-if($row['uname']!=$first['uname'])
-{
+
 ?>
  
- <div id="message" class="message">
- <span style="color:white;float:left;">
+ <div id="message1" class="message1">
+ <span style="color:yellow;float:right;">
  <?php echo $row['msg']; ?></span> <br/>
  <div>
-  <span style="color:black;float:right;
+  <span style="color:black;float:left;
           font-size:10px;clear:both;">
    <?php echo $row['uname']; ?>,
         <?php echo $row['dt']; ?>
@@ -104,25 +101,7 @@ if($row['uname']!=$first['uname'])
 <br/><br/>
 <?php
 }
-else
-{
-?>
- 
- <div id="message1" class="message1">
- <span style="color:white;float:right;">
- <?php echo $row['msg']; ?></span> <br/>
- <div>
-  <span style="color:black;float:left;
-          font-size:10px;clear:both;">
-    <?php echo $row['uname']; ?>,
-        <?php echo $row['dt']; ?>
-  </span>
-</div>
-</div>
-<br/><br/>
-<?php
-}
-}
+
 endwhile; ?>
 </div>
 
