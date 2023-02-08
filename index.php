@@ -149,7 +149,7 @@ endwhile; ?>
                    -->
                     <form action="inputmsg.php" method="post"  >
                    <!-- <input type="text" class="inpname"  name="uname"> -->
-                    <input type="text" class="inpmessage" name="msg" placeholder="&nbsp;&nbsp;Type a message">
+                    <input type="text" class="inpmessage" name="msg" placeholder="Type a message">
                     <button type="submit" class="linkk"><i class="uil uil-message" style="color:white; margin-top: 15px;"></i></a>
                   </form >
                   <!-- <div class="iaud">
