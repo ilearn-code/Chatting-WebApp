@@ -7,8 +7,9 @@
     top: 15%;
     left: 35%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+   
     
     background-color: #128c7e;
     width: 400px;
@@ -20,6 +21,14 @@ input[type="text"] {
     border-radius: 20px;
     padding: 10px 22px;
     border: none;
+}
+input[type="email"] {
+    border-radius: 20px;
+    margin-top: 12px;
+    padding: 10px 22px;
+    border: none;
+   
+
 }
 input[type="password"] {
     border-radius: 20px;
@@ -39,4 +48,16 @@ input[type="password"] {
     color: white;
 
 }
-
+.button
+{
+    padding: 10px 22px;
+   margin-top: 20px;
+    cursor: pointer;
+    display: inline;
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    border: none;
+    text-decoration: none;
+border-radius: 15px;
+}
