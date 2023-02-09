@@ -13,13 +13,13 @@
     <div class="loginForm">
         <form  method="post" name="register" action="registerp.php" >
                 <h1>Register</h1>
-                <input type="text"  name="username" placeholder="Username" />
+                <input type="text"  name="username" placeholder="Username" required/>
                 <br>
-                <input type="email"  name="email" placeholder="email" />
+                <input type="email"  name="email" placeholder="email" required />
                 <br>
-                <input type="password" name="password" placeholder="Password"/>
+                <input type="password" name="password" placeholder="Password" required/>
                 <br>
-                <input type="password" name="confirm" placeholder="Password"/>
+                <input type="password" name="confirm" placeholder="Password" required/>
                 <br>
                 <input type="submit"  name="submit"/>
                 
