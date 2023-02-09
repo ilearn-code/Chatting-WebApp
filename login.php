@@ -11,13 +11,17 @@
     session_start();
     // When form submitted, check and create user session.
     if (isset($_POST['username'])) {
-        $username = stripslashes($_REQUEST['username']);    // removes backslashes
-        $username = mysqli_real_escape_string($conn, $username);
-        $password = stripslashes($_REQUEST['password']);
-        $password = mysqli_real_escape_string($conn, $password);
+        $username = $_POST['username'];    // removes backslashes
+        
+        $password = $_POST['password'];
+       
+        $qq   = "SELECT * FROM `user` WHERE user='$username'";
+    $res = mysqli_query($conn, $qq);
+    $rows = mysqli_num_rows($res);
+
         // Check user is exist in the database
         $query    = "SELECT * FROM `user` WHERE user='$username'
-                    AND password='$password'";
+                    AND password=''";
         $result = mysqli_query($conn, $query) or die(mysql_error());
         $rows = mysqli_num_rows($result);
         if ($rows == 1) {
