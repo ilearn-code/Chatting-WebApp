@@ -17,6 +17,11 @@
     border-radius: 50px;
     text-align: center;
 }
+input:focus{
+    outline: none;
+} 
+
+
 input[type="text"] {
     border-radius: 20px;
     padding: 10px 22px;
@@ -37,7 +42,8 @@ input[type="password"] {
     border: none;
    
 
-}input[type="submit"] {
+}
+input[type="submit"] {
     border-radius: 20px;
     margin-top: 12px;
     padding: 10px 22px;
@@ -61,3 +67,4 @@ input[type="password"] {
     text-decoration: none;
 border-radius: 15px;
 }
+

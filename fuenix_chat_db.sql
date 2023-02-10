@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2023 at 11:01 AM
+-- Generation Time: Feb 10, 2023 at 08:09 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -38,11 +38,11 @@ CREATE TABLE `gp_chat_db` (
 --
 
 INSERT INTO `gp_chat_db` (`uname`, `msg`, `dt`) VALUES
-('user1', 'hi how are you', '23-02-08 01:55pm'),
-('user2', 'im all good bro', '23-02-08 01:55pm'),
-('user1', 'nope', '23-02-08 04:43pm'),
-('user1', 'hi', '23-02-08 05:39pm'),
-('user4', 'hi', '23-02-09 09:51am');
+('user1', 'hi', '23-02-10 11:28am'),
+('user2', 'hi', '23-02-10 11:28am'),
+('user2', 'no', '23-02-10 11:30am'),
+('user1', 'what', '23-02-10 11:30am'),
+('user1', 'hi', '23-02-10 11:33am');
 
 -- --------------------------------------------------------
 
@@ -53,21 +53,19 @@ INSERT INTO `gp_chat_db` (`uname`, `msg`, `dt`) VALUES
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `user` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `email` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `user`, `password`) VALUES
-(1, 'user1', 'password'),
-(2, 'user2', 'password'),
-(3, 'user3', 'password'),
-(4, 'user4', 'password'),
-(5, 'user5', 'password'),
-(6, 'user6', 'password'),
-(7, 'user7', 'password');
+INSERT INTO `user` (`id`, `user`, `password`, `email`) VALUES
+(24, 'user1', '$2y$10$1Z.Xza8nSrGH447pltPiDO2rtEWvCfeWGNJOCMHOraYdSCOkc/ViK', 'fuenix@gmail.com'),
+(25, 'user2', '$2y$10$TJzKfxhab/Zo0SuEygyBOeQu0FHzbcnoXd9lLP2Uyt4e9KOtPxSGO', 'user2@gmail.com'),
+(26, 'user3', '$2y$10$hLI4S0qKtKSdQPTducTamefoV6rw.u85/gAgpB9Ttec9pqcaqYj.K', 'user3@gmail.com'),
+(27, 'user4', '$2y$10$uP0ABAR5x5qTsBDyu506PuaryoSKieZWpkLhnpwpA2o3RtmQC2Mb.', 'user4@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -87,7 +85,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
