@@ -9,32 +9,47 @@
 <?php
   require "db_conn.php";
     session_start();
-    // When form submitted, check and create user session.
-    if (isset($_POST['username'])) {
-        $username = $_POST['username'];    // removes backslashes
-        
-        $password = $_POST['password'];
-       
-        $qq   = "SELECT * FROM `user` WHERE user='$username'";
-    $res = mysqli_query($conn, $qq);
-    $rows = mysqli_num_rows($res);
 
-        // Check user is exist in the database
-        $query    = "SELECT * FROM `user` WHERE user='$username'
-                    AND password=''";
-        $result = mysqli_query($conn, $query) or die(mysql_error());
-        $rows = mysqli_num_rows($result);
-        if ($rows == 1) {
-            $_SESSION['username'] = $username;
-            // Redirect to user dashboard page
+if (isset($_POST['username'])) {
+    $username = $_POST['username'];
+
+    $password = $_POST['password'];
+
+    $query1 = "SELECT * FROM `user` WHERE user='$username'";
+    $result = mysqli_query($conn, $query1);
+    $rows = mysqli_num_rows($result);
+
+    
+
+
+    if ($rows == 1) {
+        $_SESSION['username'] = $username;
+        $query2 = "SELECT password FROM `user` WHERE user='$username'";
+
+        $result2 = mysqli_query($conn, $query2);
+
+       $row=mysqli_fetch_array($result2, MYSQLI_ASSOC);
+        $hash = $row['password'];
+        if(password_verify($password, $hash )){
             header("Location: index.php");
-        } else {
+        } 
+        else {
+
+            echo $hash;
             echo "<div class='form'>
-                  <h3>Incorrect Username/password</h3><br/>
-                  <p class='link'>Click here to <a href='login.php'>Login</a> again.</p>
-                  </div>";
+                      <h3>Incorrect Username/password</h3><br/>
+                      <p class='link'>Click here to <a href='login.php'>Login</a> again.</p>
+                      </div>";
         }
-    } else {
+
+    }
+    
+        else{
+            echo "Invalid info2";
+    }
+    
+}
+     else {
 ?>
 <div class="loginForm">
 <form  method="post" name="login">
