@@ -1,7 +1,7 @@
 <?php 
 	require "db_conn.php";
 	session_start();
-	// Escape user inputs for security
+	
 	
        $un = $_SESSION["username"];
 	   $m = $_POST['msg'];
@@ -9,7 +9,6 @@
 	    date_default_timezone_set('Asia/Kolkata');
 	    $ts=date('y-m-d h:ia');
 	
-	// Attempt insert query execution
 	$query = "INSERT INTO `gp_chat_db`(`uname`,`msg`,`dt`) VALUES ('$un','$m','$ts');";
 	
 

@@ -55,10 +55,10 @@
 require "db_conn.php";
  
 $query = "SELECT * FROM `user`";
- $run = $conn->query($query);
+ $run = mysqli_query($conn,$query);
  
   
- while($row = $run->fetch_array()) :
+ while($row = mysqli_fetch_array($run)) :
  if($_SESSION["username"]!=$row['user']){
 ?>
 <div class="listuser">
@@ -85,10 +85,10 @@ endwhile; ?>
 require "db_conn.php";
  
 $query = "SELECT * FROM `gp_chat_db`";
- $run = $conn->query($query);
+ $run = mysqli_query($conn,$query);
  
   
- while($row = $run->fetch_array()) :
+ while($row = mysqli_fetch_array($run)) :
  if($_SESSION["username"]!=$row['uname']){
  ?>
  

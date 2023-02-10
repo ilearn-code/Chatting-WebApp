@@ -10,7 +10,7 @@
 
         if($pass == $re_pass){
 
-	     $query ="INSERT INTO `user`( `id`,`user`, `password`) VALUES (null,'$name','$secure_pass');";
+	     $query ="INSERT INTO `user`( `id`,`user`, `password`,`email`) VALUES (null,'$name','$secure_pass','$email');";
 
 	        if(mysqli_query($conn, $query)){
 
