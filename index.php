@@ -62,7 +62,8 @@ $query = "SELECT * FROM `user`";
  if($_SESSION["username"]!=$row['user']){
 ?>
 <div class="listuser">
-    <?php echo $row['user']; ?>
+    <a href="_blank"> <?php echo $row['user']; ?></a>
+   
 </div>
   <?php      
  }
