@@ -28,6 +28,7 @@
                 </div>
                 
                <a id="logout" href="logout.php">Log out</a>
+
                     
                  
   
@@ -62,7 +63,8 @@ $query = "SELECT * FROM `user`";
  if($_SESSION["username"]!=$row['user']){
 ?>
 <div class="listuser">
-    <a href="_blank"> <?php echo $row['user']; ?></a>
+    <a href="usertochap.php" name= "<?php echo $row['id']; ?>"> <?php echo $row['user']; 
+    echo  $_SESSION['sender_id'];?></a>
    
 </div>
   <?php      
@@ -82,52 +84,7 @@ endwhile; ?>
 
 
 <div class="inner_div" id="chathist">
-<?php
-require "db_conn.php";
- 
-$query = "SELECT * FROM `gp_chat_db`";
- $run = mysqli_query($conn,$query);
- 
-  
- while($row = mysqli_fetch_array($run)) :
- if($_SESSION["username"]!=$row['uname']){
- ?>
- 
- <div id="message" class="message">
- <span style="color:black;float:left;">
-  <?php echo $row['msg']; ?>
- </span> <br/>
- <div>
-  <span style="color:black;float:right;
-   font-size:10px;clear:both;">
-   <?php echo $row['uname']; ?>, <?php echo $row['dt']; ?>
- </span>
- </div>
-</div>
-<br/><br/>
- <?php
- }
-else
-{
 
-?>
- 
- <div id="message1" class="message1" >
- <span style="color:black;float:right;">
- <?php echo $row['msg']; ?></span> <br/>
- <div>
-  <span style="color:black;float:left;
-          font-size:10px;clear:both;">
-   <?php echo $row['uname']; ?>,
-        <?php echo $row['dt']; ?>
- </span>
-</div>
-</div>
-<br/><br/>
-<?php
-}
-
-endwhile; ?>
 </div>
 
 

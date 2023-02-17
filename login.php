@@ -16,7 +16,9 @@ if (isset($_POST['username'])) {
     $password = $_POST['password'];
 
     $query1 = "SELECT * FROM `user` WHERE user='$username'";
+
     $result = mysqli_query($conn, $query1);
+
     $rows = mysqli_num_rows($result);
 
     
@@ -24,9 +26,16 @@ if (isset($_POST['username'])) {
 
     if ($rows == 1) {
         $_SESSION['username'] = $username;
+       
         $query2 = "SELECT password FROM `user` WHERE user='$username'";
-
+        $query3 = "SELECT id FROM `user` WHERE user='$username'";
+        
         $result2 = mysqli_query($conn, $query2);
+        $result3 = mysqli_query($conn, $query3);
+
+        $roww=mysqli_fetch_array($result3);
+        $_SESSION['sender_id']=$roww['id'];
+
 
        $row=mysqli_fetch_array($result2, MYSQLI_ASSOC);
         $hash = $row['password'];
