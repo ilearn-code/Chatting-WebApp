@@ -24,7 +24,7 @@
 
                     
                  
-  
+                <a id="logout" href="logout.php">Log out</a>
                 
             </div>
             <div class="right">
@@ -60,9 +60,10 @@
                     if($_SESSION["username"]!=$row['user']){
                    ?>
                    <div class="listuser">
-                     <?php echo $row['user']; echo $row['id'];
-                     
-                     ?> 
+                   <a href="chat.php?myid=<?php echo $row['user']; ?>"> <?php echo $row['user'];?> 
+
+</a>
+  
                      
                    
                    </div>
