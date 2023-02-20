@@ -31,8 +31,9 @@
                 <img src="img/Smiling-Man-PNG-Download-Image.png" alt="" >
                 <h3 id="h3" >&nbsp;&nbsp;<?php
                 include "db_conn.php"; 
-                $subjectId  = $_GET['myid'];
-                echo $subjectId; ?></h3>
+                $_SESSION['usernameselected']  = $_GET['myid'];
+                $usernameselected=$_GET['myid'];
+                echo  $_SESSION['usernameselected']; ?></h3>
                 <img src="img/2319174.png"   height="40px" width= "40px"alt="">
             </div>
 
@@ -81,15 +82,23 @@
 <div class="inner_div" id="chathist">
 <?php
 require "db_conn.php";
+$qq = "SELECT `id` FROM `user` WHERE user= '$usernameselected'; ";
+$rr = mysqli_query($conn,$query);
+
+$rowud = mysqli_fetch_array($rr);
+$myuserid=$rowud['id'];
  
 $query = "SELECT * FROM `gp_chat_db`";
  $run = mysqli_query($conn,$query);
  
- $chatroom=$_SESSION['sender_id']+$_GET["myuserid"];
+ 
+
+
+ $chatroom=$_SESSION['sender_id']+$myuserid;
  while($row = mysqli_fetch_array($run)) :
   // if($row['uname']=$subjectId || $row['uname']=$_SESSION["username"]){
-    if($chatroom==$row["chatroom"])
- if( $row['uname']==$subjectId){
+    if($chatroom==$row['chatroom']){
+ if( $row['uname']==$usernameselected){
  ?>
  
  <div id="message" class="message">
@@ -125,7 +134,10 @@ else if($_SESSION["username"]==$row["uname"])
 <br/><br/>
 <?php
 }
-
+else{
+  
+}
+    }
   // }
 endwhile; ?>
 </div>
@@ -151,8 +163,8 @@ endwhile; ?>
                     <form action="inputmsg.php" method="post"  >
                    <!-- <input type="text" class="inpname"  name="uname"> -->
                     <input type="text" class="inpmessage" name="msg" placeholder="Type a message">
-                    <input type="hidden"  name="subjectid" value="<?php echo $_GET['myid']; ?>">
-                    <input type="hidden"  name="subjectid" value="<?php echo $_GET['myuserid']; ?>">
+                    
+                    <input type="hidden"  name="subjectidd" value="<?php echo $myuserid;?>">
                     <button type="submit" class="linkk"><i class="uil uil-message" style="color:white; margin-top: 15px;"></i></a>
                   </form >
                   <!-- <div class="iaud">

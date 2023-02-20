@@ -64,7 +64,7 @@ $query = "SELECT * FROM `user`";
 ?>
 <div class="listuser">
 
-    <a href="chat.php?myid=<?php echo $row['user']; ?>?myuserid=<?php echo $row['id']; ?>"> <?php echo $row['user'];?> 
+    <a href="chat.php?myid=<?php echo $row['user']; ?>"> <?php echo $row['user'];?> 
 
 </a>
   
