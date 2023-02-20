@@ -83,22 +83,23 @@
 <?php
 require "db_conn.php";
 $qq = "SELECT `id` FROM `user` WHERE user= '$usernameselected'; ";
-$rr = mysqli_query($conn,$query);
-
+$rr = mysqli_query($conn,$qq);
 $rowud = mysqli_fetch_array($rr);
 $myuserid=$rowud['id'];
- 
-$query = "SELECT * FROM `gp_chat_db`";
+
+
+$chatroom=$_SESSION['sender_id']+$myuserid;
+$query = "SELECT * FROM `gp_chat_db` WHERE `chatroom`='$chatroom';";
  $run = mysqli_query($conn,$query);
  
  
 
 
- $chatroom=$_SESSION['sender_id']+$myuserid;
+ 
  while($row = mysqli_fetch_array($run)) :
   // if($row['uname']=$subjectId || $row['uname']=$_SESSION["username"]){
-    if($chatroom==$row['chatroom']){
- if( $row['uname']==$usernameselected){
+  
+ if($_SESSION["username"]!=$row["uname"]){
  ?>
  
  <div id="message" class="message">
@@ -115,7 +116,7 @@ $query = "SELECT * FROM `gp_chat_db`";
 <br/><br/>
  <?php
  }
-else if($_SESSION["username"]==$row["uname"])
+ else
 {
 
 ?>
@@ -134,12 +135,11 @@ else if($_SESSION["username"]==$row["uname"])
 <br/><br/>
 <?php
 }
-else{
+   
   
-}
-    }
-  // }
-endwhile; ?>
+endwhile; 
+
+?>
 </div>
 
 
@@ -176,7 +176,7 @@ endwhile; ?>
            
 
         </div>
-       
+       <?php unset($_SESSION['usernameselected']); ?>
     </div>
 </body>
 </html>
