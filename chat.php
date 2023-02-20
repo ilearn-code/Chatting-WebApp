@@ -1,10 +1,3 @@
-<?php
-    session_start();
-    if(!isset($_SESSION["username"])) {
-        header("Location: login.php");
-        exit();
-    }
-?>
 
 
 <!DOCTYPE html>
@@ -27,7 +20,7 @@
                     <i class="uil uil-comment-alt-lines"></i>
                 </div>
                 
-               <a id="logout" href="logout.php">Log out</a>
+            
 
                     
                  
@@ -36,7 +29,10 @@
             </div>
             <div class="right">
                 <img src="img/Smiling-Man-PNG-Download-Image.png" alt="" >
-                <h3 id="h3" >&nbsp;&nbsp;Rohan Sharama</h3>
+                <h3 id="h3" >&nbsp;&nbsp;<?php
+                include "db_conn.php"; 
+                $subjectId  = $_GET['myid'];
+                echo $subjectId; ?></h3>
                 <img src="img/2319174.png"   height="40px" width= "40px"alt="">
             </div>
 
@@ -52,45 +48,87 @@
                   </div>
                   <div class="listscroll" >
                    
-<?php
-require "db_conn.php";
- 
-$query = "SELECT * FROM `user`";
- $run = mysqli_query($conn,$query);
- 
-  
- while($row = mysqli_fetch_array($run)) :
- if($_SESSION["username"]!=$row['user']){
-?>
-<div class="listuser">
-
-    <a href="chat.php?myid=<?php echo $row['user']; ?>?myuserid=<?php echo $row['id']; ?>"> <?php echo $row['user'];?> 
-
-</a>
-  
-
-</div>
-  <?php      
- }
- 
-
-endwhile; ?>
-</div>
-
+                   <?php
+                   require "db_conn.php";
+                    session_start();
+                   $query = "SELECT * FROM `user`";
+                    $run = mysqli_query($conn,$query);
                     
-                  </div>
-            </div>
-            <div class="r1">
+                     
+                    while($row = mysqli_fetch_array($run)) :
+                    if($_SESSION["username"]!=$row['user']){
+                   ?>
+                   <div class="listuser">
+                     <?php echo $row['user']; echo $row['id'];
+                     
+                     ?> 
+                     
+                   
+                   </div>
+                     <?php      
+                    }
+                    
+                   
+                   endwhile; ?>
+                   </div>
+</div>
+<div class="r1">
 <div class="chatboxes">
 <div class="chat">
 
 
 
 <div class="inner_div" id="chathist">
+<?php
+require "db_conn.php";
+ 
+$query = "SELECT * FROM `gp_chat_db`";
+ $run = mysqli_query($conn,$query);
+ 
+ $chatroom=$_SESSION['sender_id']+$_GET["myuserid"];
+ while($row = mysqli_fetch_array($run)) :
+  // if($row['uname']=$subjectId || $row['uname']=$_SESSION["username"]){
+    if($chatroom==$row["chatroom"])
+ if( $row['uname']==$subjectId){
+ ?>
+ 
+ <div id="message" class="message">
+ <span style="color:black;float:left;">
+  <?php echo $row['msg']; echo $_SESSION["username"];?>
+ </span> <br/>
+ <div>
+  <span style="color:black;float:right;
+   font-size:10px;clear:both;">
+   <?php echo $row['uname']; ?>, <?php echo $row['dt']; ?>
+ </span>
+ </div>
+</div>
+<br/><br/>
+ <?php
+ }
+else if($_SESSION["username"]==$row["uname"])
+{
 
+?>
+ 
+ <div id="message1" class="message1" >
+ <span style="color:black;float:right;">
+ <?php echo $row['msg']; ?></span> <br/>
+ <div>
+  <span style="color:black;float:left;
+          font-size:10px;clear:both;">
+   <?php echo $row['uname']; ?>,
+        <?php echo $row['dt']; ?>
+ </span>
+</div>
+</div>
+<br/><br/>
+<?php
+}
 
-
-</div> 
+  // }
+endwhile; ?>
+</div>
 
 
         
@@ -110,15 +148,17 @@ endwhile; ?>
                         <i class="uil uil-smile"></i>
                     </div>
                    -->
-                    <form  >
+                    <form action="inputmsg.php" method="post"  >
                    <!-- <input type="text" class="inpname"  name="uname"> -->
                     <input type="text" class="inpmessage" name="msg" placeholder="Type a message">
+                    <input type="hidden"  name="subjectid" value="<?php echo $_GET['myid']; ?>">
+                    <input type="hidden"  name="subjectid" value="<?php echo $_GET['myuserid']; ?>">
                     <button type="submit" class="linkk"><i class="uil uil-message" style="color:white; margin-top: 15px;"></i></a>
                   </form >
                   <!-- <div class="iaud">
                     <img src="./mike.png" height="25px" width= "30px" alt="">
                   </div> -->
-                  
+                 
                   </div>
             </div>
            
