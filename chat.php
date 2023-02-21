@@ -157,20 +157,15 @@ endwhile;
 </div>
 </div>
                 <div class="messagediv">
-                    <!-- <div class="iemo">
-                        <i class="uil uil-smile"></i>
-                    </div>
-                   -->
-                    <form action="inputmsg.php" method="post"  >
-                   <!-- <input type="text" class="inpname"  name="uname"> -->
+                   
+                    <form  id="myForm" >
+                 
                     <input type="text" class="inpmessage" name="msg" placeholder="Type a message">
                     
                     <input type="hidden"  name="subjectidd" value="<?php echo $myuserid;?>">
-                    <button type="submit" class="linkk"><i class="uil uil-message" style="color:white; margin-top: 15px;"></i></a>
+                    <button type="submit" id="submitBtn" class="linkk"><i class="uil uil-message" style="color:white; margin-top: 15px;"></i></a>
                   </form >
-                  <!-- <div class="iaud">
-                    <img src="./mike.png" height="25px" width= "30px" alt="">
-                  </div> -->
+                 
                  
                   </div>
             </div>
@@ -180,4 +175,24 @@ endwhile;
        <?php unset($_SESSION['usernameselected']); ?>
     </div>
 </body>
+
+<script>
+  document.getElementById("submitBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+    sendData();
+  });
+
+  function sendData() {
+  var formData = new FormData(document.getElementById("myForm"));
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "inputmsg.php", true);
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      console.log(xhr.responseText);
+    }
+  };
+  xhr.send(formData);
+}
+
+</script>
 </html>

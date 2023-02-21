@@ -15,7 +15,7 @@
 	
 
     if(mysqli_query($conn, $query)){
-		header("Location: index.php");
+		
 	} else{
 		die("error while executing the query". mysqli_error($conn));
 	}
