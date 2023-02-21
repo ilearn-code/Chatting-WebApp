@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
+
+
+
 </head>
 <body>
     <div class="main">
@@ -33,6 +36,10 @@
                 include "db_conn.php"; 
                 $_SESSION['usernameselected']  = $_GET['myid'];
                 $usernameselected=$_GET['myid'];
+                $qq = "SELECT `id` FROM `user` WHERE user= '$usernameselected'; ";
+$rr = mysqli_query($conn,$qq);
+$rowud = mysqli_fetch_array($rr);
+$receiver_id=$rowud['id'];  
                 echo  $_SESSION['usernameselected']; ?></h3>
                 <img src="img/2319174.png"   height="40px" width= "40px"alt="">
             </div>
@@ -78,91 +85,19 @@
 <div class="chatboxes">
 <div class="chat">
 
-
-
-<div class="inner_div" id="chathist">
-<?php
-require "db_conn.php";
-$qq = "SELECT `id` FROM `user` WHERE user= '$usernameselected'; ";
-$rr = mysqli_query($conn,$qq);
-$rowud = mysqli_fetch_array($rr);
-$myuserid=$rowud['id'];
-
-
-$chatroom=$_SESSION['sender_id']+$myuserid;
-$query = "SELECT * FROM `gp_chat_db` WHERE `chatroom`='$chatroom';";
- $run = mysqli_query($conn,$query);
- 
- 
-
-
- 
- while($row = mysqli_fetch_array($run)) :
-  // if($row['uname']=$subjectId || $row['uname']=$_SESSION["username"]){
-  
- if($_SESSION["username"]!=$row["uname"]){
- ?>
- 
- <div id="message" class="message">
- <span style="color:black;float:left;">
-  <?php echo $row['msg']; echo $_SESSION["username"];?>
- </span> <br/>
- <div>
-  <span style="color:black;float:right;
-   font-size:10px;clear:both;">
-   <?php echo $row['uname']; ?>, <?php echo $row['dt']; ?>
- </span>
- </div>
-</div>
-<br/><br/>
- <?php
- }
- else
-{
-
-?>
- 
- <div id="message1" class="message1" >
- <span style="color:black;float:right;">
- <?php echo $row['msg']; ?></span> <br/>
- <div>
-  <span style="color:black;float:left;
-          font-size:10px;clear:both;">
-   <?php echo $row['uname']; ?>,
-        <?php echo $row['dt']; ?>
- </span>
-</div>
-</div>
-<br/><br/>
-<?php
-}
-   
-  
-endwhile; 
-
-?>
-</div>
+<div id="chat-window"></div>
 
 
         
           
-               
- 
-
-           
-
-
-         
-
 </div>
 </div>
                 <div class="messagediv">
                    
-                    <form  id="myForm" >
-                 
+                    <form  id="myForm">
+                    <input type="hidden"  name="receiver_id" value="<?php echo $receiver_id;?>">
                     <input type="text" class="inpmessage" name="msg"  placeholder="Type a message">
-                    
-                    <input type="hidden"  name="subjectidd" value="<?php echo $myuserid;?>">
+                   
                     <button type="submit" id="submitBtn" class="linkk"><i class="uil uil-message" style="color:white; margin-top: 15px;"></i></a>
                   </form >
                  
@@ -192,7 +127,32 @@ endwhile;
     }
   };
   xhr.send(formData);
+  location.reload();
 }
 
 </script>
+
+
+
+<script>
+  function getChatMessages() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var messages = JSON.parse(this.responseText);
+        for (var i = 0; i < messages.length; i++) {
+          var message = messages[i];
+          var messageClass = message.sender_id == <?php echo $_SESSION['sender_id']; ?> ? 'right' : 'left';
+          var chatBubble = '<div class="chat-bubble ' + messageClass + '">' + message.content + '</div>';
+          document.getElementById('chat-window').innerHTML += chatBubble;
+        }
+      }
+    };
+    xhttp.open("GET", "getChatMessages.php", true);
+    xhttp.send();
+  }
+
+  setInterval(getChatMessages, 1000);
+</script>
+
 </html>
