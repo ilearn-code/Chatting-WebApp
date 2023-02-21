@@ -39,7 +39,8 @@
                 $qq = "SELECT `id` FROM `user` WHERE user= '$usernameselected'; ";
 $rr = mysqli_query($conn,$qq);
 $rowud = mysqli_fetch_array($rr);
-$receiver_id=$rowud['id'];  
+$receiver_id=$rowud['id']; 
+
                 echo  $_SESSION['usernameselected']; ?></h3>
                 <img src="img/2319174.png"   height="40px" width= "40px"alt="">
             </div>
@@ -85,7 +86,9 @@ $receiver_id=$rowud['id'];
 <div class="chatboxes">
 <div class="chat">
 
-<div id="chat-window"></div>
+<div id="chat-window">
+
+</div>
 
 
         
@@ -107,7 +110,7 @@ $receiver_id=$rowud['id'];
            
 
         </div>
-       <?php unset($_SESSION['usernameselected']); ?>
+       
     </div>
 </body>
 
@@ -142,9 +145,12 @@ $receiver_id=$rowud['id'];
         var messages = JSON.parse(this.responseText);
         for (var i = 0; i < messages.length; i++) {
           var message = messages[i];
+          // if (message.sender_id == <?php echo $_SESSION['sender_id']; ?>&& message.receiver_id==<?php echo $receiver_id ;?>)
+          // {
           var messageClass = message.sender_id == <?php echo $_SESSION['sender_id']; ?> ? 'right' : 'left';
-          var chatBubble = '<div class="chat-bubble ' + messageClass + '">' + message.content + '</div>';
+          var chatBubble = '<div class="chat-bubble ' + messageClass + '">' + message.message + '</div>';
           document.getElementById('chat-window').innerHTML += chatBubble;
+          
         }
       }
     };
