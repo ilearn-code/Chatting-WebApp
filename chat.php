@@ -160,7 +160,7 @@ endwhile;
                    
                     <form  id="myForm" >
                  
-                    <input type="text" class="inpmessage" name="msg" placeholder="Type a message">
+                    <input type="text" class="inpmessage" name="msg"  placeholder="Type a message">
                     
                     <input type="hidden"  name="subjectidd" value="<?php echo $myuserid;?>">
                     <button type="submit" id="submitBtn" class="linkk"><i class="uil uil-message" style="color:white; margin-top: 15px;"></i></a>

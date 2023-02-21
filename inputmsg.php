@@ -3,19 +3,21 @@
 	session_start();
 	
 	
-       $un = $_SESSION["username"];
+      
 	   $m = $_POST['msg'];
 	   $subjectid=$_POST["subjectidd"];
-	   $chatroom=$_SESSION['sender_id']+$subjectid;
-	  
-	   	    date_default_timezone_set('Asia/Kolkata');
-	    $ts=date('y-m-d h:ia');
-		
-	$query = "INSERT INTO `gp_chat_db`(`chatroom`, `uname`, `msg`, `dt`) VALUES ('$chatroom','$un','$m','$ts');";
+	   $sender_id=$_SESSION['sender_id'];
 	
+	  
+	   	
+	    $ts=date('Y-m-d H:i:s');
+		date_default_timezone_set('Asia/Kolkata');
 
+	$query = "INSERT INTO `chat_messages`(`id`, `sender_id`, `receiver_id`, `message`, `created_at`) VALUES (null,'$sender_id',' $subjectid','$m','$ts')";
+	
+	
     if(mysqli_query($conn, $query)){
-		
+		// header('location:chat.php')
 	} else{
 		die("error while executing the query". mysqli_error($conn));
 	}
