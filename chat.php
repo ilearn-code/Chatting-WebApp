@@ -84,7 +84,7 @@ $receiver_id=$rowud['id'];
 </div>
 <div class="r1">
 <div class="chatboxes">
-<div class="chat">
+<div class="chat" id="chatsid" >
 
 <div id="chat-window">
 
@@ -151,11 +151,18 @@ $receiver_id=$rowud['id'];
             var chatBubble = '<div class="chat-bubble ' + messageClass + '">' + message.message+ '</div>';
             document.getElementById('chat-window').innerHTML += chatBubble;
           }
+          
         }
+        scrollToBottom();
+ 
       }
     };
     xhttp.open("GET", "getChatMessages.php", true);
     xhttp.send();
+  }
+  function scrollToBottom() {
+    var chatContainer = document.getElementById("chatsid");
+  chatContainer.scrollTop = chatContainer.scrollHeight;
   }
 
   setInterval(getChatMessages, 1000);
