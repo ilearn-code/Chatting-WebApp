@@ -286,7 +286,7 @@ i{
   .chat-bubble {
     height: 50px;
     width: 50px;
-    padding: 2px;
+    padding:5px;
     margin: 5px;
    border-radius: 5px;
     font-size: 10px;
@@ -295,7 +295,7 @@ i{
   
   .chat-bubble.left {
     
-   
+    background-color:#dcf8c6;
     color:black;
     float:left;
   
@@ -305,10 +305,16 @@ i{
   
   .chat-bubble.right {
    
-   
-    color:black;
-    float:right;
-   
-   clear:both;
+    
+        color:#000;
+        
+        background-color:#dcf8c6;
+        
+
+        text-align:right;
+        border-radius:5px;
+        float:right;
+        clear:both;
+    
   }
   

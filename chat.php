@@ -99,7 +99,7 @@ $receiver_id=$rowud['id'];
                    
                     <form  id="myForm">
                     <input type="hidden"  name="receiver_id" value="<?php echo $receiver_id;?>">
-                    <input type="text" class="inpmessage" name="msg"  placeholder="Type a message">
+                    <input type="text" class="inpmessage" id="inpmessageid" name="msg"  placeholder="Type a message">
                    
                     <button type="submit" id="submitBtn" class="linkk"><i class="uil uil-message" style="color:white; margin-top: 15px;"></i></a>
                   </form >
@@ -130,7 +130,7 @@ $receiver_id=$rowud['id'];
     }
   };
   xhr.send(formData);
-  location.reload();
+  document.getElementById('inpmessageid').value = "";
 }
 
 </script>
@@ -144,6 +144,7 @@ $receiver_id=$rowud['id'];
         document.getElementById('chat-window').innerHTML = '';
         for (var message of messages) {
           console.log(<?php echo $_SESSION['sender_id']; ?>);
+
           // Only show messages between the logged-in user and the other user
           if ((message.sender_id == <?php echo $_SESSION['sender_id']; ?> && message.receiver_id == <?php echo $receiver_id ?>) || (message.sender_id == <?php echo $receiver_id; ?> && message.receiver_id == <?php echo $_SESSION['sender_id']; ?>)) {
             var messageClass = message.sender_id== <?php echo $_SESSION['sender_id']; ?>? 'right' : 'left';
@@ -158,7 +159,7 @@ $receiver_id=$rowud['id'];
   }
 
   setInterval(getChatMessages, 1000);
-</script>
+</script> 
 
 
 </html>

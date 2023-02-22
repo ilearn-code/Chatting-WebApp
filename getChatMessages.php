@@ -12,7 +12,7 @@
   }
 
   // Send the messages as a JSON response
-  header('Content-Type: application/json');
+  // header('Content-Type: application/json');
   echo json_encode($messages);
   mysqli_close($conn);
 ?>
