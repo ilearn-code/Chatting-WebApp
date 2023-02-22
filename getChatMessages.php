@@ -3,7 +3,7 @@
   include "db_conn.php";
 
   // Get the chat messages from the database
-  $result = mysqli_query($conn, "SELECT * FROM chat_messages ORDER BY `created_at` DESC");
+  $result = mysqli_query($conn, "SELECT * FROM chat_messages ORDER BY `created_at` ASC");
 
   // Convert the result to an array of objects
   $messages = array();

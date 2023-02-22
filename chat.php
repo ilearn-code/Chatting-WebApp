@@ -135,41 +135,30 @@ $receiver_id=$rowud['id'];
 
 </script>
 
-
-
 <script>
   function getChatMessages() {
     var xhttp = new XMLHttpRequest();
-    var flag = false;
-     
     xhttp.onreadystatechange = function() {
-      
-     
       if (this.readyState == 4 && this.status == 200) {
         var messages = JSON.parse(this.responseText);
-        var flag = true; 
-        for (var i = 0; i < messages.length; i++) {
-          var message = messages[i];
-          if (message.sender_id == <?php echo $_SESSION['sender_id']; ?>&& message.receiver_id==<?php echo $receiver_id ;?>)
-          {
-          var messageClass = message.sender_id == <?php echo $_SESSION['sender_id']; ?> ? 'left' : 'left';
-          var chatBubble = '<div class="chat-bubble ' + messageClass + '">' +message.message + '</div>';
-          document.getElementById('chat-window').innerHTML += chatBubble;
-          } 
-          
+        document.getElementById('chat-window').innerHTML = '';
+        for (var message of messages) {
+          console.log(<?php echo $_SESSION['sender_id']; ?>);
+          // Only show messages between the logged-in user and the other user
+          if ((message.sender_id == <?php echo $_SESSION['sender_id']; ?> && message.receiver_id == <?php echo $receiver_id ?>) || (message.sender_id == <?php echo $receiver_id; ?> && message.receiver_id == <?php echo $_SESSION['sender_id']; ?>)) {
+            var messageClass = message.sender_id== <?php echo $_SESSION['sender_id']; ?>? 'right' : 'left';
+            var chatBubble = '<div class="chat-bubble ' + messageClass + '">' + message.message+ '</div>';
+            document.getElementById('chat-window').innerHTML += chatBubble;
+          }
         }
-      
       }
     };
     xhttp.open("GET", "getChatMessages.php", true);
     xhttp.send();
-  
-  
   }
 
   setInterval(getChatMessages, 1000);
-  
-
 </script>
+
 
 </html>

@@ -284,21 +284,31 @@ i{
 
 
   .chat-bubble {
-    padding: 10px;
-    margin: 10px;
-    border-radius: 20px;
-    font-size: 16px;
-    max-width: 60%;
+    height: 50px;
+    width: 50px;
+    padding: 2px;
+    margin: 5px;
+   border-radius: 5px;
+    font-size: 10px;
+   
   }
   
   .chat-bubble.left {
-    background-color: #ccc;
-    float: left;
+    
+   
+    color:black;
+    float:left;
+  
+   clear:both;
+    
   }
   
   .chat-bubble.right {
-    background-color: #0084ff;
-    float: right;
-    color: white;
+   
+   
+    color:black;
+    float:right;
+   
+   clear:both;
   }
   
