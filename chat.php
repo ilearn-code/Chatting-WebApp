@@ -9,6 +9,25 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tiny.cloud/1/tsfthrvrlqoy0sr9r1im8h943bj9u05qvv8tpm4c560johtn/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+    tinymce.init({
+      selector: "#mytextarea",
+  plugins: "emoticons autoresize",
+  toolbar: "emoticons",
+  toolbar_location: "bottom",
+  menubar: false,
+  statusbar: false,
+  toxsidebar:false
+
+  });
+  </script>
+ 
+  
+ 
+
+      
+   
     <title>Document</title>
 
 
@@ -96,11 +115,12 @@ $receiver_id=$rowud['id'];
 </div>
 </div>
                 <div class="messagediv">
-                   
+                
+                
                     <form  id="myForm">
+                    <!-- <textarea id="mytextarea"></textarea> -->
                     <input type="hidden"  name="receiver_id" value="<?php echo $receiver_id;?>">
                     <input type="text" class="inpmessage" id="inpmessageid" name="msg"  placeholder="Type a message">
-                   
                     <button type="submit" id="submitBtn" class="linkk"><i class="uil uil-message" style="color:white; margin-top: 15px;"></i></a>
                   </form >
                  
@@ -147,26 +167,24 @@ $receiver_id=$rowud['id'];
 
           // Only show messages between the logged-in user and the other user
           if ((message.sender_id == <?php echo $_SESSION['sender_id']; ?> && message.receiver_id == <?php echo $receiver_id ?>) || (message.sender_id == <?php echo $receiver_id; ?> && message.receiver_id == <?php echo $_SESSION['sender_id']; ?>)) {
-            var messageClass = message.sender_id== <?php echo $_SESSION['sender_id']; ?>? 'right' : 'left';
+            var messageClass = message.sender_id== <?php echo $_SESSION['sender_id']; ?>?'rright' :'lleft';
             var chatBubble = '<div class="chat-bubble ' + messageClass + '">' + message.message+ '</div>';
             document.getElementById('chat-window').innerHTML += chatBubble;
           }
           
         }
-        scrollToBottom();
  
       }
     };
     xhttp.open("GET", "getChatMessages.php", true);
     xhttp.send();
   }
-  function scrollToBottom() {
-    var chatContainer = document.getElementById("chatsid");
-  chatContainer.scrollTop = chatContainer.scrollHeight;
-  }
+ 
 
   setInterval(getChatMessages, 1000);
 </script> 
+
+
 
 
 </html>

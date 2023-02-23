@@ -284,37 +284,39 @@ i{
 
 
   .chat-bubble {
-    height: 50px;
-    width: 50px;
+   
     padding:5px;
     margin: 5px;
    border-radius: 5px;
-    font-size: 10px;
+    font-size: 15px;
    
   }
   
-  .chat-bubble.left {
+  .chat-bubble.lleft {
     
-    background-color:#dcf8c6;
+    background-color:whitesmoke;
     color:black;
     float:left;
-  
-   clear:both;
+    max-width:90%;
+    clear:both;
+    
     
   }
   
-  .chat-bubble.right {
-   
-    
+  .chat-bubble.rright {
         color:#000;
-        
         background-color:#dcf8c6;
-        
-
-        text-align:right;
-        border-radius:5px;
+        max-width:90%;
         float:right;
         clear:both;
     
   }
   
+
+  .mytextarea
+  {
+    
+  display: inline-grid;
+    
+    
+  }
