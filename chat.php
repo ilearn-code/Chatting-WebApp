@@ -41,13 +41,7 @@
                 <div class="ic">
                     <i class="uil uil-comment-alt-lines"></i>
                 </div>
-                
-            
-
-                    
-                 
                 <a id="logout" href="logout.php">Log out</a>
-                
             </div>
             <div class="right">
                 <img src="img/Smiling-Man-PNG-Download-Image.png" alt="" >

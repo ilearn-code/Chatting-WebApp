@@ -11,7 +11,7 @@
 
 
     <div class="loginForm">
-        <form  method="post" name="register" action="registerp.php" >
+        <form  method="post" name="register" action="registerp.php" enctype="multipart/form-data" >
                 <h1>Register</h1>
                 <input type="text"  name="username" placeholder="Username" required/>
                 <br>
@@ -19,7 +19,9 @@
                 <br>
                 <input type="password" name="password" placeholder="Password" required/>
                 <br>
-                <input type="password" name="confirm" placeholder="Password" required/>
+                <input type="password" name="confirm" placeholder="Confirm Password" required/>
+                <br>
+                <input type="file" name="profile_pic" placeholder="Select profile pic" required>
                 <br>
                 <input type="submit"  name="submit"/>
                 
