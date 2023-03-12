@@ -61,9 +61,12 @@ $query = "SELECT * FROM `user`";
   
  while($row = mysqli_fetch_array($run)) :
  if($_SESSION["username"]!=$row['user']){
+    $img_path=$row['img_path'];
 ?>
 <div class="listuser">
 
+               
+                 <img src="<?php echo $img_path ?>" height="40px"  width="40px"> 
     <a href="chat.php?myid=<?php echo $row['user']; ?>"> <?php echo $row['user'];?> 
 
 </a>

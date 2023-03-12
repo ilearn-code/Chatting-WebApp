@@ -80,6 +80,7 @@
                     if($_SESSION["username"]!=$row['user']){
                    ?>
                    <div class="listuser">
+                   <img src="<?php echo $row['img_path'] ?>" height="40px"  width="40px"> 
                    <a href="chat.php?myid=<?php echo $row['user']; ?>"> <?php echo $row['user'];?> 
 
 </a>
