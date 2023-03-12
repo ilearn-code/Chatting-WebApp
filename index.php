@@ -35,9 +35,9 @@
                 
             </div>
             <div class="right">
-                <img src="img/Smiling-Man-PNG-Download-Image.png" alt="" >
-                <h3 id="h3" >&nbsp;&nbsp;Rohan Sharama</h3>
-                <img src="img/2319174.png"   height="40px" width= "40px"alt="">
+                <!-- <img src="img/Smiling-Man-PNG-Download-Image.png" alt="" >
+                <h3 id="h3" >&nbsp;&nbsp;</h3> -->
+                <!-- <img src="img/2319174.png"   height="40px" width= "40px"alt=""> -->
             </div>
 
         </div>

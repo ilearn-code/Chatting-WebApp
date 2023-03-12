@@ -1,8 +1,8 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,55 +10,54 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.tiny.cloud/1/tsfthrvrlqoy0sr9r1im8h943bj9u05qvv8tpm4c560johtn/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>
-    tinymce.init({
-      selector: "#mytextarea",
-  plugins: "emoticons autoresize",
-  toolbar: "emoticons",
-  toolbar_location: "bottom",
-  menubar: false,
-  statusbar: false,
-  toxsidebar:false
-
-  });
-  </script>
- 
-  
- 
-
-      
    
-    <title>Document</title>
-
-
+<title>chat</title>
 
 </head>
+
+
 <body>
+
     <div class="main">
         <div class="continer">
+          
             <div class="left">
+
                 <img src="img/Smiling-Man-PNG-Download-Image.png" alt="" >
                 <div class="ic">
                     <i class="uil uil-comment-alt-lines"></i>
                 </div>
                 <a id="logout" href="logout.php">Log out</a>
             </div>
+
+
+
             <div class="right">
-                <img src="img/Smiling-Man-PNG-Download-Image.png" alt="" >
-                <h3 id="h3" >&nbsp;&nbsp;<?php
+                
+
+                <?php
                 include "db_conn.php"; 
                 $_SESSION['usernameselected']  = $_GET['myid'];
                 $usernameselected=$_GET['myid'];
-                $qq = "SELECT `id` FROM `user` WHERE user= '$usernameselected'; ";
-$rr = mysqli_query($conn,$qq);
-$rowud = mysqli_fetch_array($rr);
-$receiver_id=$rowud['id']; 
+                $qq = "SELECT `id` FROM `user` WHERE user= '$usernameselected';";
+                $rr = mysqli_query($conn,$qq);
+                $rowud = mysqli_fetch_array($rr);
+                $receiver_id=$rowud['id']; 
+                
+                $qq_pic = "SELECT `img_path` FROM `user` WHERE user= '$usernameselected';";
+                $rr_pic= mysqli_query($conn,$qq_pic);
+                $rowud_pic = mysqli_fetch_array($rr_pic);
+                $img_path=$rowud_pic['img_path'];
+               
+                echo "<img src=\"$img_path\" alt=\"error\">"; 
+                 ?>
 
-                echo  $_SESSION['usernameselected']; ?></h3>
-                <img src="img/2319174.png"   height="40px" width= "40px"alt="">
+                <!-- <img src="img/2319174.png"   height="40px" width= "40px"alt=""> -->
+
             </div>
 
         </div>
+
         <div class="c1">
             <div class="l1">
                 <div class="search">
