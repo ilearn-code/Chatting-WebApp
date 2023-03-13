@@ -66,8 +66,9 @@ $query = "SELECT * FROM `user`";
 <div class="listuser">
 
                
-                 <img src="<?php echo $img_path ?>" height="40px"  width="40px"> 
+                 
     <a href="chat.php?myid=<?php echo $row['user']; ?>">  
+    <img src="<?php echo $img_path ?>" height="40px"  width="40px"> 
     <strong id="nn"><?php echo ucfirst($row['user']);?></strong>
  <strong id="n2"><?php echo ucfirst($row['email']);?> </strong>
 </a>

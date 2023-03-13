@@ -48,8 +48,10 @@
                 $rr_pic= mysqli_query($conn,$qq_pic);
                 $rowud_pic = mysqli_fetch_array($rr_pic);
                 $img_path=$rowud_pic['img_path'];
-               
+               echo "<p>";
                 echo "<img src=\"$img_path\" alt=\"error\">"; 
+                echo '<strong id="n3">' . ucfirst($_SESSION['usernameselected']) . '</strong>';
+                echo "</p>"
                  ?>
 
                 <!-- <img src="img/2319174.png"   height="40px" width= "40px"alt=""> -->
@@ -82,8 +84,9 @@
                    <div class="listuser">
 
                
-<img src="<?php echo $img_path ?>" height="40px"  width="40px"> 
+
 <a href="chat.php?myid=<?php echo $row['user']; ?>">  
+<img src="<?php echo $img_path ?>" height="40px"  width="40px"> 
 <strong id="nn"><?php echo ucfirst($row['user']);?></strong>
 <strong id="n2"><?php echo ucfirst($row['email']);?> </strong>
 </a>
