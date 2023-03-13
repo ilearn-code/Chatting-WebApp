@@ -2,7 +2,7 @@
     
    height: 700px;
    width: 100%;
-   background-color: #128c7e;
+   background-color: #47555c;;
 }
 
 .container{
@@ -16,12 +16,12 @@
     height: 70px;
     position: relative;
     width: 30%;
-    background-color: #128c7e;
+    background-color: #47555c;;
 }
 .right{
    
   height: 70px;
-    background-color:#128c7e;
+    background-color:#47555c;;
    
 }
 
@@ -43,7 +43,7 @@
 .r1{
     height: 630px;
    
-    background-color:#128c7e;
+    background-color:#47555c;
    
 }
 
@@ -201,7 +201,7 @@ i{
         text-align:right;
         height: 30px;
         width: 50%;
-        background-color: #25D366;
+        background-color: #47555c;;
         margin-left: 30%;
         margin-bottom: 20px;
         padding-right: 5px;
