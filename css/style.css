@@ -78,13 +78,28 @@ i{
 
         }
         .listuser{
-          height: 100px;
+          height: 70px;
           width: 98%;
           border: 5px solid white;
           background-color: #4caf50;
-          text-align: center;
+          
           
       }
+.listuser img{
+  float: left;
+  margin: 15px;
+  border-radius: 50%;
+}
+ #nn{
+  display: inline-block;
+  margin-top: 15px;
+
+}
+#n2{
+ display: block;
+ 
+
+}
         button{
             float: left;
             width:48px ;

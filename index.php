@@ -67,10 +67,11 @@ $query = "SELECT * FROM `user`";
 
                
                  <img src="<?php echo $img_path ?>" height="40px"  width="40px"> 
-    <a href="chat.php?myid=<?php echo $row['user']; ?>"> <?php echo $row['user'];?> 
-
+    <a href="chat.php?myid=<?php echo $row['user']; ?>">  
+    <strong id="nn"><?php echo ucfirst($row['user']);?></strong>
+ <strong id="n2"><?php echo ucfirst($row['email']);?> </strong>
 </a>
-  
+ 
 
 </div>
   <?php      
