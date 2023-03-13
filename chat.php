@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdn.tiny.cloud/1/tsfthrvrlqoy0sr9r1im8h943bj9u05qvv8tpm4c560johtn/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+  
    
 <title>chat</title>
 
@@ -80,7 +80,7 @@
                     if($_SESSION["username"]!=$row['user']){
                    ?>
                    <div class="listuser">
-                   <img src="<?php echo $row['img_path'] ?>" height="40px"  width="40px"> 
+                   <img src="<?php echo $row['img_path'] ?>" style="border-radius:20px; margin-top:20px" height="40px"  width="40px"> 
                    <a href="chat.php?myid=<?php echo $row['user']; ?>"> <?php echo $row['user'];?> 
 
 </a>
