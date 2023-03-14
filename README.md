@@ -11,6 +11,6 @@ It stores password in hash form for security
 It used ajax to send chat data into database and show it into chatroom asynchronously.
 
 Currently Working on this Project
-<img src="githubimg/chat ui.png"  >
+<img src="githubimg/main ui.png"  >
 <img src="githubimg/login.png"  >
 <img src="githubimg/register.png"  >
