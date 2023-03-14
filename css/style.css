@@ -314,8 +314,7 @@ i{
 
 .left img {
   float: left;
-  margin-left: 30px;
-  margin-top: 15px;
+margin: 15px;
   height: 40px;
   width: 40px;
   border-radius: 50%;

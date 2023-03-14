@@ -30,7 +30,12 @@
             $q_profile_pic= mysqli_query($conn,"SELECT * FROM user WHERE user='$propfilepic'");
             $row_profile_pic=mysqli_fetch_array($q_profile_pic);
             $img_pathp=$row_profile_pic['img_path'];
+            $pp_name=$row_profile_pic['user'];
+            
+            // echo "<p>";
             echo "<img src=\"$img_pathp\" alt=\"error\">"; 
+            echo '<strong id="n3">' . ucfirst($pp_name) . '</strong>';
+            // echo "</p>"
              ?>
                 <div class="ic">
                     <i class="uil uil-comment-alt-lines"></i>
