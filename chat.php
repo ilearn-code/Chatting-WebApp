@@ -23,7 +23,15 @@
           
             <div class="left">
 
-                <img src="img/Smiling-Man-PNG-Download-Image.png" alt="" >
+            <?php
+            session_start();
+             require "db_conn.php";
+             $propfilepic=$_SESSION['username'];
+            $q_profile_pic= mysqli_query($conn,"SELECT * FROM user WHERE user='$propfilepic'");
+            $row_profile_pic=mysqli_fetch_array($q_profile_pic);
+            $img_pathp=$row_profile_pic['img_path'];
+            echo "<img src=\"$img_pathp\" alt=\"error\">"; 
+             ?>
                 <div class="ic">
                     <i class="uil uil-comment-alt-lines"></i>
                 </div>
@@ -73,7 +81,7 @@
                    
                    <?php
                    require "db_conn.php";
-                    session_start();
+                    // session_start();
                    $query = "SELECT * FROM `user`";
                     $run = mysqli_query($conn,$query);
                     

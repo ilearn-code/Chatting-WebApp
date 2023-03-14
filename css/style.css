@@ -317,8 +317,9 @@ i{
   margin-left: 30px;
   margin-top: 15px;
   height: 40px;
-  border-radius: 80px;
-  background-color: aliceblue;
+  width: 40px;
+  border-radius: 50%;
+
 }
 
 .right img {
