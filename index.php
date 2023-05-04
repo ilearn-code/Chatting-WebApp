@@ -33,9 +33,7 @@
             echo '<strong id="n3">' . ucfirst($pp_name) . '</strong>';
              ?>
                 
-                <div class="ic">
-                    <i class="uil uil-comment-alt-lines"></i>
-                </div>
+              
                 
                <a id="logout" href="logout.php">Log out</a>
 
@@ -45,9 +43,7 @@
                 
             </div>
             <div class="right">
-                <!-- <img src="img/Smiling-Man-PNG-Download-Image.png" alt="" >
-                <h3 id="h3" >&nbsp;&nbsp;</h3> -->
-                <!-- <img src="img/2319174.png"   height="40px" width= "40px"alt=""> -->
+            
             </div>
 
         </div>
@@ -55,7 +51,7 @@
             <div class="l1">
                 <div class="search">
                     <form class="searchform">
-                    <button type="submit"><i class="fa fa-search"></i></button>
+                    <button class="search_button"><i class="fa fa-search"></i></button>
                     <input type="text" placeholder="Search">
                   </form>
                   

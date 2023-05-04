@@ -1,32 +1,39 @@
-.main{
-    
-   height: 700px;
-   width: 100%;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+.main{ 
+   height: 100vh;
+  
    background-color: #47555c;;
 }
 
 .container{
-    /* display: flex; */
+  
     width: 100%;
-    
     height: 70px;
 }
 .left{
     float: left;
     height: 70px;
-    position: relative;
     width: 30%;
     background-color: #47555c;;
 }
 .right{
-   
-  height: 70px;
+ 
+    height: 70px;
+    width: calc( 70% - 30% );
     background-color:#47555c;;
    
 }
 
 .c1{
-    /* display: flex; */
+  
     width: 100%;
     
    
@@ -77,6 +84,20 @@ i{
             
 
         }
+
+        .search_button
+        {
+          margin-top: 10px;
+          float: left;
+          width:40px ;
+          height: 40px;
+          margin-left: 5px;
+          border: none!important;
+          background-color: white;
+        }
+
+
+
         .listuser{
           height: 70px;
           width: 98%;
@@ -105,18 +126,6 @@ i{
  
 
 }
-
-        button{
-            float: left;
-            width:48px ;
-            height: 42px;
-            margin-top: 10px;
-            margin-left: 5px;
-            border: none!important;
-            background-color: white;
-            
-        }
-       
         input{
 
           
