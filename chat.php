@@ -18,7 +18,7 @@
 
 <body>
 
-    <div class="main">
+  
         <div class="continer">
           
             <div class="left">
@@ -143,7 +143,7 @@
 
         </div>
        
-    </div>
+  
 </body>
 
 <script>

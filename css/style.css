@@ -6,24 +6,20 @@
 
 
 
-.container{
+.continer{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+
+ 
 }
 
 .left{
-    float: left;
+    
     height: 70px;
     width: 30%;
     background-color: #47555c;;
 }
 .right{
-   width: auto;
+   width: 70%;
     height: 70px;
     background-color:#47555c;;
    
