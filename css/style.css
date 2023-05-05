@@ -8,55 +8,46 @@
 
 .continer{
   display: flex;
-
+width: 100%;
  
 }
 
 .left{
     
-    height: 70px;
-    width: 30%;
+    height: 5rem;
+    width: 30vw;
     background-color: #47555c;;
 }
 .right{
-   width: 70%;
-    height: 70px;
+   width: 70vw;
+    height: 5rem;
     background-color:#47555c;;
    
 }
 
 .c1{
-  
-
-
-  
-  
-  width: 100%;
- 
-    
-   
+display: flex; 
+   width: 100wh;
+   height: calc( 100vh - 4rem );
 }
 .l1{
-    float: left;
+  
      height: -webkit-fill-available;
  
     width: 30%;
    background-color:  #F2E9EA;
 }
+
 .r1{
     height: 42.5rem;
-   
+   width: 70vw;
     background-color:#47555c;
    
 }
 
 
 
-.ic{
-    position: absolute;
-    left: 70%;
-    top:25%;
-}
+
 i{
     font-size: 35px;
 }
