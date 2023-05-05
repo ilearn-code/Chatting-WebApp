@@ -13,11 +13,37 @@ width: 100%;
 }
 
 .left{
-    
+ 
     height: 5rem;
     width: 30vw;
     background-color: #47555c;;
 }
+.left img {
+  float: left;
+margin: 15px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+
+}
+
+#logout {
+ 
+  margin-top: 23px;
+ text-decoration: none;
+  float: right;
+  height: 20px;
+  width: 70px;
+ border-radius: 15px;
+ text-align: center;
+ cursor: pointer;
+  background-color: aliceblue;
+}
+#logout:hover{
+  background-color: red;
+}
+
+
 .right{
    width: 70vw;
     height: 5rem;
@@ -241,21 +267,6 @@ i{
     height: 40px;
   }
 
-  #logout {
- 
-    margin-top: 23px;
-   text-decoration: none;
-    float: right;
-    height: 20px;
-    width: 70px;
-   border-radius: 15px;
-   text-align: center;
-   cursor: pointer;
-    background-color: aliceblue;
-  }
-  #logout:hover{
-    background-color: red;
-  }
 
   .linkk{
     margin-top: 10px;
@@ -314,14 +325,7 @@ i{
 
  
 
-.left img {
-  float: left;
-margin: 15px;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
 
-}
 
 .right img {
   margin: 15px 10px 15px 30px;
