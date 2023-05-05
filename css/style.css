@@ -6,19 +6,16 @@
 
 
 
-
-.main{ 
-   height: 100vh;
-  width: 100wh;
-   background-color: #47555c;
-   overflow: none;
-}
-
 .container{
-  display:flex; 
-     width: 100%;
-    height: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
 }
+
 .left{
     float: left;
     height: 70px;
@@ -34,7 +31,12 @@
 
 .c1{
   
-    width: 100%;
+
+
+  
+  
+  width: 100%;
+ 
     
    
 }
@@ -46,7 +48,7 @@
    background-color:  #F2E9EA;
 }
 .r1{
-    height: 630px;
+    height: 42.5rem;
    
     background-color:#47555c;
    
@@ -163,12 +165,20 @@ i{
       }
 
       .messagediv{
+      
       display: flex;
       justify-content: center;
+      padding-top: 22px;
+      margin-top: 40px;
+      
      
       }
+      
+
       .inpmessage{
      width: 900px;
+     border: none;
+     background-color: #f0f0f0;
      border-radius: 25px;
      padding-left: 20px;
      
@@ -190,11 +200,8 @@ i{
     
       .chat{
         background-color: #ece5dd;
-        position: absolute;
-        left: 30.2%;
-        /* top:25% ; */
-        width: 64.1%;
-        height: 522px;
+       
+        height: 38rem;
         overflow-y: auto;
         
         padding-left: 80px;
@@ -345,3 +352,6 @@ margin: 15px;
   font-size: 20px;
  
 }
+
+
+
