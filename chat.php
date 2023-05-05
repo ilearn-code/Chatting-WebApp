@@ -50,6 +50,7 @@
                 include "db_conn.php"; 
                 $_SESSION['usernameselected']  = $_GET['myid'];
                 $usernameselected=$_GET['myid'];
+                
                 $qq = "SELECT `id` FROM `user` WHERE user= '$usernameselected';";
                 $rr = mysqli_query($conn,$qq);
                 $rowud = mysqli_fetch_array($rr);
