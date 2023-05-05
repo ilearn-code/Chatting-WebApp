@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>RealTime Chatting</title>
+    <title>Document</title>
 </head>
 <body>
     
@@ -90,7 +90,7 @@ endwhile; ?>
 
                     
                   </div>
-            </div>
+           
             <div class="r1">
 <div class="chatboxes">
 <div class="chat">
@@ -118,18 +118,21 @@ endwhile; ?>
 </div>
                 <div class="messagediv">
                  
-                    <form >
+                    <form  >
+                   <!-- <input type="text" class="inpname"  name="uname"> -->
                     <input type="text" class="inpmessage" name="msg" placeholder="Type a message">
                     <button type="submit" class="linkk"><i class="uil uil-message" style="color:white; margin-top: 15px;"></i></a>
                   </form >
-                 
+                  <!-- <div class="iaud">
+                    <img src="./mike.png" height="25px" width= "30px" alt="">
+                  </div> -->
                   
                   </div>
             </div>
            
 
+            </div>
         </div>
-       
-   
+    
 </body>
 </html>

@@ -2,7 +2,7 @@
     require "db_conn.php";
     
 	$uploadOK=1;
-	   $name = $_POST["username"];
+	//    $name = $_POST["username"];
 	   $email = $_POST["email"];
 	   $pass = $_POST["password"];
 	   $re_pass = $_POST["confirm"];
@@ -13,9 +13,31 @@
 
 		$file_path = "photo/".$file_name;
 		
+		if($_SERVER['REQUEST_METHOD']=="POST")
+		{ 
+			if(empty($_POST['name']))
+			{
+               echo "invalid name type"
+			}
+			else
+			{
+				$name=testInput($_POST['name']);
+       if(preg_match("/^[a-zA-Z-' ]$*/",$_POST['name']))
+           {
+	
+              }
+			
 		
+			}}
 
 
+		function testInput($data)
+		{
+			$data=trim($data);
+			$data=stripcslashes($data);
+			$data=htmlspecialchars($data);
+             return $data;
+		}
 
 
 
