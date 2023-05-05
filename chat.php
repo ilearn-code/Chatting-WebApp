@@ -18,7 +18,7 @@
 
 <body>
 
-    <!-- <div class="main"> -->
+    <div class="main">
         <div class="continer">
           
             <div class="left">
@@ -32,12 +32,12 @@
             $img_pathp=$row_profile_pic['img_path'];
             $pp_name=$row_profile_pic['user'];
             
-            
+          
             echo "<img src=\"$img_pathp\" alt=\"error\">"; 
             echo '<strong id="n3">' . ucfirst($pp_name) . '</strong>';
-            
+       
              ?>
-             
+              
                 <a id="logout" href="logout.php">Log out</a>
             </div>
 
@@ -59,13 +59,13 @@
                 $rr_pic= mysqli_query($conn,$qq_pic);
                 $rowud_pic = mysqli_fetch_array($rr_pic);
                 $img_path=$rowud_pic['img_path'];
-              //  echo "<p>";
+               echo "<p>";
                 echo "<img src=\"$img_path\" alt=\"error\">"; 
                 echo '<strong id="n3">' . ucfirst($_SESSION['usernameselected']) . '</strong>';
-                // echo "</p>"
+                echo "</p>"
                  ?>
 
-               
+                <!-- <img src="img/2319174.png"   height="40px" width= "40px"alt=""> -->
 
             </div>
 
@@ -73,13 +73,15 @@
 
         <div class="c1">
             <div class="l1">
-                <div class="search">
+            <div class="search">
                     <form class="searchform">
-                    <button class="search_button" ><i class="fa fa-search"></i></button>
+                    <button class="search_button"><i class="fa fa-search"></i></button>
                     <input type="text" placeholder="Search">
                   </form>
                   
                   </div>
+                  
+                  
                   <div class="listscroll" >
                    
                    <?php
@@ -128,7 +130,8 @@
                 
                 
                     <form  id="myForm">
-                  
+                   
+                    <input type="hidden"  name="receiver_id" value="<?php echo $receiver_id;?>">
                     <input type="text" class="inpmessage" id="inpmessageid" name="msg"  placeholder="Type a message">
                     <button type="submit" id="submitBtn" class="linkk"><i class="uil uil-message" style="color:white; margin-top: 15px;"></i></a>
                   </form >
@@ -144,7 +147,28 @@
 </body>
 
 <script>
-    function getChatMessages() {
+  document.getElementById("submitBtn").addEventListener("click", function(event) {
+    event.preventDefault();
+    sendData();
+  });
+
+  function sendData() {
+  var formData = new FormData(document.getElementById("myForm"));
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "inputmsg.php", true);
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      console.log(xhr.responseText);
+    }
+  };
+  xhr.send(formData);
+  document.getElementById('inpmessageid').value = "";
+}
+
+</script>
+
+<script>
+  function getChatMessages() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
@@ -170,9 +194,7 @@
  
 
   setInterval(getChatMessages, 1000);
-</script>
-
-<script src="js\input_message.js"></script>
+</script> 
 
 
 

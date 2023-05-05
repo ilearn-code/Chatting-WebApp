@@ -16,10 +16,10 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Document</title>
+    <title>RealTime Chatting</title>
 </head>
 <body>
-    <!-- <div class="main"> -->
+    
         <div class="continer">
             <div class="left">
              <?php
@@ -117,18 +117,12 @@ endwhile; ?>
 </div>
 </div>
                 <div class="messagediv">
-                    <!-- <div class="iemo">
-                        <i class="uil uil-smile"></i>
-                    </div>
-                   -->
-                    <form  >
-                   <!-- <input type="text" class="inpname"  name="uname"> -->
+                 
+                    <form >
                     <input type="text" class="inpmessage" name="msg" placeholder="Type a message">
                     <button type="submit" class="linkk"><i class="uil uil-message" style="color:white; margin-top: 15px;"></i></a>
                   </form >
-                  <!-- <div class="iaud">
-                    <img src="./mike.png" height="25px" width= "30px" alt="">
-                  </div> -->
+                 
                   
                   </div>
             </div>
@@ -136,6 +130,6 @@ endwhile; ?>
 
         </div>
        
-    <!-- </div> -->
+   
 </body>
 </html>
