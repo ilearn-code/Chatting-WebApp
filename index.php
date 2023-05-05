@@ -19,7 +19,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="main">
+    <!-- <div class="main"> -->
         <div class="continer">
             <div class="left">
              <?php
@@ -136,6 +136,6 @@ endwhile; ?>
 
         </div>
        
-    </div>
+    <!-- </div> -->
 </body>
 </html>

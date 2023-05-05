@@ -18,7 +18,7 @@
 
 <body>
 
-    <div class="main">
+    <!-- <div class="main"> -->
         <div class="continer">
           
             <div class="left">
@@ -32,10 +32,10 @@
             $img_pathp=$row_profile_pic['img_path'];
             $pp_name=$row_profile_pic['user'];
             
-            // echo "<p>";
+            
             echo "<img src=\"$img_pathp\" alt=\"error\">"; 
             echo '<strong id="n3">' . ucfirst($pp_name) . '</strong>';
-            // echo "</p>"
+            
              ?>
              
                 <a id="logout" href="logout.php">Log out</a>
@@ -59,10 +59,10 @@
                 $rr_pic= mysqli_query($conn,$qq_pic);
                 $rowud_pic = mysqli_fetch_array($rr_pic);
                 $img_path=$rowud_pic['img_path'];
-               echo "<p>";
+              //  echo "<p>";
                 echo "<img src=\"$img_path\" alt=\"error\">"; 
                 echo '<strong id="n3">' . ucfirst($_SESSION['usernameselected']) . '</strong>';
-                echo "</p>"
+                // echo "</p>"
                  ?>
 
                
@@ -128,8 +128,7 @@
                 
                 
                     <form  id="myForm">
-                    <!-- <textarea id="mytextarea"></textarea> -->
-                    <input type="hidden"  name="receiver_id" value="<?php echo $receiver_id;?>">
+                  
                     <input type="text" class="inpmessage" id="inpmessageid" name="msg"  placeholder="Type a message">
                     <button type="submit" id="submitBtn" class="linkk"><i class="uil uil-message" style="color:white; margin-top: 15px;"></i></a>
                   </form >

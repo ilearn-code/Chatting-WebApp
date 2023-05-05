@@ -9,13 +9,14 @@
 
 .main{ 
    height: 100vh;
-  
-   background-color: #47555c;;
+  width: 100wh;
+   background-color: #47555c;
+   overflow: none;
 }
 
 .container{
-  
-    width: 100%;
+  display:flex; 
+     width: 100%;
     height: 70px;
 }
 .left{
@@ -25,9 +26,8 @@
     background-color: #47555c;;
 }
 .right{
- 
+   width: auto;
     height: 70px;
-    width: calc( 70% - 30% );
     background-color:#47555c;;
    
 }
@@ -40,11 +40,9 @@
 }
 .l1{
     float: left;
-    height: 630px;
+     height: -webkit-fill-available;
  
     width: 30%;
-   
-
    background-color:  #F2E9EA;
 }
 .r1{
@@ -276,8 +274,9 @@ i{
 
   .listscroll{
     overflow-x: hidden;
+    height: 624px;
     overflow-y: scroll;
-    height: 570px;
+   
   }
 
 
