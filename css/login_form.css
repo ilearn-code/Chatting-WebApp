@@ -6,6 +6,7 @@
 
 }
 .loginForm {
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,6 +14,7 @@
     height: 100vh;
     overflow: auto;
     background: #f7f7f7;
+    scroll-behavior: smooth;
     /* background-color: rgba(0,0,0,0.4); */
   }
   
@@ -88,9 +90,14 @@ a:hover{
   /* Media queries for screens with smaller height */
   @media screen and (max-height: 600px) {
     /* Adjust height of .loginForm div */
-    .loginForm {
-      height: auto;
-      
-    }
+    .centered {
+        width: 100%;
+       
+      }
+      .loginForm {
+        justify-content: flex-start;
+        height: auto;
+        
+      }
   }
   

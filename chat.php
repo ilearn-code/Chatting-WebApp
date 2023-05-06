@@ -146,58 +146,65 @@
        
   
 </body>
-
 <script>
-  document.getElementById("submitBtn").addEventListener("click", function(event) {
-    event.preventDefault();
-    sendData();
-  });
 
-  function sendData() {
-  var formData = new FormData(document.getElementById("myForm"));
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", "inputmsg.php", true);
-  xhr.onload = function() {
-    if (xhr.status === 200) {
-      console.log(xhr.responseText);
-    }
-  };
-  xhr.send(formData);
+// Add event listener to the submit button to prevent default form submission and send data using fetch API
+document.getElementById("submitBtn").addEventListener("click", function(event) {
+  event.preventDefault();
+  sendData();
+});
+
+// Function to send data using fetch API
+function sendData() {
+  const form = document.getElementById("myForm");
+  const formData = new FormData(form);
+  fetch("inputmsg.php", {
+    method: "POST",
+    body: formData
+  })
+  .then(response => {
+    console.log(response);
+  })
+  .catch(error => {
+    console.error(error);
+  });
   document.getElementById('inpmessageid').value = "";
 }
+</script>
+<script>
+
+// Function to get chat messages using fetch API
+function getChatMessages() {
+  fetch("getChatMessages.php")
+  .then(response => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error('Network response was not ok.');
+    }
+  })
+  .then(messages => {
+    document.getElementById('chat-window').innerHTML = '';
+    for (let message of messages) {
+      console.log(<?php echo $_SESSION['sender_id']; ?>);
+
+      // Only show messages between the logged-in user and the other user
+      if ((message.sender_id == <?php echo $_SESSION['sender_id']; ?> && message.receiver_id == <?php echo $receiver_id ?>) || (message.sender_id == <?php echo $receiver_id; ?> && message.receiver_id == <?php echo $_SESSION['sender_id']; ?>)) {
+        const messageClass = message.sender_id == <?php echo $_SESSION['sender_id']; ?> ? 'rright' :'lleft';
+        const chatBubble = '<div class="chat-bubble ' + messageClass + '">' + message.message+ '</div>';
+        document.getElementById('chat-window').innerHTML += chatBubble;
+      }
+    }
+  })
+  .catch(error => {
+    console.error(error);
+  });
+}
+
+// Call the getChatMessages function every second using setInterval
+setInterval(getChatMessages, 1000);
 
 </script>
-
-<script>
-  function getChatMessages() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        var messages = JSON.parse(this.responseText);
-        document.getElementById('chat-window').innerHTML = '';
-        for (var message of messages) {
-          console.log(<?php echo $_SESSION['sender_id']; ?>);
-
-          // Only show messages between the logged-in user and the other user
-          if ((message.sender_id == <?php echo $_SESSION['sender_id']; ?> && message.receiver_id == <?php echo $receiver_id ?>) || (message.sender_id == <?php echo $receiver_id; ?> && message.receiver_id == <?php echo $_SESSION['sender_id']; ?>)) {
-            var messageClass = message.sender_id== <?php echo $_SESSION['sender_id']; ?>?'rright' :'lleft';
-            var chatBubble = '<div class="chat-bubble ' + messageClass + '">' + message.message+ '</div>';
-            document.getElementById('chat-window').innerHTML += chatBubble;
-          }
-          
-        }
- 
-      }
-    };
-    xhttp.open("GET", "getChatMessages.php", true);
-    xhttp.send();
-  }
- 
-
-  setInterval(getChatMessages, 1000);
-</script> 
-
-
 
 
 </html>
