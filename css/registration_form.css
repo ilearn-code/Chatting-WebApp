@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     overflow: auto;
     background: #f7f7f7;
     /* background-color: rgba(0,0,0,0.4); */
