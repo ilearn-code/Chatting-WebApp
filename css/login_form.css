@@ -2,65 +2,95 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
+  
 
+}
 .loginForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background-color: rgba(0,0,0,0.4);
-}
-
-.centered { 
+    height: 100vh;
+    overflow: auto;
+    background: #f7f7f7;
+    /* background-color: rgba(0,0,0,0.4); */
+  }
+  
+  .centered { 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background: #fff;
     height: 80vh;
-    width: 80vw;
-}
-
-input {
+    width: 70vw;
+    border-radius: 16px;
+    box-shadow:0 0 128px 0 rgba(0,0,0,0.1), 0 32px 64px -48px rgba(0,0,0,0.5);
+  }
+  
+  input {
     border: 1px solid #ccc;
     border-radius: 20px;
     padding: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
     width: 100%;
-}
+  }
 
-input[type="submit"] {
-    margin-top: 20px;
-}
-
-.button {
-    margin-top: 20px;
-    padding: 10px 20px;
- 
-    color: #fff;
-    background: #333;
-    text-decoration: none;
+  button
+  {
+    border: 1px solid #ccc;
     border-radius: 20px;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    margin-top: 20px;
+    background: #333;
+    color: #fff;
+    font-size: 17px;
+  }
+  a{
+    font-size: 17px;
+    color: #333;
+    text-decoration: none!important;
+}
+a:hover{
+  text-decoration: underline!important;
 }
 
-@media screen and (max-width: 768px) {
+
+
+ /* Media queries for tablet screens */
+ @media screen and (max-width: 768px) { 
+    /* Adjust height and width of .centered div */
     .centered {
         height: auto;
         width: 90vw;
-    }
-}
+      }
 
-@media screen and (max-width: 480px) {
+}
+  
+  /* Media queries for mobile screens */
+  @media screen and (max-width: 480px) {
+    /* Adjust width of .centered div */
     .centered {
-        width: 100%;
+      width: 100%;
+     
     }
-}
-
-@media screen and (max-height: 600px) {
     .loginForm {
-        height: auto;
+      justify-content: flex-start;
+      height: auto;
+      
     }
-}
+  }
+  
+  /* Media queries for screens with smaller height */
+  @media screen and (max-height: 600px) {
+    /* Adjust height of .loginForm div */
+    .loginForm {
+      height: auto;
+      
+    }
+  }
+  

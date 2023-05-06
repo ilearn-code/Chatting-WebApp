@@ -37,12 +37,32 @@
     margin-bottom: 10px;
     width: 100%;
   }
-  
-  input[type="submit"] {
+  button
+  {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
     margin-top: 20px;
     background: #333;
     color: #fff;
+    font-size: 17px;
   }
+  
+ 
+  a{
+    font-size: 17px;
+    color: #333;
+    text-decoration: none!important;
+}
+a:hover{
+  text-decoration: underline!important;
+}
+span{
+    font-size: 17px;
+}
   
 /* Media queries for tablet screens */
 @media screen and (max-width: 768px) {
@@ -70,7 +90,12 @@
   /* Media queries for screens with smaller height */
   @media screen and (max-height: 600px) {
     /* Adjust height of .loginForm div */
+    .centered {
+      width: 100%;
+     
+    }
     .loginForm {
+      justify-content: flex-start;
       height: auto;
       
     }

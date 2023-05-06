@@ -24,9 +24,11 @@
                 <br>
                 <input type="file" name="profile_pic" placeholder="Select profile pic" >
                 <br>
-                <input type="submit"  name="submit"/>
+                <!-- <input type="submit"  name="submit"/> -->
+                <button type="submit" name="submit">Continue to chat</button>
                 
           </form>
+          <span>already signed up?<a href="./login.php">Signed Now</a></span>
 
         </div>
  
