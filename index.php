@@ -1,14 +1,16 @@
 <?php
-    session_start();
-    if(!isset($_SESSION["username"])) {
-        header("Location: login.php");
-        exit();
-    }
+session_start();
+if (!isset($_SESSION["username"])) {
+    header("Location: login.php");
+    exit();
+}
+// echo $_SESSION["username"];
 ?>
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,142 +20,145 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
-<body>
-    
-        <div class="continer">
-            <div class="left">
-             <?php
-             require "db_conn.php";
-             $propfilepic=$_SESSION['username'];
-            $q_profile_pic= mysqli_query($conn,"SELECT * FROM user WHERE user='$propfilepic'");
-            $row_profile_pic=mysqli_fetch_array($q_profile_pic);
-            $img_pathp=$row_profile_pic['img_path'];
-            $pp_name=$row_profile_pic['user'];
-            echo "<img src=\"$img_pathp\" alt=\"error\">"; 
-            echo '<strong id="n3">' . ucfirst($pp_name) . '</strong>';
-             ?>
-                
-              
-                
-               <a id="logout" href="logout.php">Log out</a>
 
-                    
-                 
-  
-                
-            </div>
-            <div class="right">
-            
-            </div>
+<body>
+
+    <div class="continer">
+        <div class="left">
+            <?php
+            require "db_conn.php";
+            $propfilepic = $_SESSION['username'];
+            $q_profile_pic = mysqli_query($conn, "SELECT * FROM user WHERE user='$propfilepic'");
+            $row_profile_pic = mysqli_fetch_array($q_profile_pic);
+            $img_pathp = $row_profile_pic['img_path'];
+            $pp_name = $row_profile_pic['user'];
+            echo "<img src=\"$img_pathp\" alt=\"error\">";
+            echo '<strong id="n3">' . ucfirst($pp_name) . '</strong>';
+            ?>
+
+
+
+            <a id="logout" href="logout.php">Log out</a>
+
+
+
+
 
         </div>
-        <div class="c1">
-            <div class="l1">
-                <div class="search">
-                    <form class="searchform">
+        <div class="right">
+
+        </div>
+
+    </div>
+    <div class="c1">
+        <div class="l1">
+            <div class="search">
+                <form class="searchform">
                     <button class="search_button"><i class="fa fa-search"></i></button>
                     <input type="text" placeholder="Search">
-                  </form>
-                  
-                  </div>
-                  <div class="listscroll" >
-                   
-<?php
-require "db_conn.php";
- 
-$query = "SELECT * FROM `user`";
- $run = mysqli_query($conn,$query);
- 
-  
- while($row = mysqli_fetch_array($run)) :
- if($_SESSION["username"]!=$row['user']){
-    $img_path=$row['img_path'];
-?>
-<div class="listuser">
+                </form>
 
-               
-                 
-<button onclick="loadUserData('<?php echo $row['user']; ?>')">
+            </div>
+            <div class="listscroll">
 
-     <img src="<?php echo $img_path ?>" height="40px"  width="40px"> 
-    <strong id="nn"><?php echo ucfirst($row['user']);?></strong>
-    <strong id="n2"><?php echo ucfirst($row['email']);?> </strong>
+                <?php
+                require "db_conn.php";
+
+                $query = "SELECT * FROM `user`";
+                $run = mysqli_query($conn, $query);
 
 
-</button>
+                while ($row = mysqli_fetch_array($run)):
+                    if ($_SESSION["username"] != $row['user']) {
+                        $img_path = $row['img_path'];
+                        ?>
+                        <div class="listuser">
 
 
- 
 
-</div>
-  <?php      
- }
- 
+                            <button onclick="loadUserData('<?php echo $row['id']; ?>')">
 
-endwhile; ?>
-</div>
+                                <img src="<?php echo $img_path ?>" height="40px" width="40px">
+                                <strong id="nn">
+                                    <?php echo ucfirst($row['user']); ?>
+                                </strong>
+                               
 
-                    
-                  </div>
-           
-            <div class="r1">
-
-<div class="chat">
+                            </button>
 
 
 
 
-
-<div id="user-data"></div>
-
-
-
-
-        
-          
-               
- 
-
-           
+                        </div>
+                        <?php
+                    }
 
 
-         
+                endwhile; ?>
+            </div>
 
-</div>
-<!-- </div> -->
-                <div class="messagediv">
-                 
-                    <form  >
-                   <!-- <input type="text" class="inpname"  name="uname"> -->
+
+        </div>
+
+        <div class="r1">
+
+            <div class="chat">
+
+
+
+
+
+                <div id="user-data"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+            <div class="messagediv">
+
+                <form>
+
                     <input type="text" class="inpmessage" name="msg" placeholder="Type a message">
-                    <button type="submit" class="linkk"><i class="uil uil-message" style="color:white; margin-top: 15px;"></i></a>
-                  </form >
-                  <!-- <div class="iaud">
-                    <img src="./mike.png" height="25px" width= "30px" alt="">
-                  </div> -->
-                  
-                  </div>
-            </div>
-           
+                    <button type="submit" class="linkk"><i class="uil uil-message"
+                            style="color:white; margin-top: 15px;"></i></a>
+                </form>
+
 
             </div>
-        
-    
+        </div>
+
+
+    </div>
+
+
 </body>
 
 <script>
 
 function loadUserData(userId) {
-  // Make an asynchronous request to the server using the Fetch API
   fetch('getUserData.php?userId=' + userId)
     .then(response => response.json())
     .then(data => {
-      // Update the page with the retrieved user data
       const userDataElement = document.getElementById('user-data');
-      userDataElement.innerHTML = `
-        <h2>${data.name}</h2>
-        <p>${data.bio}</p>
-      `;
+      let messagesHtml = '';
+      data.forEach(message => {
+        const sender = message.sender_id == userId ? 'other' : 'self';
+        messagesHtml += `<div class="message ${sender}">
+          <p>${message.message}</p>
+        </div>`;
+      });
+      userDataElement.innerHTML = messagesHtml;
     })
     .catch(error => {
       console.error('Error retrieving user data:', error);
@@ -161,4 +166,5 @@ function loadUserData(userId) {
 }
 
 </script>
+
 </html>

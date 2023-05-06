@@ -9,8 +9,9 @@
 </head>
 <body>
 <?php
+session_start();
   require "db_conn.php";
-    session_start();
+    
 
 if (isset($_POST['username'])) {
     $username = $_POST['username'];
@@ -27,7 +28,7 @@ if (isset($_POST['username'])) {
 
 
     if ($rows == 1) {
-        $_SESSION['username'] = $username;
+       
        
         $query2 = "SELECT password FROM `user` WHERE user='$username'";
         $query3 = "SELECT id FROM `user` WHERE user='$username'";
@@ -36,12 +37,14 @@ if (isset($_POST['username'])) {
         $result3 = mysqli_query($conn, $query3);
 
         $roww=mysqli_fetch_array($result3);
-        $_SESSION['sender_id']=$roww['id'];
+       
 
 
        $row=mysqli_fetch_array($result2, MYSQLI_ASSOC);
         $hash = $row['password'];
         if(password_verify($password, $hash )){
+              $_SESSION['username'] = $username;
+            $_SESSION['sender_id']=$roww['id'];
             header("Location: index.php");
         } 
         else {

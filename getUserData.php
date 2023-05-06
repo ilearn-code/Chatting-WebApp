@@ -1,16 +1,18 @@
 <?php
+session_start();
+include "db_conn.php";
 
-  include "db_conn.php";
+$userId = $_GET['userId'];
+$loggedInUserId =$_SESSION["sender_id"];
 
-  $userId = $_GET['userId'];
-  $result = mysqli_query($conn, "SELECT * FROM chat_messages WHERE `user_id` = '$userId' ORDER BY `created_at` ASC");
+$result = mysqli_query($conn, "SELECT * FROM chat_messages WHERE (`sender_id` = '$loggedInUserId' AND `receiver_id` = '$userId') OR (`sender_id` = '$userId' AND `receiver_id` = '$loggedInUserId') ORDER BY `created_at` ASC");
 
-  $messages = array();
-  while ($row = mysqli_fetch_assoc($result)) {
-    $messages[] = $row;
-  }
+$messages = array();
+while ($row = mysqli_fetch_assoc($result)) {
+  $messages[] = $row;
+}
 
-  header('Content-Type: application/json');
-  echo json_encode($messages);
-  mysqli_close($conn);
+header('Content-Type: application/json');
+echo json_encode($messages);
+mysqli_close($conn);
 ?>
