@@ -12,7 +12,8 @@
     align-items: center;
     height: 100vh;
     overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    background: #f7f7f7;
+    /* background-color: rgba(0,0,0,0.4); */
   }
   
   .centered { 
@@ -23,6 +24,9 @@
     background: #fff;
     height: 80vh;
     width: 70vw;
+    border-radius: 16px;
+   
+    box-shadow:0 0 128px 0 rgba(0,0,0,0.1), 0 32px 64px -48px rgba(0,0,0,0.5);
   }
   
   input {
