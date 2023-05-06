@@ -73,11 +73,16 @@ $query = "SELECT * FROM `user`";
 
                
                  
-    <a href="chat.php?myid=<?php echo $row['user']; ?>">  
-    <img src="<?php echo $img_path ?>" height="40px"  width="40px"> 
+<button onclick="loadUserData('<?php echo $row['user']; ?>')">
+
+     <img src="<?php echo $img_path ?>" height="40px"  width="40px"> 
     <strong id="nn"><?php echo ucfirst($row['user']);?></strong>
- <strong id="n2"><?php echo ucfirst($row['email']);?> </strong>
-</a>
+    <strong id="n2"><?php echo ucfirst($row['email']);?> </strong>
+
+
+</button>
+
+
  
 
 </div>
@@ -92,16 +97,16 @@ endwhile; ?>
                   </div>
            
             <div class="r1">
-<div class="chatboxes">
+
 <div class="chat">
 
 
 
-<div class="inner_div" id="chathist">
 
 
+<div id="user-data"></div>
 
-</div> 
+
 
 
         
@@ -115,7 +120,7 @@ endwhile; ?>
          
 
 </div>
-</div>
+<!-- </div> -->
                 <div class="messagediv">
                  
                     <form  >
@@ -132,7 +137,28 @@ endwhile; ?>
            
 
             </div>
-        </div>
+        
     
 </body>
+
+<script>
+
+function loadUserData(userId) {
+  // Make an asynchronous request to the server using the Fetch API
+  fetch('getUserData.php?userId=' + userId)
+    .then(response => response.json())
+    .then(data => {
+      // Update the page with the retrieved user data
+      const userDataElement = document.getElementById('user-data');
+      userDataElement.innerHTML = `
+        <h2>${data.name}</h2>
+        <p>${data.bio}</p>
+      `;
+    })
+    .catch(error => {
+      console.error('Error retrieving user data:', error);
+    });
+}
+
+</script>
 </html>

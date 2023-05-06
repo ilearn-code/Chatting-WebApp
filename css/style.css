@@ -14,7 +14,7 @@ width: 100%;
 
 .left{
  
-    height: 5rem;
+    height: 4rem;
     width: 30%;
     background-color: #4CAF50;
 }
@@ -46,20 +46,20 @@ margin: 15px;
 
 .right{
    width: 70%;
-    height: 5rem;
+    height: 4rem;
     background-color:#4CAF50;;
    
 }
 
 .c1{
 display: flex; 
-   width: 100%;
-   height: calc( 100vh - 4rem );
+width: 100%;
+max-height: calc( 100vh - 4rem );
 }
+
 .l1{
   
-     height: -webkit-fill-available;
- 
+     height:inherit;
     width: 30%;
    background-color:  #F2E9EA;
 }
@@ -126,34 +126,12 @@ i{
       }
 .listuser img{
   float: left;
-  margin: 15px;
+  
   border-radius: 50%;
 }
- #nn{
-  display: inline-block;
-  margin-top: 15px;
 
-}
-#n2{
- display: block;
- 
-
-}
-        input{
-
-          
-            width: 390px;
-            height: 40px;
-            margin-top: 10px;
-            /* border-radius: 20px; */
-            border: none!important;
-            
-        }
         
-       
-        input:focus{
-            outline: none;
-        } 
+    
        
 
 
@@ -165,62 +143,22 @@ i{
       }
 
     
-      .chatboxes{
-        
-        height: 550px;
-        width: 100%;
-        background-color: blueviolet;
-        
-      }
-      .chatboxes i{
-        width: 80%;
-        position: relative;
-      }
+   
 
-      .messagediv{
-      
-      display: flex;
-      justify-content: center;
-      padding-top: 22px;
-      margin-top: 40px;
-      
      
-      }
+
+
+
       
-
-      .inpmessage{
-     width: 900px;
-     border: none;
-     background-color: #f0f0f0;
-     border-radius: 25px;
-     padding-left: 20px;
-     
-      }
-      .iemo{
-        margin-top: 12px;
-        padding-right: 5px;
-      }
-
-      .iaud{
-        margin-top: 15px;
-        padding-left: 5px;
-      }
-      .sub_{
-        height: 40px;
-        width: 60px;
-        background-color: blueviolet;
-      }
     
       .chat{
         background-color: #fff;
        
-        height: 38rem;
+        height: 90%;
         overflow-y: auto;
         
         padding-left: 80px;
         padding-top: 30px;
-        
-        
     
       }
      
