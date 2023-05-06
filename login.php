@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>Log in</title>
-    <link rel="stylesheet" href="css/loginform.css">
+    <link rel="stylesheet" href="css\login_form.css">
 </head>
 <body>
 <?php
@@ -61,6 +61,7 @@ if (isset($_POST['username'])) {
      else {
 ?>
 <div class="loginForm">
+<div class="centered">
 <form  method="post" name="login">
         <h1>Login</h1>
         <input type="text"  name="username" placeholder="Username" />
