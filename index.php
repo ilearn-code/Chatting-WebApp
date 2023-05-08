@@ -128,7 +128,8 @@ if (!isset($_SESSION["username"])) {
             <div class="messagediv">
 
                 <form id="myForm">
-                <input type="text" class="inpmessage" id="inpmessageid" name="msg" placeholder="Type a message" onreadystatechange="loadUserData(this)">
+                    <input type="text" class="inpmessage" id="inpmessageid" name="msg" placeholder="Type a message"
+                        onreadystatechange="loadUserData(this)">
 
                     <input type="hidden" name="receiver_id" id="receiverIdField">
                     <button type="submit" id="submitBtn" class="linkk"><i class="uil uil-message"
@@ -182,77 +183,35 @@ if (!isset($_SESSION["username"])) {
     });
 
     // Function to send data using fetch API
-   // Function to send data using fetch API
-function sendData() {
-  const form = document.getElementById("myForm");
-  const formData = new FormData(form);
-  fetch("inputmsg.php", {
-      method: "POST",
-      body: formData
-  })
-  .then(response => {
-      console.log(response);
-      // If the message was successfully sent to the server, add it to the chat window
-      if (response.ok) {
-          const message = document.getElementById('inpmessageid').value;
-          const userDataElement = document.getElementById('user-data');
-          const sender = <?php echo $_SESSION['sender_id']; ?>;
-          const receiver = document.getElementById('receiverIdField').value;
-          const messageHtml = `<div class="message self"><p>${message}</p></div>`;
-          // If the chat window is currently showing the conversation between the sender and receiver, add the new message to it
-          if (sender == receiver) {
-              userDataElement.innerHTML += messageHtml;
-          }
-      }
-  })
-  .catch(error => {
-      console.error(error);
-  });
-  document.getElementById('inpmessageid').value = "";
-}
-
-</script>
-
-<script>
-function getChatData() {
-  fetch("getChatMessages.php")
-    .then(response => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error('Network response was not ok.');
-      }
-    })
-    .then(messages => {
-      const userId = <?php echo $_SESSION['sender_id']; ?>;
-      const userDataElement = document.getElementById('user-data');
-      let messagesHtml = '';
-      for (let message of messages) {
-        // Only show messages between the logged-in user and the other user
-        if ((message.sender_id == userId && message.receiver_id == <?php echo $receiver_id ?>) || (message.sender_id == <?php echo $receiver_id; ?> && message.receiver_id == userId)) {
-          const sender = message.sender_id == userId ? 'self' : 'other';
-          messagesHtml += `<div class="message ${sender}">
-            <p>${message.message}</p>
-          </div>`;
-        }
-      }
-      userDataElement.innerHTML = messagesHtml;
-    })
-    .catch(error => {
-      console.error('Error retrieving chat data:', error);
-    });
-}
-
-// Call the getChatData function every second using setInterval
-setInterval(()=>
-{
-    getChatData();
-}, 1000);
+    // Function to send data using fetch API
+    function sendData() {
+        const form = document.getElementById("myForm");
+        const formData = new FormData(form);
+        fetch("inputmsg.php", {
+            method: "POST",
+            body: formData
+        })
+            .then(response => {
+                console.log(response);
+                // If the message was successfully sent to the server, add it to the chat window
+                if (response.ok) {
+                    const message = document.getElementById('inpmessageid').value;
+                    const userDataElement = document.getElementById('user-data');
+                    const sender = <?php echo $_SESSION['sender_id']; ?>;
+                    const receiver = document.getElementById('receiverIdField').value;
+                    const messageHtml = `<div class="message self"><p>${message}</p></div>`;
+                    // If the chat window is currently showing the conversation between the sender and receiver, add the new message to it
+                    if (sender == receiver) {
+                        userDataElement.innerHTML += messageHtml;
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error sending data:', error);
+            });
+    }
 
 
 
 
-
-// </script>
-
-</html>
+</html >
