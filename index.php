@@ -33,8 +33,10 @@ if (!isset($_SESSION["username"])) {
             $row_profile_pic = mysqli_fetch_array($q_profile_pic);
             $img_pathp = $row_profile_pic['img_path'];
             $pp_name = $row_profile_pic['user'];
-            echo "<img src=\"$img_pathp\" alt=\"error\">";
-            echo '<strong id="n3">' . ucfirst($pp_name) . '</strong>';
+            echo "<div class=img_n_name>";
+            echo "<img src=\"$img_pathp\">";
+            echo '<strong id="login_user_name">' . ucfirst($pp_name) . '</strong>';
+            echo "</div>";
             ?>
 
 
@@ -73,24 +75,25 @@ if (!isset($_SESSION["username"])) {
                     if ($_SESSION["username"] != $row['user']) {
                         $img_path = $row['img_path'];
                         ?>
-                        <div class="listuser">
+                       
 
 
 
-                            <button onclick="loadUserData('<?php echo $row['id']; ?>')">
+                            <a onclick="loadUserData('<?php echo $row['id']; ?>')">
+
+                            <div class="listuser">
 
                                 <img src="<?php echo $img_path ?>" height="40px" width="40px">
                                 <strong id="nn">
                                     <?php echo ucfirst($row['user']); ?>
                                 </strong>
+                                </div>
+                    </a>
 
 
-                            </button>
 
 
-
-
-                        </div>
+                        
                         <?php
                     }
 
@@ -102,42 +105,16 @@ if (!isset($_SESSION["username"])) {
         </div>
 
         <div class="r1">
-<!-- 
-            <div class="chat"> -->
+                <div id="user-data">
 
-
-
-
-
-                <div id="user-data"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!-- </div> -->
-
+                </div>
             <div class="messagediv">
-
                 <form id="myForm">
                     <input type="text" class="inpmessage" id="inpmessageid" name="msg"="Type a message">
-
                     <input type="hidden" name="receiver_id" id="receiverIdField">
-                    <button type="submit" id="submitBtn" class="linkk"><i class="uil uil-message"
-                            style="color:white; margin-top: 15px;"></i></a>
+                    <button type="submit" id="submitBtn" class="linkk"><i class="uil uil-message">
+                           </i></a>
                 </form>
-
-
-
             </div>
         </div>
 
