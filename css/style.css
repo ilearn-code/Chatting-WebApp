@@ -9,7 +9,6 @@
 .continer {
   display: flex;
   width: 100%;
-
 }
 
 .left {
@@ -27,8 +26,8 @@
 
 }
 
-#logout {
-
+#logout 
+{
   margin-top: 23px;
   text-decoration: none;
   float: right;
@@ -49,8 +48,6 @@
   width: 70%;
   height: 4rem;
   background-color: #4CAF50;
-  ;
-
 }
 
 .c1 {
@@ -68,12 +65,22 @@
 }
 
 .r1 {
-  height: 42.5rem;
+  display: flex;
+  flex-direction: column;
   width: 70vw;
+  max-height: calc(100vh - 4rem);
   background-color: #4CAF50;
 
 }
-
+#user-data
+{
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  overflow-y: scroll;
+  background-color: #fff;
+ 
+}
 
 
 
@@ -137,87 +144,10 @@ h3 {
   color: gray;
 }
 
-
-
-.chat {
-  background-color: #fff;
-
-  height: 90%;
-  overflow-y: auto;
-
-  padding-left: 80px;
-  padding-top: 30px;
-
-}
-
-
-
- .self {
-  padding: 10px;
-
-  background-color: #dcf8c6;
-  line-height: 20px;
-  max-width: 90%;
-
-  text-align: right;
-  border-radius: 5px;
-  float: right;
-  clear: both;
-}
-
- .user {
-  padding: 10px;
-
-  margin-left: 15px;
-  background-color: #dcf8c6;
-  line-height: 20px;
-  max-width: 90%;
-  display: inline-block;
-  text-align: left;
-  border-radius: 5px;
-  clear: both;
-}
-
-
-
-
-
-
 .listscroll {
   overflow-x: hidden;
   height: 624px;
   overflow-y: scroll;
-
-}
-
-
-.chat-bubble {
-
-  padding: 5px;
-  margin: 5px;
-  border-radius: 5px;
-  font-size: 15px;
-
-}
-
-.chat-bubble.lleft {
-
-  background-color: whitesmoke;
-  color: black;
-  float: left;
-  max-width: 90%;
-  clear: both;
-
-
-}
-
-.chat-bubble.rright {
-  color: #000;
-  background-color: #dcf8c6;
-  max-width: 90%;
-  float: right;
-  clear: both;
-
 }
 
 
@@ -225,7 +155,6 @@ h3 {
   margin: 15px 10px 15px 30px;
   float: left;
   height: 40px;
-
   width: 40px;
   border-radius: 50%;
 }
