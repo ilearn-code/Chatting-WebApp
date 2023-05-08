@@ -1,10 +1,11 @@
 <?php
 session_start();
 if (!isset($_SESSION["username"])) {
+
     header("Location: login.php");
     exit();
+
 }
-// echo $_SESSION["username"];
 ?>
 
 
@@ -128,8 +129,7 @@ if (!isset($_SESSION["username"])) {
             <div class="messagediv">
 
                 <form id="myForm">
-                    <input type="text" class="inpmessage" id="inpmessageid" name="msg" placeholder="Type a message"
-                        onreadystatechange="loadUserData(this)">
+                    <input type="text" class="inpmessage" id="inpmessageid" name="msg" ="Type a message">
 
                     <input type="hidden" name="receiver_id" id="receiverIdField">
                     <button type="submit" id="submitBtn" class="linkk"><i class="uil uil-message"
@@ -149,28 +149,48 @@ if (!isset($_SESSION["username"])) {
 
 <script>
 
-    function loadUserData(userId) {
-        // Set the value of the receiver_id input field in the message form
+function loadUserData(userId) {
+  // Set the value of the receiver_id input field in the message form
+  receiverIdField.value = userId;
 
-        receiverIdField.value = userId;
-
-        fetch('getUserData.php?userId=' + userId)
-            .then(response => response.json())
-            .then(data => {
-                const userDataElement = document.getElementById('user-data');
-                let messagesHtml = '';
-                data.forEach(message => {
-                    const sender = message.sender_id == userId ? 'other' : 'self';
-                    messagesHtml += `<div class="message ${sender}">
+  // Fetch the user data and messages from the server
+  fetch('getUserData.php?userId=' + userId)
+    .then(response => response.json())
+    .then(data => {
+      const userDataElement = document.getElementById('user-data');
+      let messagesHtml = '';
+      data.forEach(message => {
+        const sender = message.sender_id == userId ? 'other' : 'self';
+        messagesHtml += `<div class="message ${sender}">
           <p>${message.message}</p>
         </div>`;
-                });
-                userDataElement.innerHTML = messagesHtml;
-            })
-            .catch(error => {
-                console.error('Error retrieving user data:', error);
-            });
-    }
+      });
+      userDataElement.innerHTML = messagesHtml;
+    })
+    .catch(error => {
+      console.error('Error retrieving user data:', error);
+    });
+
+  // Update the chat window periodically
+  setInterval(() => {
+    fetch('getUserData.php?userId=' + userId)
+      .then(response => response.json())
+      .then(data => {
+        const userDataElement = document.getElementById('user-data');
+        let messagesHtml = '';
+        data.forEach(message => {
+          const sender = message.sender_id == userId ? 'other' : 'self';
+          messagesHtml += `<div class="message ${sender}">
+            <p>${message.message}</p>
+          </div>`;
+        });
+        userDataElement.innerHTML = messagesHtml;
+      })
+      .catch(error => {
+        console.error('Error retrieving user data:', error);
+      });
+  }, 5000); // Update every 5 seconds
+}
 
 </script>
 
@@ -182,36 +202,34 @@ if (!isset($_SESSION["username"])) {
         sendData();
     });
 
-    // Function to send data using fetch API
-    // Function to send data using fetch API
     function sendData() {
-        const form = document.getElementById("myForm");
-        const formData = new FormData(form);
-        fetch("inputmsg.php", {
-            method: "POST",
-            body: formData
-        })
-            .then(response => {
-                console.log(response);
-                // If the message was successfully sent to the server, add it to the chat window
-                if (response.ok) {
-                    const message = document.getElementById('inpmessageid').value;
-                    const userDataElement = document.getElementById('user-data');
-                    const sender = <?php echo $_SESSION['sender_id']; ?>;
-                    const receiver = document.getElementById('receiverIdField').value;
-                    const messageHtml = `<div class="message self"><p>${message}</p></div>`;
-                    // If the chat window is currently showing the conversation between the sender and receiver, add the new message to it
-                    if (sender == receiver) {
-                        userDataElement.innerHTML += messageHtml;
-                    }
-                }
-            })
-            .catch(error => {
-                console.error('Error sending data:', error);
-            });
-    }
+  const form = document.getElementById("myForm");
+  const formData = new FormData(form);
+  fetch("inputmsg.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => {
+      console.log(response);
+      // If the message was successfully sent to the server, add it to the chat window
+      if (response.ok) {
+        const message = document.getElementById("inpmessageid").value;
+        const userDataElement = document.getElementById("user-data");
+        const sender = <?php echo $_SESSION['sender_id']; ?>;
+        const receiver = document.getElementById("receiverIdField").value;
+        const messageHtml = `<div class="message self"><p>${message}</p></div>`;
+        // If the chat window is currently showing the conversation between the sender and receiver, add the new message to it
+        if (sender == receiver) {
+          userDataElement.innerHTML += messageHtml;
+        }
+      }
+    })
+    .catch((error) => {
+      console.error("Error sending data:", error);
+    });
+}
 
 
-
+</script>
 
 </html >
