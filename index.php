@@ -149,6 +149,8 @@ if (!isset($_SESSION["username"])) {
 
 <script>
 
+let intervalId = null;
+
 function loadUserData(userId) {
   // Set the value of the receiver_id input field in the message form
   receiverIdField.value = userId;
@@ -171,8 +173,13 @@ function loadUserData(userId) {
       console.error('Error retrieving user data:', error);
     });
 
+  // Clear the interval before setting a new one
+  if (intervalId) {
+    clearInterval(intervalId);
+  }
+
   // Update the chat window periodically
-  setInterval(() => {
+  intervalId = setInterval(() => {
     fetch('getUserData.php?userId=' + userId)
       .then(response => response.json())
       .then(data => {
