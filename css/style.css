@@ -69,7 +69,7 @@
 .c1 {
   display: flex;
   width: 100%;
-  min-height: calc( 100vh - 4rem );
+  height: calc( 100vh - 4rem );
 }
 
 .l1 {
@@ -201,17 +201,34 @@ h3 {
 } */
 
 
-
-
-
-.input_message_div
-{ 
+.input_message_div { 
   display: flex;
   width: 100%;
   height: 10%;
   background-color: #4CAF50;
   justify-content: center;
-  align-items: center;
+}
+
+#input_message_id {
+  height: 5vh;
+  width: 40vw;
+  border: 0.1rem solid #ccc;
+  padding-left: 0.5vw;
+  border-radius: 0.5rem; 
+}
+
+#input_user_message_button {
+  display: inline-block;
+  border: none;
+  padding: 0;
+  background-color: transparent; /* Remove the background color */
+  color: #fff;
+  margin-top: 0.5rem;
+}
+
+#input_user_message_button i {
+  font-size: 2.5rem; /* Adjust the font size of the icon */
+  vertical-align: middle; 
 }
 
 

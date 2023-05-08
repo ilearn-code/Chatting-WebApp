@@ -110,9 +110,9 @@ if (!isset($_SESSION["username"])) {
                 </div>
             <div class="input_message_div">
                 <form id="myForm">
-                    <input type="text" class="inpmessage" id="input_message_id" name="msg" placeholder="Type a message">
+                    <input type="text"  id="input_message_id" name="msg" placeholder="Type a message">
                     <input type="hidden" name="receiver_id" id="receiverIdField">
-                    <button type="submit" id="submitBtn"><i class="uil uil-message">
+                    <button type="submit" id="input_user_message_button"><i class="uil uil-message">
                            </i></button>
                 </form>
             </div>
@@ -181,7 +181,7 @@ if (!isset($_SESSION["username"])) {
 <script>
 
     // Add event listener to the submit button to prevent default form submission and send data using fetch API
-    document.getElementById("submitBtn").addEventListener("click", function (event) {
+    document.getElementById("input_user_message_button").addEventListener("click", function (event) {
         event.preventDefault();
         sendData();
     });
