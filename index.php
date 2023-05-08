@@ -108,12 +108,12 @@ if (!isset($_SESSION["username"])) {
                 <div id="user-data">
 
                 </div>
-            <div class="messagediv">
+            <div class="input_message_div">
                 <form id="myForm">
-                    <input type="text" class="inpmessage" id="inpmessageid" name="msg"="Type a message">
+                    <input type="text" class="inpmessage" id="input_message_id" name="msg" placeholder="Type a message">
                     <input type="hidden" name="receiver_id" id="receiverIdField">
-                    <button type="submit" id="submitBtn" class="linkk"><i class="uil uil-message">
-                           </i></a>
+                    <button type="submit" id="submitBtn"><i class="uil uil-message">
+                           </i></button>
                 </form>
             </div>
         </div>
@@ -197,7 +197,7 @@ if (!isset($_SESSION["username"])) {
                 console.log(response);
                 // If the message was successfully sent to the server, add it to the chat window
                 if (response.ok) {
-                    const message = document.getElementById("inpmessageid").value;
+                    const message = document.getElementById("input_message_id").value;
                     const userDataElement = document.getElementById("user-data");
                     const sender = <?php echo $_SESSION['sender_id']; ?>;
                     const receiver = document.getElementById("receiverIdField").value;

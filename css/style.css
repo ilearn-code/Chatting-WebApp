@@ -119,12 +119,6 @@
 }
 
 
-.messagediv
-{
-  width: 100%;
-  min-height: 10%;
-  background-color: #4CAF50;
-}
 
 
 
@@ -198,12 +192,26 @@ h3 {
 
 
 
-.right img {
+/* .right img {
   margin: 15px 10px 15px 30px;
   float: left;
   height: 40px;
   width: 40px;
   border-radius: 50%;
+} */
+
+
+
+
+
+.input_message_div
+{ 
+  display: flex;
+  width: 100%;
+  height: 10%;
+  background-color: #4CAF50;
+  justify-content: center;
+  align-items: center;
 }
 
 
