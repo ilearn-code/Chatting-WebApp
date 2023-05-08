@@ -4,7 +4,10 @@
   box-sizing: border-box;
 }
 
-
+body{
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
 
 .continer {
   display: flex;
@@ -67,7 +70,7 @@
 .r1 {
   display: flex;
   flex-direction: column;
-  width: 70vw;
+  width: 70%;
   max-height: calc(100vh - 4rem);
   background-color: #4CAF50;
 
@@ -76,10 +79,16 @@
 {
   display: flex;
   flex-direction: column;
-  height: 80%;
+ min-height: 90%;
   overflow-y: scroll;
-  background-color: #fff;
+  background-color:yellow;
  
+}
+.messagediv
+{
+  width: 100%;
+  min-height: 10%;
+  background-color: black;
 }
 
 
