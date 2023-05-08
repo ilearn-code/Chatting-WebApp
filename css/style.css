@@ -76,7 +76,7 @@
   display: flex;
   flex-direction: column;
   width: 30%;
-  max-height: calc( 100vh - 4rem );
+  height: calc( 100vh - 4rem );
   background-color: #F2E9EA;
 }
 
@@ -84,7 +84,7 @@
   display: flex;
   flex-direction: column;
   width: 70%;
-  max-height: calc(100vh - 4rem);
+  height: calc(100vh - 4rem);
   background-color: #4CAF50;
 
 }
@@ -93,7 +93,7 @@
   width: auto;
   display: flex;
   flex-direction: column;
-  min-height: 90%;
+  height: 90%;
   overflow-y: scroll;
   background-color:#D1EAFB;
  
@@ -153,8 +153,9 @@ h3 {
 
 
 .listscroll {
+  display: block;
   overflow-x: hidden;
-  height: 80%;
+  height: 90%;
   overflow-y: scroll;
 }
 
@@ -166,8 +167,6 @@ h3 {
   width: 100%;
   border: 5px solid white;
   background-color: #4CAF50;
-
-
 }
 
 .listuser a {
@@ -178,7 +177,7 @@ h3 {
 
 .listuser img {
     justify-content: center;
-    height: 90%;
+    height: 90% !important;
     width: 3rem;
     border-radius: 50%;
 }
@@ -192,13 +191,7 @@ h3 {
 
 
 
-/* .right img {
-  margin: 15px 10px 15px 30px;
-  float: left;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-} */
+
 
 
 .input_message_div { 
