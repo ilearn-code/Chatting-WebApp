@@ -24,7 +24,7 @@ if (!isset($_SESSION["username"])) {
 
 <body>
 
-    <div class="continer">
+    <header class="continer">
         <div class="left">
             <?php
             require "db_conn.php";
@@ -52,7 +52,7 @@ if (!isset($_SESSION["username"])) {
 
         </div>
 
-    </div>
+    </header>
     <div class="c1">
         <div class="l1">
             <div class="search">

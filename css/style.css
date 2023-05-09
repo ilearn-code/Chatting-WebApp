@@ -9,7 +9,9 @@
 .continer {
   display: flex;
   width: 100%;
-
+position: fixed;
+left: 0;
+top: 0;
 }
 
 .left {
@@ -71,6 +73,7 @@
   display: flex;
   width: 100%;
   height: calc( 100vh - 4rem );
+  padding-top:4rem;
 }
 
 .l1 {
