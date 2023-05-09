@@ -272,6 +272,34 @@ h3 {
   color: gray;
   padding-left: 0;
 }
+
+#nn
+{
+display: none;
+}
+
+.l1 {
+  width: 15%;
+  height: calc( 100vh - 4rem );
+  background-color: #F2E9EA;
+}
+
+.r1 {
+
+  width: 85%;
+  height: calc(100vh - 4rem);
+  background-color: #4CAF50;
+
+}
+
+.search_button {
+display: none;
+  
+  }
+
+  .listuser {
+   justify-content: center;
+  }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
