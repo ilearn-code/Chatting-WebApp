@@ -57,8 +57,8 @@ if (!isset($_SESSION["username"])) {
         <div class="l1">
             <div class="search">
                 <form class="searchform">
-                    <button class="search_button"><i class="fa fa-search"></i></button>
                     <input type="text" placeholder="Search">
+                    <button class="search_button"><i class="fa fa-search"></i></button>
                 </form>
 
             </div>
