@@ -9,6 +9,7 @@
 .continer {
   display: flex;
   width: 100%;
+
 }
 
 .left {
@@ -26,7 +27,7 @@
 }
 
 .left img {
- justify-content: center;
+  justify-content: center;
   height: 90%;
   width: 3rem;
   border-radius: 50%;
@@ -194,6 +195,8 @@ h3 {
   width: 100%;
   border: 5px solid white;
   background-color: #4CAF50;
+  align-items: center;
+  
 }
 
 .listuser a {
@@ -203,11 +206,17 @@ h3 {
 }
 
 .listuser img {
-    justify-content: center;
-    height: 90% !important;
+    margin-left: 2%;
+  
+    height: 90%;
     width: 3rem;
     border-radius: 50%;
 }
+.listuser strong
+{
+padding-left: 2%;
+}
+
 
 
 
@@ -228,6 +237,8 @@ h3 {
   height: 10%;
   background-color: #4CAF50;
   justify-content: center;
+
+
 }
 
 #input_message_id {
@@ -236,6 +247,7 @@ h3 {
   border: 0.1rem solid #ccc;
   padding-left: 0.5vw;
   border-radius: 0.5rem; 
+ 
 }
 
 #input_user_message_button {
@@ -245,11 +257,13 @@ h3 {
   background-color: transparent; /* Remove the background color */
   color: #fff;
   margin-top: 0.5rem;
+
 }
 
 #input_user_message_button i {
   font-size: 2.5rem; /* Adjust the font size of the icon */
   vertical-align: middle; 
+ 
 }
 
 

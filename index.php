@@ -83,7 +83,7 @@ if (!isset($_SESSION["username"])) {
 
                             <div class="listuser">
 
-                                <img src="<?php echo $img_path ?>" height="40px" width="40px">
+                                <img src="<?php echo $img_path ?>" >
                                 <strong id="nn">
                                     <?php echo ucfirst($row['user']); ?>
                                 </strong>
@@ -108,6 +108,7 @@ if (!isset($_SESSION["username"])) {
                 <div id="user-data">
 
                 </div>
+            
             <div class="input_message_div">
                 <form id="myForm">
                     <input type="text"  id="input_message_id" name="msg" placeholder="Type a message">
@@ -116,7 +117,7 @@ if (!isset($_SESSION["username"])) {
                            </i></button>
                 </form>
             </div>
-        </div>
+        
 
 
     </div>
