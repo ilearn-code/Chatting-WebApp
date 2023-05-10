@@ -50,6 +50,25 @@ if (!isset($_SESSION["username"])) {
         </div>
         <div class="right">
 
+        
+        <?php
+            //     include "db_conn.php"; 
+            //     $_SESSION['usernameselected']  = $_GET['myid'];
+            //     $usernameselected=$_GET['myid'];
+            //     $qq = "SELECT `id` FROM `user` WHERE user= '$usernameselected';";
+            //     $rr = mysqli_query($conn,$qq);
+            //     $rowud = mysqli_fetch_array($rr);
+            //     $receiver_id=$rowud['id']; 
+                
+            //     $qq_pic = "SELECT `img_path` FROM `user` WHERE user= '$usernameselected';";
+            //     $rr_pic= mysqli_query($conn,$qq_pic);
+            //     $rowud_pic = mysqli_fetch_array($rr_pic);
+            //     $img_path=$rowud_pic['img_path'];
+            //    echo "<p>";
+            //     echo "<img src=\"$img_path\" alt=\"error\">"; 
+            //     echo '<strong id="n3">' . ucfirst($_SESSION['usernameselected']) . '</strong>';
+            //     echo "</p>"
+            //      ?>
         </div>
 
     </header>
@@ -206,6 +225,7 @@ if (!isset($_SESSION["username"])) {
                 if (response.ok) {
                     const message = document.getElementById("input_message_id").value;
                     const userDataElement = document.getElementById("user-data");
+                    
                     const sender = <?php echo $_SESSION['sender_id']; ?>;
                     const receiver = document.getElementById("receiverIdField").value;
                     const messageHtml = `<div class="message self"><p>${message}</p></div>`;
