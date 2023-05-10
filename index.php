@@ -127,6 +127,11 @@ if (!isset($_SESSION["username"])) {
 
 <script>
 
+
+
+
+
+
     let intervalId = null;
 
     function loadUserData(userId) {
@@ -146,6 +151,7 @@ if (!isset($_SESSION["username"])) {
         </div>`;
                 });
                 userDataElement.innerHTML = messagesHtml;
+                userDataElement.scrollTop = userDataElement.scrollHeight;
             })
             .catch(error => {
                 console.error('Error retrieving user data:', error);
@@ -174,17 +180,17 @@ if (!isset($_SESSION["username"])) {
                 .catch(error => {
                     console.error('Error retrieving user data:', error);
                 });
-        }, 5000); // Update every 5 seconds
+        }, 1000); // Update every 5 seconds
     }
 
-</script>
 
-<script>
 
     // Add event listener to the submit button to prevent default form submission and send data using fetch API
     document.getElementById("input_user_message_button").addEventListener("click", function (event) {
         event.preventDefault();
         sendData();
+       
+  
     });
 
     function sendData() {
@@ -206,7 +212,9 @@ if (!isset($_SESSION["username"])) {
                     // If the chat window is currently showing the conversation between the sender and receiver, add the new message to it
                     if (sender == receiver) {
                         userDataElement.innerHTML += messageHtml;
+                        
                     }
+                    userDataElement.scrollTop = userDataElement.scrollHeight;
                 }
             })
             .catch((error) => {
