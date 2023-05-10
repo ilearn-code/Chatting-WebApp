@@ -166,7 +166,7 @@ if (!isset($_SESSION["username"])) {
                 data.forEach(message => {
                     const sender = message.sender_id == userId ? 'other' : 'self';
                     messagesHtml += `<div class="message ${sender}">
-          <p>${message.message}</p>
+          <span id="message_${sender}_para">${message.message}</span>
         </div>`;
                 });
                 userDataElement.innerHTML = messagesHtml;
@@ -191,7 +191,7 @@ if (!isset($_SESSION["username"])) {
                     data.forEach(message => {
                         const sender = message.sender_id == userId ? 'other' : 'self';
                         messagesHtml += `<div class="message ${sender}">
-            <p>${message.message}</p>
+                        <span id="message_${sender}_para">${message.message}</span>
           </div>`;
                     });
                     userDataElement.innerHTML = messagesHtml;

@@ -112,14 +112,34 @@ top: 0;
 }
 
 .self {
+ 
   align-items: flex-end;
-
+/* background-color: #4CAF50; */
 
 }
 
 
 .other {
   align-items: flex-start;
+}
+
+#message_self_para
+{
+  max-width: 10vw;
+  background:  #25D366;
+  color: black;
+  padding: 0.5rem;
+ border-radius: 0.3rem;
+}
+#message_other_para
+{
+  max-width: 10vw;
+ 
+  background-color: white;
+  color: black;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+
 }
 
 
