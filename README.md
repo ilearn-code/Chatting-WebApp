@@ -1,14 +1,13 @@
 # watsap-clone-lates-master-latesst
 
-This is php based ajax chatting website.
+This is a dynamic chatting website built using PHP and Ajax technology. 
 
-It usees ajax to send chat data into database and show it into chatroom asynchronously.
+With Ajax, users can send and receive chat messages asynchronously, with no need for page refreshes. 
 
-You can login or register and chat with other users that you have created.
+To ensure security, user passwords are stored in hashed form. 
 
-It stores password in hash form for security 
-
-It used ajax to send chat data into database and show it into chatroom asynchronously.
+Users can easily register and login to start chatting with other users that they have added. 
+The chat messages are saved in a database, and users can view their conversations in almost in real-time as they happen.
 
 Currently Working on this Project
 <img src="githubimg/main ui.png"  >
