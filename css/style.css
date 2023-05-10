@@ -46,15 +46,16 @@ top: 0;
 
 #logout 
 { 
-  
-  padding: 0.5rem 0.5rem;
-  background-color: #4CAF50;
-  color: white;
-  text-align: center;
-  font-size: 16px;
-  border-radius: 5px;
+  width: 10vw;
+  padding: 0.2rem 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+ 
   cursor: pointer;
-  transition: all 0.3s ease;
+  
+  text-decoration: none;
 }
 
 #logout:hover {
