@@ -3,7 +3,7 @@
 $hostname     = "localhost"; 
 $username     = "root";  
 $password     = "";   
-$databasename = "fuenix_chat_db"; 
+$databasename = "chat_db"; 
 
 $conn = new mysqli($hostname, $username, $password,$databasename);
 
