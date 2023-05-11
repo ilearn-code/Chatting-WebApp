@@ -234,6 +234,7 @@ if (!isset($_SESSION["username"])) {
                         userDataElement.innerHTML += messageHtml;
                         
                     }
+                    document.getElementById('input_message_id').value = "";
                     userDataElement.scrollTop = userDataElement.scrollHeight;
                 }
             })
