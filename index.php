@@ -48,11 +48,13 @@ if (!isset($_SESSION["username"])) {
 
 
         </div>
-        <div class="right" id="right">
-<img id="image_chatting_user" src="" alt="">
-<h2 id="chatting_user_name" ></h2>
         
-     
+        <div class="right" id="right">
+        <div class=img_n_name>
+         <img id="image_chatting_user" src="" alt="">
+         <strong id="chatting_user_name" ></strong>
+        
+        </div>
         </div>
 
     </header>

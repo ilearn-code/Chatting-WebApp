@@ -74,9 +74,16 @@ top: 0;
 {
   display: none;
   height: 90%;
-  width: 3.5rem;
+  width: 3rem;
   border-radius: 50%;
   justify-content: center;
+}
+#chatting_user_name
+{
+    height: 80%;
+    width: 3rem;
+    margin: 0.5rem;
+    flex: 0 1 auto;
 }
 
 .c1 {
