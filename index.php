@@ -51,24 +51,7 @@ if (!isset($_SESSION["username"])) {
         <div class="right">
 
         
-        <?php
-            //     include "db_conn.php"; 
-            //     $_SESSION['usernameselected']  = $_GET['myid'];
-            //     $usernameselected=$_GET['myid'];
-            //     $qq = "SELECT `id` FROM `user` WHERE user= '$usernameselected';";
-            //     $rr = mysqli_query($conn,$qq);
-            //     $rowud = mysqli_fetch_array($rr);
-            //     $receiver_id=$rowud['id']; 
-                
-            //     $qq_pic = "SELECT `img_path` FROM `user` WHERE user= '$usernameselected';";
-            //     $rr_pic= mysqli_query($conn,$qq_pic);
-            //     $rowud_pic = mysqli_fetch_array($rr_pic);
-            //     $img_path=$rowud_pic['img_path'];
-            //    echo "<p>";
-            //     echo "<img src=\"$img_path\" alt=\"error\">"; 
-            //     echo '<strong id="n3">' . ucfirst($_SESSION['usernameselected']) . '</strong>';
-            //     echo "</p>"
-            //      ?>
+      <h1 id="right_heading"></h1>
         </div>
 
     </header>
@@ -98,7 +81,7 @@ if (!isset($_SESSION["username"])) {
 
 
 
-                            <a onclick="loadUserData('<?php echo $row['id']; ?>')">
+                            <a onclick="loadUserData('<?php echo $row['id']; ?>','<?php echo ucfirst($row['user']); ?>')">
 
                             <div class="listuser">
 
@@ -153,10 +136,11 @@ if (!isset($_SESSION["username"])) {
 
     let intervalId = null;
 
-    function loadUserData(userId) {
+    function loadUserData(userId,selectedUserNAme) {
         // Set the value of the receiver_id input field in the message form
         receiverIdField.value = userId;
-
+        rightDiv=document.getElementById('right_heading');
+        rightDiv.textContent=selectedUserNAme;
         // Fetch the user data and messages from the server
         fetch('getUserData.php?userId=' + userId)
             .then(response => response.json())
