@@ -201,8 +201,8 @@ h3 {
 {
   width: 80%;
   height: 60%;
-  padding-top: 4%;
-  padding-bottom: 4%;
+  /* padding-top: 4%;
+  padding-bottom: 4%; */
   padding-left: 2%;
   border-radius: 0.5rem;
   outline: none;
