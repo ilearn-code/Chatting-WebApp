@@ -146,12 +146,13 @@ top: 0;
   background:  #25D366;
   color: black;
   padding: 0.5rem;
- border-radius: 0.3rem;
+  border-radius: 0.3rem;
+  font-size: 1.2em;
 }
 #message_other_para
-{
+{ 
   max-width: 10vw;
- 
+  font-size: 1.2em;
   background-color: white;
   color: black;
   padding: 0.5rem;
@@ -315,6 +316,18 @@ padding-left: 2%;
 @media only screen and (max-width: 768px) {
   /* CSS styles for smaller screens */
 
+
+
+  .left
+  {
+    width: 15%;
+  }
+
+  
+  .right
+  {
+    width: 85%;
+  }
   #logout 
 { 
   display: none;
