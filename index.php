@@ -49,7 +49,8 @@ if (!isset($_SESSION["username"])) {
 
         </div>
         <div class="right" id="right">
-
+<img id="image_chatting_user" src="" alt="">
+<h2 id="chatting_user_name" ></h2>
         
      
         </div>
@@ -81,7 +82,7 @@ if (!isset($_SESSION["username"])) {
 
 
 
-                            <a onclick="loadUserData('<?php echo $row['id']; ?>','<?php echo ucfirst($row['user']); ?>')">
+                            <a onclick="loadUserData('<?php echo $row['id']; ?>','<?php echo ucfirst($row['user']); ?>','<?php echo $img_path ?>')">
 
                             <div class="listuser">
 
@@ -136,28 +137,35 @@ if (!isset($_SESSION["username"])) {
 
     let intervalId = null;
 
-    function loadUserData(userId,selectedUserNAme) {
+    function loadUserData(userId,selectedUserNAme,imageSrc) {
         // Set the value of the receiver_id input field in the message form
         receiverIdField.value = userId;
-        const img = document.createElement("img");
-        const para_user_name = document.createElement("p");
-        img.setAttribute("src", "");
+        const image_chatting_user=document.getElementById('image_chatting_user');
+        image_chatting_user.style.display="block";
+        const chatting_user_name=document.getElementById('chatting_user_name');
 
-       // Set the id attribute
-        img.setAttribute("id", "chatting-user-image");
-        para_user_name.setAttribute("id", "chatting-user-name");
+        image_chatting_user.setAttribute('src',imageSrc);
+        chatting_user_name.innerHTML = selectedUserNAme;
 
-       // Add the image element to the div
-        const container = document.getElementById("right");
-        container.appendChild(para_user_name);
-        container.appendChild(img);
+    
+    
+    //     img.setAttribute("src", "");
+
+    //    // Set the id attribute
+    //     img.setAttribute("id", "chatting-user-image");
+    //     para_user_name.setAttribute("id", "chatting-user-name");
+
+    //    // Add the image element to the div
+    //     const container = document.getElementById("right");
+    //     container.appendChild(para_user_name);
+    //     container.appendChild(img);
 
 
 
-        //set the value of heading
+    //     //set the value of heading
        
-        para_user_name.textContent=selectedUserNAme;
-        // Fetch the user data and messages from the server
+    //     para_user_name.textContent=selectedUserNAme;
+    //     // Fetch the user data and messages from the server
         fetch('getUserData.php?userId=' + userId)
             .then(response => response.json())
             .then(data => {

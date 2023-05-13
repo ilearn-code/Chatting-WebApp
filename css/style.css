@@ -65,9 +65,18 @@ top: 0;
 
 
 .right {
+  display: flex;
   width: 70%;
   height: 4rem;
   background-color: #4CAF50;
+}
+#image_chatting_user
+{
+  display: none;
+  height: 90%;
+  width: 3.5rem;
+  border-radius: 50%;
+  justify-content: center;
 }
 
 .c1 {
