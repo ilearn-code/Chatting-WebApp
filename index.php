@@ -48,10 +48,10 @@ if (!isset($_SESSION["username"])) {
 
 
         </div>
-        <div class="right">
+        <div class="right" id="right">
 
         
-      <h1 id="right_heading"></h1>
+     
         </div>
 
     </header>
@@ -139,8 +139,24 @@ if (!isset($_SESSION["username"])) {
     function loadUserData(userId,selectedUserNAme) {
         // Set the value of the receiver_id input field in the message form
         receiverIdField.value = userId;
-        rightDiv=document.getElementById('right_heading');
-        rightDiv.textContent=selectedUserNAme;
+        const img = document.createElement("img");
+        const para_user_name = document.createElement("p");
+        img.setAttribute("src", "");
+
+       // Set the id attribute
+        img.setAttribute("id", "chatting-user-image");
+        para_user_name.setAttribute("id", "chatting-user-name");
+
+       // Add the image element to the div
+        const container = document.getElementById("right");
+        container.appendChild(para_user_name);
+        container.appendChild(img);
+
+
+
+        //set the value of heading
+       
+        para_user_name.textContent=selectedUserNAme;
         // Fetch the user data and messages from the server
         fetch('getUserData.php?userId=' + userId)
             .then(response => response.json())
