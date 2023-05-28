@@ -1,103 +1,109 @@
 /* Default styles */
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
-  .loginForm {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: auto;
-    background: #f7f7f7;
-    /* background-color: rgba(0,0,0,0.4); */
-  }
-  
-  .centered { 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    height: 80vh;
-    width: 70vw;
-    border-radius: 16px;
-   
-    box-shadow:0 0 128px 0 rgba(0,0,0,0.1), 0 32px 64px -48px rgba(0,0,0,0.5);
-  }
-  
-  input {
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    padding: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 100%;
-  }
-  button
-  {
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    padding: 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 100%;
-    margin-top: 20px;
-    background: #4CAF50;
-    color: #fff;
-    font-size: 17px;
-  }
-  
- 
-  a{
-    font-size: 17px;
-    color: #4CAF50;
-    text-decoration: none!important;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-a:hover{
-  text-decoration: underline!important;
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: auto;
+  background: #f7f7f7;
+  /* background-color: rgba(0,0,0,0.4); */
 }
-span{
-    font-size: 17px;
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  height: 80vh;
+  width: 70vw;
+  border-radius: 16px;
+
+  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
 }
-  
+
+input {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+button {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  margin-top: 20px;
+  background: #4CAF50;
+  color: #fff;
+  font-size: 17px;
+}
+
+
+a {
+  font-size: 17px;
+  color: #4CAF50;
+  text-decoration: none !important;
+}
+
+a:hover {
+  text-decoration: underline !important;
+}
+
+span {
+  font-size: 17px;
+}
+
 /* Media queries for tablet screens */
 @media screen and (max-width: 768px) {
-    /* Adjust height and width of .centered div */
-    .centered {
-      height: auto;
-      width: 90vw;
-    }
+
+  /* Adjust height and width of .centered div */
+  .centered {
+    height: auto;
+    width: 90vw;
   }
-  
-  /* Media queries for mobile screens */
-  @media screen and (max-width: 480px) {
-    /* Adjust width of .centered div */
-    .centered {
-      width: 100%;
-     
-    }
-    .loginForm {
-      justify-content: flex-start;
-      height: auto;
-      
-    }
+}
+
+/* Media queries for mobile screens */
+@media screen and (max-width: 480px) {
+
+  /* Adjust width of .centered div */
+  .centered {
+    width: 100%;
+
   }
-  
-  /* Media queries for screens with smaller height */
-  @media screen and (max-height: 600px) {
-    /* Adjust height of .loginForm div */
-    .centered {
-      width: 100%;
-     
-    }
-    .loginForm {
-      justify-content: flex-start;
-      height: auto;
-      
-    }
+
+  .loginForm {
+    justify-content: flex-start;
+    height: auto;
+
   }
-  
+}
+
+/* Media queries for screens with smaller height */
+@media screen and (max-height: 600px) {
+
+  /* Adjust height of .loginForm div */
+  .centered {
+    width: 100%;
+
+  }
+
+  .loginForm {
+    justify-content: flex-start;
+    height: auto;
+
+  }
+}

@@ -151,23 +151,7 @@ if (!isset($_SESSION["username"])) {
 
     
     
-    //     img.setAttribute("src", "");
-
-    //    // Set the id attribute
-    //     img.setAttribute("id", "chatting-user-image");
-    //     para_user_name.setAttribute("id", "chatting-user-name");
-
-    //    // Add the image element to the div
-    //     const container = document.getElementById("right");
-    //     container.appendChild(para_user_name);
-    //     container.appendChild(img);
-
-
-
-    //     //set the value of heading
-       
-    //     para_user_name.textContent=selectedUserNAme;
-    //     // Fetch the user data and messages from the server
+ 
         fetch('getUserData.php?userId=' + userId)
             .then(response => response.json())
             .then(data => {
