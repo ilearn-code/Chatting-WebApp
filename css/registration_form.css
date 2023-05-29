@@ -73,6 +73,7 @@ span {
   .centered {
     height: auto;
     width: 90vw;
+    box-shadow:none;
   }
 }
 
