@@ -193,7 +193,7 @@ if (!isset($_SESSION["username"])) {
                 .catch(error => {
                     console.error('Error retrieving user data:', error);
                 });
-        }, 1000); // Update every 5 seconds
+        }, 1000); // Update every 1 seconds
     }
 
 

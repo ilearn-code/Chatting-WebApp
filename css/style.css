@@ -122,6 +122,7 @@ top: 0;
 .message
 {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   margin: 10px;
   padding: 10px;
@@ -142,7 +143,8 @@ top: 0;
 
 #message_self_para
 {
-  max-width: 10vw;
+  width: auto;
+  height: auto;
   background:  #25D366;
   color: black;
   padding: 0.5rem;
@@ -150,8 +152,10 @@ top: 0;
   font-size: 1.2em;
 }
 #message_other_para
-{ 
-  max-width: 10vw;
+{ display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  height: auto;
   font-size: 1.2em;
   background-color: white;
   color: black;
