@@ -9,7 +9,7 @@ To ensure security, user passwords are stored in hashed form.
 Users can easily register and login to start chatting with other users that they have added. 
 The chat messages are saved in a database, and users can view their conversations in almost in real-time as they happen.
 
-Currently Working on this Project
+
 <img src="githubimg/main ui.png"  >
 <img src="githubimg/login.png"  >
 <img src="githubimg/register.png"  >
