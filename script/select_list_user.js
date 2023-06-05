@@ -14,7 +14,7 @@ function loadUserData(userId,selectedUserNAme,imageSrc) {
 
 
 
-    fetch('php_api//getUserData.php?userId=' + userId)
+    fetch('php_api/getUserData.php?userId=' + userId)
         .then(response => response.json())
         .then(data => {
             const userDataElement = document.getElementById('user-data');
