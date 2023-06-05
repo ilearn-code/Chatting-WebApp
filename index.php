@@ -44,7 +44,7 @@ if (!isset($_SESSION["username"])) {
 
 
 
-            <a id="logout" href="logout.php">Log out</a>
+            <a id="logout" href="login.php" method="get" action="php_api/logout.php">Log out</a>
 
 
 
