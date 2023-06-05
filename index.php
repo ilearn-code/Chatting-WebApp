@@ -69,41 +69,15 @@ if (!isset($_SESSION["username"])) {
             </div>
             <div class="listscroll">
 
-                <?php
-                require "db_conn.php";
-
-                $query = "SELECT * FROM `user`";
-                $run = mysqli_query($conn, $query);
+                
 
 
-                while ($row = mysqli_fetch_array($run)):
-                    if ($_SESSION["username"] != $row['user']) {
-                        $img_path = $row['img_path'];
-                        ?>
-                       
-
-
-
-                            <a onclick="loadUserData('<?php echo $row['id']; ?>','<?php echo ucfirst($row['user']); ?>','<?php echo $img_path ?>')">
-
-                            <div class="listuser">
-
-                                <img src="<?php echo $img_path ?>" >
-                                <strong id="nn">
-                                    <?php echo ucfirst($row['user']); ?>
-                                </strong>
-                                </div>
-                    </a>
 
 
 
 
                         
-                        <?php
-                    }
-
-
-                endwhile; ?>
+                  
             </div>
 
 
@@ -126,7 +100,7 @@ if (!isset($_SESSION["username"])) {
 
 
     </div>
-
+    <script src="script\list_user_fetch.js"></script>
 
 </body>
 
