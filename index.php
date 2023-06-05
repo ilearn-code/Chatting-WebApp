@@ -69,15 +69,7 @@ if (!isset($_SESSION["username"])) {
             </div>
             <div class="listscroll">
 
-                
-
-
-
-
-
-
-                        
-                  
+      
             </div>
 
 
@@ -100,7 +92,12 @@ if (!isset($_SESSION["username"])) {
 
 
     </div>
+    <script>
+  const senderIdSession = <?php echo $_SESSION['sender_id']; ?>;
+</script>
     <script src="script\list_user_fetch.js"></script>
+    <script src="script\select_list_user.js"></script>
+    <script src="script\send_chat_data.js"></script>
 
 </body>
 
@@ -111,106 +108,9 @@ if (!isset($_SESSION["username"])) {
 
 
 
-    let intervalId = null;
 
-    function loadUserData(userId,selectedUserNAme,imageSrc) {
-        // Set the value of the receiver_id input field in the message form
-        receiverIdField.value = userId;
-        const image_chatting_user=document.getElementById('image_chatting_user');
-        image_chatting_user.style.display="block";
-        const chatting_user_name=document.getElementById('chatting_user_name');
 
-        image_chatting_user.setAttribute('src',imageSrc);
-        chatting_user_name.innerHTML = selectedUserNAme;
-
-    
-    
  
-        fetch('getUserData.php?userId=' + userId)
-            .then(response => response.json())
-            .then(data => {
-                const userDataElement = document.getElementById('user-data');
-                let messagesHtml = '';
-                data.forEach(message => {
-                    const sender = message.sender_id == userId ? 'other' : 'self';
-                    messagesHtml += `<div class="message ${sender}">
-          <span id="message_${sender}_para">${message.message}</span>
-        </div>`;
-                });
-                userDataElement.innerHTML = messagesHtml;
-                userDataElement.scrollTop = userDataElement.scrollHeight;
-            })
-            .catch(error => {
-                console.error('Error retrieving user data:', error);
-            });
-
-        // Clear the interval before setting a new one
-        if (intervalId) {
-            clearInterval(intervalId);
-        }
-
-        // Update the chat window periodically
-        intervalId = setInterval(() => {
-            fetch('getUserData.php?userId=' + userId)
-                .then(response => response.json())
-                .then(data => {
-                    const userDataElement = document.getElementById('user-data');
-                    let messagesHtml = '';
-                    data.forEach(message => {
-                        const sender = message.sender_id == userId ? 'other' : 'self';
-                        messagesHtml += `<div class="message ${sender}">
-                        <span id="message_${sender}_para">${message.message}</span>
-          </div>`;
-                    });
-                    userDataElement.innerHTML = messagesHtml;
-                })
-                .catch(error => {
-                    console.error('Error retrieving user data:', error);
-                });
-        }, 1000); // Update every 1 seconds
-    }
-
-
-
-    // Add event listener to the submit button to prevent default form submission and send data using fetch API
-    document.getElementById("input_user_message_button").addEventListener("click", function (event) {
-        event.preventDefault();
-        sendData();
-       
-  
-    });
-
-    function sendData() {
-        const form = document.getElementById("myForm");
-        const formData = new FormData(form);
-        fetch("inputmsg.php", {
-            method: "POST",
-            body: formData,
-        })
-            .then((response) => {
-                console.log(response);
-                // If the message was successfully sent to the server, add it to the chat window
-                if (response.ok) {
-                    const message = document.getElementById("input_message_id").value;
-                    const userDataElement = document.getElementById("user-data");
-                    
-                    const sender = <?php echo $_SESSION['sender_id']; ?>;
-                    const receiver = document.getElementById("receiverIdField").value;
-                    const messageHtml = `<div class="message self"><p>${message}</p></div>`;
-                    // If the chat window is currently showing the conversation between the sender and receiver, add the new message to it
-                    if (sender == receiver) {
-                        userDataElement.innerHTML += messageHtml;
-                        
-                    }
-                    document.getElementById('input_message_id').value = "";
-                    userDataElement.scrollTop = userDataElement.scrollHeight;
-                }
-            })
-            .catch((error) => {
-                console.error("Error sending data:", error);
-            });
-    }
-
 
 </script>
 

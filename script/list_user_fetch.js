@@ -33,11 +33,11 @@
       })
       .catch(error => {
         // Handle any errors
-        console.error(error);
+        console.error("ERROR",error);
       });
   
-    function loadUserData(userId, name, imgPath) {
+     
       // Your code to handle the loadUserData action
-    }
+    
   })();
   
