@@ -20,7 +20,7 @@ if (!isset($_SESSION["username"])) {
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
-    <script>
+      <script>
   const senderIdSession = <?php echo $_SESSION['sender_id']; ?>;
 </script>
 </head>
@@ -96,7 +96,7 @@ if (!isset($_SESSION["username"])) {
 
     </div>
   
-    <script src="./script/list_user_fetch.js"></script>
+    <script src="script\list_user_fetch.js"></script>
     <script src="script\select_list_user.js"></script>
     <script src="script\send_chat_data.js"></script>
 

@@ -32,14 +32,14 @@ function loadUserData(userId,selectedUserNAme,imageSrc) {
             console.error('Error retrieving user data:', error);
         });
 
-    // Clear the interval before setting a new one
+   // Clear the interval before setting a new one
     if (intervalId) {
         clearInterval(intervalId);
     }
 
     // Update the chat window periodically
     intervalId = setInterval(() => {
-        fetch('getUserData.php?userId=' + userId)
+        fetch('php_api/getUserData.php?userId=' + userId)
             .then(response => response.json())
             .then(data => {
                 const userDataElement = document.getElementById('user-data');

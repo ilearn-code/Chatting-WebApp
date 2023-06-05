@@ -6,7 +6,8 @@
         // Process the JSON data
         console.log("hi");
         for (let userId in data) {
-            
+            if(senderIdSession!=userId)
+            {
           let user = data[userId];
           let name = user.name;
           let imgPath = user.img_path;
@@ -33,6 +34,7 @@
           // Append the link to the listscroll div
           document.querySelector('.listscroll').appendChild(link);
         }
+    }
       })
       .catch(error => {
         // Handle any errors
