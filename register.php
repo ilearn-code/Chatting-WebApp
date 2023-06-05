@@ -12,7 +12,7 @@
 
     <div class="loginForm">
         <div class="centered">
-        <form  method="post" name="register" action="registerp.php" enctype="multipart/form-data" >
+        <form  method="post" name="register" action="php_api/registerp.php" enctype="multipart/form-data" >
                 <h1>Realtime Chat App</h1>
                 <input type="text"  name="username" placeholder="Username" />
                 <br>
