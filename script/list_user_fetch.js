@@ -1,9 +1,12 @@
 (function() {
-    fetch('list_user.php')
+    
+    fetch('php_api/list_user.php')
       .then(response => response.json())
       .then(data => {
         // Process the JSON data
+        console.log("hi");
         for (let userId in data) {
+            
           let user = data[userId];
           let name = user.name;
           let imgPath = user.img_path;

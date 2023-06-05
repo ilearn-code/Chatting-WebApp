@@ -1,5 +1,5 @@
 <?php
-require "db_conn.php";
+require "../db_conn.php";
 
 // Initialize variables for error messages
 $nameErr= $emailErr= "";

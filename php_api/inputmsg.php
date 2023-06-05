@@ -1,6 +1,6 @@
 <?php
 
-require "db_conn.php";
+require "../db_conn.php";
 session_start();
 if (isset($_SESSION['sender_id']) && isset($_POST["receiver_id"]) && isset($_POST['msg'])) {
 	$m = $_POST['msg'];

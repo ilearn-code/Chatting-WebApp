@@ -1,5 +1,5 @@
 <?php
-                require "db_conn.php";
+                require "../db_conn.php";
           
                 $query = "SELECT * FROM `user`";
                 $run = mysqli_query($conn, $query);
@@ -7,7 +7,7 @@
 
                 while ($row = mysqli_fetch_array($run))
                     {
-                    if ("drag"!==$row['user']) {
+                    if (isset($row['user'])) {
 
                         $user_id = $row['id'];
                         $user_name = $row['user'];

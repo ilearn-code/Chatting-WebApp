@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "db_conn.php";
+in "../db_conn.php";
 
 $userId = $_GET['userId'];
 $loggedInUserId =$_SESSION["sender_id"];

@@ -9,7 +9,7 @@
 function sendData() {
     const form = document.getElementById("myForm");
     const formData = new FormData(form);
-    fetch("inputmsg.php", {
+    fetch('php_api/inputmsg.php', {
         method: "POST",
         body: formData,
     })
