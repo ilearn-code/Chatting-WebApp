@@ -4,6 +4,7 @@ let intervalId = null;
 function loadUserData(userId,selectedUserNAme,imageSrc) {
     // Set the value of the receiver_id input field in the message form
     receiverIdField.value = userId;
+    console.log(userId)
     const image_chatting_user=document.getElementById('image_chatting_user');
     image_chatting_user.style.display="block";
     const chatting_user_name=document.getElementById('chatting_user_name');
@@ -17,6 +18,7 @@ function loadUserData(userId,selectedUserNAme,imageSrc) {
     fetch('php_api/getUserData.php?userId=' + userId)
         .then(response => response.json())
         .then(data => {
+            console.log(data);
             const userDataElement = document.getElementById('user-data');
             let messagesHtml = '';
             data.forEach(message => {

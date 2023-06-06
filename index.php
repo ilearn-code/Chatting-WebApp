@@ -14,6 +14,7 @@
     <title>Document</title>
       <script >
   const senderIdSession = localStorage.getItem('sender_id');
+  console.log(senderIdSession);
 </script>
 </head>
 
@@ -21,18 +22,7 @@
 
     <header class="continer">
         <div class="left">
-<!-- <?php
-            require "db_conn.php";
-            $propfilepic = $_SESSION['username'];
-            $q_profile_pic = mysqli_query($conn, "SELECT * FROM user WHERE user='$propfilepic'");
-            $row_profile_pic = mysqli_fetch_array($q_profile_pic);
-            $img_pathp = $row_profile_pic['img_path'];
-            $pp_name = $row_profile_pic['user'];
-            echo "<div class=img_n_name>";
-            echo "<img src=\"$img_pathp\">";
-            echo '<strong id="login_user_name">' . ucfirst($pp_name) . '</strong>';
-            echo "</div>";            
-            ?> -->
+
 
 
 
