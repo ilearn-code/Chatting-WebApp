@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "db_conn.php";
+require "../db_conn.php";
 
 $response = array(); // Create an array to store the response data
 
@@ -31,8 +31,15 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             if (password_verify($password, $hash)) {
                 $_SESSION['username'] = $username;
                 $_SESSION['sender_id'] = $row['id'];
+               
+            
+                // Store the login token in the user's session or database
+               
 
-                $response['success'] = "Login successful";
+                $response['success'] = array(
+                    'username'=>$username,
+                    'sender_id'=>$row['id']
+                );
             } else {
                 $response['error'] = "Incorrect password";
             }

@@ -21,6 +21,6 @@
 </div>
 </div>   
 
-
+<script src="script/login_user_with_session.js"></script>
 </body>
 </html>

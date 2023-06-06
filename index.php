@@ -1,12 +1,4 @@
-<?php
-session_start();
-if (!isset($_SESSION["username"])) {
 
-    header("Location: login.php");
-    exit();
-
-}
-?>
 
 
 <!DOCTYPE html>
@@ -20,8 +12,8 @@ if (!isset($_SESSION["username"])) {
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
-      <script>
-  const senderIdSession = <?php echo $_SESSION['sender_id']; ?>;
+      <script >
+  const senderIdSession = localStorage.getItem('sender_id');
 </script>
 </head>
 
@@ -29,7 +21,7 @@ if (!isset($_SESSION["username"])) {
 
     <header class="continer">
         <div class="left">
-            <?php
+<!-- <?php
             require "db_conn.php";
             $propfilepic = $_SESSION['username'];
             $q_profile_pic = mysqli_query($conn, "SELECT * FROM user WHERE user='$propfilepic'");
@@ -39,8 +31,8 @@ if (!isset($_SESSION["username"])) {
             echo "<div class=img_n_name>";
             echo "<img src=\"$img_pathp\">";
             echo '<strong id="login_user_name">' . ucfirst($pp_name) . '</strong>';
-            echo "</div>";
-            ?>
+            echo "</div>";            
+            ?> -->
 
 
 
