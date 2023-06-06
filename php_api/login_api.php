@@ -38,7 +38,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
                 $response['success'] = array(
                     'username'=>$username,
-                    'sender_id'=>$row['id']
+                    'sender_id'=>$row['id'],
+                    'img_path'=>$row['img_path']
                 );
             } else {
                 $response['error'] = "Incorrect password";

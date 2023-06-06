@@ -22,8 +22,14 @@
 
     <header class="continer">
         <div class="left">
+            
+          
 
-
+<div class=img_n_name>
+         <img id="login_user_image_id" src="" alt="">
+         <strong id="userName" ></strong>
+        
+        </div>
 
 
             <a id="logout">Log out</a>
@@ -77,10 +83,11 @@
 
 
     </div>
-    <script src="script\logout_fetch.js"></script>
+    
     <script src="script\list_user_fetch.js"></script>
     <script src="script\select_list_user.js"></script>
     <script src="script\send_chat_data.js"></script>
+    <script src="script\logout_fetch.js"></script>
 
 </body>
 

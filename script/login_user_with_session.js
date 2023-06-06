@@ -32,6 +32,7 @@
           // Store session on device
           localStorage.setItem('username', data.success.username);
           localStorage.setItem('sender_id', data.success.sender_id);
+          localStorage.setItem('img_path', data.success.img_path);
           
           // Redirect to another page or perform additional actions
           window.location.href = 'index.php';

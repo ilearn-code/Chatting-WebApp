@@ -18,6 +18,7 @@ top: 0;
 .left {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 4rem;
   width: 30%;
   background-color: #4CAF50;
@@ -26,6 +27,8 @@ top: 0;
 {
   height: 80%;
   display: flex; 
+  justify-content: baseline;
+  align-items: center;
   margin: 0.5rem;
 }
 
@@ -37,12 +40,14 @@ top: 0;
 
 }
 
-#login_user_name
+#userName
 {
-  height: 80%;
+
   width: 3rem;
   margin: 0.5rem;
   flex: 0 1 auto; 
+ 
+  
 }
 
 #logout 
@@ -327,8 +332,10 @@ padding-left: 2%;
   {
     width: 15%;
   }
-
-  
+ #userName
+  {
+    display: none;
+  }
   .right
   {
     width: 85%;
