@@ -26,7 +26,7 @@
 
 
 
-            <a id="logout" href="login.php" method="get" action="php_api/logout.php">Log out</a>
+            <a id="logout">Log out</a>
 
 
 
@@ -77,7 +77,7 @@
 
 
     </div>
-  
+    <script src="script\logout_fetch.js"></script>
     <script src="script\list_user_fetch.js"></script>
     <script src="script\select_list_user.js"></script>
     <script src="script\send_chat_data.js"></script>
