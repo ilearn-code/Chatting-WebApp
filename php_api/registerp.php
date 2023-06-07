@@ -75,7 +75,7 @@ if ($uploadOK == 1 && $nameErr == "" && $emailErr == "" && isset($file_path) && 
     $query = "INSERT INTO `user` (`id`, `user`, `password`, `email`, `img_path`) VALUES (UUID(), '$name', '$secure_pass', '$email', '$file_path');";
     move_uploaded_file($file_tmp, $file_path);
     mysqli_query($conn, $query);
-    header('Location: login.php');
+    header('Location: ../login.php');
   }
 }
 
