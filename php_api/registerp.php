@@ -38,7 +38,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 if (isset($_FILES["profile_pic"])) {
   $file_tmp = $_FILES["profile_pic"]["tmp_name"];
   $file_name = $_FILES["profile_pic"]["name"];
-  $file_path = "photo/" . $file_name;
+  $file_path =  "../photo/" . $file_name;
+  $file_path2 =  "photo/" . $file_name;
+ echo $file_path;
   $check = getimagesize($file_tmp);
   $imageFileType = strtolower(pathinfo($file_path, PATHINFO_EXTENSION));
 
@@ -72,7 +74,7 @@ if ($uploadOK == 1 && $nameErr == "" && $emailErr == "" && isset($file_path) && 
   $secure_pass = password_hash($pass, PASSWORD_DEFAULT);
 
   if ($pass == $re_pass) {
-    $query = "INSERT INTO `user` (`id`, `user`, `password`, `email`, `img_path`) VALUES (UUID(), '$name', '$secure_pass', '$email', '$file_path');";
+    $query = "INSERT INTO `user` (`id`, `user`, `password`, `email`, `img_path`) VALUES (UUID(), '$name', '$secure_pass', '$email', '$file_path2');";
     move_uploaded_file($file_tmp, $file_path);
     mysqli_query($conn, $query);
     header('Location: ../login.php');
