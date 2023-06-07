@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <html>
 
@@ -16,6 +15,8 @@
   const senderIdSession = localStorage.getItem('sender_id');
   console.log(senderIdSession);
 </script>
+
+
 </head>
 
 <body>
@@ -83,7 +84,7 @@
 
 
     </div>
-    
+    <script src="script\login_redirect_page.js"></script>
     <script src="script\list_user_fetch.js"></script>
     <script src="script\select_list_user.js"></script>
     <script src="script\send_chat_data.js"></script>

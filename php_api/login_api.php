@@ -29,17 +29,23 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             $hash = $row['password'];
 
             if (password_verify($password, $hash)) {
+                // Generate a unique session ID for the user
+                $session_id = generateUniqueSessionId();
+
+                // Store session ID and user ID in the database
+                $userId = $row['id'];
+                storeSessionData($session_id, $userId);
+
+                // Set session variables
+                $_SESSION['session_id'] = $session_id;
                 $_SESSION['username'] = $username;
-                $_SESSION['sender_id'] = $row['id'];
-               
-            
-                // Store the login token in the user's session or database
-               
+                $_SESSION['sender_id'] = $userId;
+                $_SESSION['img_path'] = $row['img_path'];
 
                 $response['success'] = array(
-                    'username'=>$username,
-                    'sender_id'=>$row['id'],
-                    'img_path'=>$row['img_path']
+                    'username' => $username,
+                    'sender_id' => $userId,
+                    'img_path' => $row['img_path']
                 );
             } else {
                 $response['error'] = "Incorrect password";
@@ -54,4 +60,18 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 header('Content-Type: application/json');
 echo json_encode($response);
+
+// Function to generate a unique session ID
+function generateUniqueSessionId() {
+    return uniqid();
+}
+
+// Function to store session data in the database
+function storeSessionData($session_id, $user_id) {
+    // Implement your code to store the session data in the database
+    // Store the session_id and user_id in a table that associates the session data with each user
+    // You can create a new table or modify an existing one for this purpose
+    // Ensure proper security measures are in place to prevent SQL injection or unauthorized access
+}
+
 ?>

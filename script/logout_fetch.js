@@ -8,6 +8,7 @@ logout_button.addEventListener('click', function (event) {
             console.log(data)
             localStorage.removeItem('username');
             localStorage.removeItem('sender_id');
+            localStorage.removeItem('img_path');
 
             // Redirect to another page or perform additional actions
             window.location.href = 'login.php';
