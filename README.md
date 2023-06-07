@@ -1,4 +1,4 @@
-# watsap-clone-lates-master-latesst
+# Realtime-Chat-Web-App
 
 This is a dynamic chatting website built using PHP and Ajax technology. 
 
