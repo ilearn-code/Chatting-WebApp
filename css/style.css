@@ -392,7 +392,7 @@ padding-left: 2%;
 
   .left
   {
-    width: 15%;
+    width: 17%;
     
   }
 
@@ -409,7 +409,7 @@ padding-left: 2%;
   }
   .right
   {
-    width: 85%;
+    width: 83%;
   }
 
 
@@ -430,14 +430,14 @@ display: none;
 }
 
 .l1 {
-  width: 15%;
+  width: 17%;
   height: calc( 100vh - 4rem );
   background-color: #F2E9EA;
 }
 
 .r1 {
 
-  width: 85%;
+  width: 83%;
   height: calc(100vh - 4rem);
   background-color: #4CAF50;
 
