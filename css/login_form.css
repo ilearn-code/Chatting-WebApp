@@ -5,6 +5,11 @@
 scroll-behavior: smooth;
 
 }
+#errorMessage
+{
+  color: red;
+}
+
 
 .loginForm {
 
@@ -62,6 +67,7 @@ a {
 a:hover {
   text-decoration: underline !important;
 }
+
 
 
 

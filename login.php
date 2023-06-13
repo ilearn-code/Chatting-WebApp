@@ -18,6 +18,7 @@
         <button type="submit" name="submit">Continue to chat</button>
   </form>
   <span>Not yet signed up?<a href="./register.php">Signup Now</a></span>
+  <span id="errorMessage"></span>
 </div>
 </div>   
 

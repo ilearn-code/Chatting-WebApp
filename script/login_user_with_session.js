@@ -8,6 +8,7 @@ loginForm.addEventListener('submit', function(event) {
 
   const username = loginForm.elements.username.value;
   const password = loginForm.elements.password.value;
+  let errorSpan=document.getElementById('errorMessage');
 
   fetch('php_api/login_api.php', {
     method: 'POST',
@@ -21,9 +22,11 @@ loginForm.addEventListener('submit', function(event) {
     if (data.error) {
       // Handle login error
       console.log('Login error:', data.error);
+      errorSpan.innerHTML=data.error;
     } else {
       // Login success
       console.log(data);
+      errorSpan.innerHTML="SUCCESS";
       console.log('Login successful');
       console.log('Username:', data.success.username);
       console.log('Sender ID:', data.success.sender_id);
@@ -45,6 +48,7 @@ loginForm.addEventListener('submit', function(event) {
   .catch(error => {
     // Handle any errors
     console.error('Error:', error);
+    errorSpan.innerHTML=error;
   });
 });
 
