@@ -30,20 +30,20 @@
           
 
 <div class=img_n_name>
-         <img id="login_user_image_id" src="" alt="">
+       <img id="login_user_image_id" src="" alt="">
          <strong id="userName" ></strong>
         
         </div>
 
-
-            <!-- <a id="logout">Log out</a> -->
+   
+            <!-- <a >Log out</a> -->
 
 <div class="dropdown">
   <a class="dropdown-button" onclick="toggleDropdown()">
     <i class="fi fi-rr-menu-dots-vertical"></i>
 </a>
   <div class="dropdown-content">
-    <a href="#">Logout</a>
+    <a id="logout">Logout</a>
     <a href="#">Settings</a>
   </div>
 </div>
@@ -111,13 +111,18 @@
 function toggleDropdown() {
   const dropdown = document.querySelector('.dropdown');
   dropdown.classList.toggle('show');
-  console.log('no');
+
+}
+function toggleDropdown2() {
+  const dropdown = document.querySelector('.dropdown2');
+  dropdown.classList.toggle('show');
+
 }
 
 // Close the dropdown if the user clicks outside of it
 window.addEventListener('click', function (event) {
   const dropdown = document.querySelector('.dropdown');
-  console.log('yes');
+ 
   if (!event.target.matches('.dropdown-button') && dropdown.classList.contains('show')) {
     dropdown.classList.remove('show');
   }
