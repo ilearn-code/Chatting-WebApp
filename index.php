@@ -29,7 +29,7 @@
             
           
 
-<div class=img_n_name>
+<div class="img_n_name" onclick="toggleDropdown()" >
        <img id="login_user_image_id" src="" alt="">
          <strong id="userName" ></strong>
         
@@ -54,7 +54,7 @@
         </div>
         
         <div class="right" id="right">
-        <div class=img_n_name>
+        <div class=img_n_name2>
          <img id="image_chatting_user" src="" alt="">
          <strong id="chatting_user_name" ></strong>
         
@@ -109,25 +109,16 @@
 
 
 function toggleDropdown() {
-  const dropdown = document.querySelector('.dropdown');
+  let dropdown = document.querySelector('.dropdown');
   dropdown.classList.toggle('show');
-
-}
-function toggleDropdown2() {
-  const dropdown = document.querySelector('.dropdown2');
-  dropdown.classList.toggle('show');
-
 }
 
-// Close the dropdown if the user clicks outside of it
-window.addEventListener('click', function (event) {
-  const dropdown = document.querySelector('.dropdown');
- 
-  if (!event.target.matches('.dropdown-button') && dropdown.classList.contains('show')) {
+window.addEventListener('click', function(event) {
+  let dropdown = document.querySelector('.dropdown');
+  if (!event.target.matches('.dropdown-button') && !event.target.closest('.dropdown') &&!event.target.closest('.img_n_name') && dropdown.classList.contains('show')) {
     dropdown.classList.remove('show');
   }
 });
-
 
 
 
