@@ -10,10 +10,13 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <title>Document</title>
       <script >
   const senderIdSession = localStorage.getItem('sender_id');
   console.log(senderIdSession);
+
+  
 </script>
 
 
@@ -33,8 +36,17 @@
         </div>
 
 
-            <a id="logout">Log out</a>
+            <!-- <a id="logout">Log out</a> -->
 
+<div class="dropdown">
+  <a class="dropdown-button" onclick="toggleDropdown()">
+    <i class="fi fi-rr-menu-dots-vertical"></i>
+</a>
+  <div class="dropdown-content">
+    <a href="#">Logout</a>
+    <a href="#">Settings</a>
+  </div>
+</div>
 
 
 
@@ -96,6 +108,20 @@
 
 
 
+function toggleDropdown() {
+  const dropdown = document.querySelector('.dropdown');
+  dropdown.classList.toggle('show');
+  console.log('no');
+}
+
+// Close the dropdown if the user clicks outside of it
+window.addEventListener('click', function (event) {
+  const dropdown = document.querySelector('.dropdown');
+  console.log('yes');
+  if (!event.target.matches('.dropdown-button') && dropdown.classList.contains('show')) {
+    dropdown.classList.remove('show');
+  }
+});
 
 
 
