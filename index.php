@@ -44,7 +44,7 @@
 </a>
   <div class="dropdown-content">
     <a id="logout">Logout</a>
-    <a onclick="showPopup()" >Settings</a>
+    <a id="profileUpdate" onclick="showPopup()" >Profile</a>
   </div>
 </div>
 
@@ -116,30 +116,10 @@
     <script src="script\select_list_user.js"></script>
     <script src="script\send_chat_data.js"></script>
     <script src="script\logout_fetch.js"></script>
+    <script src="script/dropdown.js"></script>
 
 </body>
 
-<script>
 
-
-
-function toggleDropdown() {
-  let dropdown = document.querySelector('.dropdown');
-  dropdown.classList.toggle('show');
-}
-
-window.addEventListener('click', function(event) {
-  let dropdown = document.querySelector('.dropdown');
-  if (!event.target.matches('.dropdown-button') && !event.target.closest('.dropdown') &&!event.target.closest('.img_n_name') && dropdown.classList.contains('show')) {
-    dropdown.classList.remove('show');
-  }
-});
-
-
-
-
- 
-
-</script>
 
 </html>

@@ -403,6 +403,14 @@ padding-left: 2%;
   border-radius: 5px;
 }
 
+#profileUpdate
+{
+  cursor: pointer;
+}
+#profileUpdate:hover
+{
+  background-color: #25D366;
+}
 #profilePic {
   width: 100px;
   height: 100px;
