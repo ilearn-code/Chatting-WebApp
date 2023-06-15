@@ -109,7 +109,7 @@ top: 0;
   margin: 0.5rem;
   flex: 0 1 auto; 
  
-  
+  text-transform: capitalize;
 }
 
 #logout 
@@ -146,6 +146,7 @@ top: 0;
     width: 3rem;
     margin: 0.5rem;
     flex: 0 1 auto;
+    text-transform: capitalize;
 }
 
 .c1 {
@@ -326,6 +327,7 @@ h3 {
 .listuser strong
 {
 padding-left: 2%;
+text-transform: capitalize;
 }
 
 
@@ -405,13 +407,25 @@ padding-left: 2%;
   border-radius: 5px;
 }
 
+.profile_Details{
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .popup_tittle
 {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
   border-bottom:2px solid gray ;
 }
+
+
 
 #profileUpdate
 {
@@ -433,6 +447,10 @@ padding-left: 2%;
   border-radius: 50%;
   height: 100%;
   width: 100%;
+}
+#namePop
+{
+  text-transform: capitalize;
 }
 
 
@@ -473,6 +491,7 @@ padding-left: 2%;
  #userName
   {
     display: none;
+
   }
   .right
   {
@@ -494,6 +513,7 @@ padding-left: 2%;
 #nn
 {
 display: none;
+
 }
 
 .l1 {

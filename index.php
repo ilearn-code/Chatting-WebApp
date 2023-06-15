@@ -102,7 +102,7 @@
   <div id="popupContent">
     <div class="popup_tittle">
     <span>Profile</span>
-    <button>bt</button>
+    <a style="vertical-align: middle;"><i class="fi fi-rr-rectangle-xmark"></i></a>
     </div>
    <Div class="profile_Details">
    <div id="profilePic">

@@ -7,13 +7,16 @@
   
   console.log(localStorage.getItem('img_path'));
   let userNameElement = document.getElementById('userName');
-  userNameElement.textContent=localStorage.getItem('username');
+  const storedUsername = localStorage.getItem('username');
+  const capitalizedUsername = storedUsername.charAt(0).toUpperCase() + storedUsername.slice(1);
+  userNameElement.textContent = capitalizedUsername;
+  
 
     fetch('php_api/list_user.php')
       .then(response => response.json())
       .then(data => {
         // Process the JSON data
-        console.log("hi");
+     
         for (let userId in data) {
             if(senderIdSession!=userId)
             {
