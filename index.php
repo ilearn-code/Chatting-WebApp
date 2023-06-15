@@ -44,7 +44,7 @@
 </a>
   <div class="dropdown-content">
     <a id="logout">Logout</a>
-    <a href="#">Settings</a>
+    <a onclick="showPopup()" >Settings</a>
   </div>
 </div>
 
@@ -96,6 +96,21 @@
 
 
     </div>
+
+
+
+
+    <div id="popupContainer">
+  <div id="popupContent">
+    <div id="profilePic"></div>
+    <p id="email"></p>
+  </div>
+</div>
+
+
+
+      <script src="script/popup.js"></script>
+
     <script src="script\login_redirect_page.js"></script>
     <script src="script\list_user_fetch.js"></script>
     <script src="script\select_list_user.js"></script>
