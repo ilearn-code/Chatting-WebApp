@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
           console.log('Registration failed');
           // Display error messages to the user
           const errorSpan = document.getElementById('errorMessage');
-          errorSpan.innerHTML = '';
+          errorSpan.innerHTML = 'Registration failed';
   
           for (const key in data) {
             const errorMessage = data[key];
