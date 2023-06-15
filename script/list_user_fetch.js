@@ -1,10 +1,14 @@
 (function() {
   let imageElement = document.getElementById('login_user_image_id');
+ 
+
+
   imageElement.setAttribute('src', localStorage.getItem('img_path'));
   
   console.log(localStorage.getItem('img_path'));
   let userNameElement = document.getElementById('userName');
   userNameElement.textContent=localStorage.getItem('username');
+
     fetch('php_api/list_user.php')
       .then(response => response.json())
       .then(data => {

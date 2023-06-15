@@ -15,8 +15,6 @@
       <script >
   const senderIdSession = localStorage.getItem('sender_id');
   console.log(senderIdSession);
-
-  
 </script>
 
 
@@ -36,7 +34,7 @@
         </div>
 
    
-            <!-- <a >Log out</a> -->
+          
 
 <div class="dropdown">
   <a class="dropdown-button" onclick="toggleDropdown()">
@@ -102,8 +100,13 @@
 
     <div id="popupContainer">
   <div id="popupContent">
-    <div id="profilePic"></div>
-    <p id="email"></p>
+    <div id="profilePic">
+      <img id="popProfile" src="" alt="">
+    </div>
+    <p id="namePop"></p>
+    <p id="emailPop"></p>
+    
+    
   </div>
 </div>
 

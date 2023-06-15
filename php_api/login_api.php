@@ -44,6 +44,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
                 $response['success'] = array(
                     'username' => $username,
+                    'email' => $row['email'],
                     'sender_id' => $userId,
                     'img_path' => $row['img_path']
                 );

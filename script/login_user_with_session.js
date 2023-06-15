@@ -30,16 +30,19 @@ loginForm.addEventListener('submit', function(event) {
       console.log('Login successful');
       console.log('Username:', data.success.username);
       console.log('Sender ID:', data.success.sender_id);
+      console.log('email',data.success.email)
 
       // Store session data in the frontend
       const username = data.success.username;
       const senderId = data.success.sender_id;
       const imgPath = data.success.img_path;
-
+      const EmailSuccess = data.success.email;
       // Set session data in localStorage or sessionStorage
       localStorage.setItem('username', username);
       localStorage.setItem('sender_id', senderId);
       localStorage.setItem('img_path', imgPath);
+      localStorage.setItem('img_path', imgPath);
+      localStorage.setItem('email',EmailSuccess);
 
       // Redirect to another page or perform additional actions
       window.location.href = 'index.php';
