@@ -100,11 +100,19 @@
 
     <div id="popupContainer">
   <div id="popupContent">
-    <div id="profilePic">
+    <div class="popup_tittle">
+    <span>Profile</span>
+    <button>bt</button>
+    </div>
+   <Div class="profile_Details">
+   <div id="profilePic">
       <img id="popProfile" src="" alt="">
     </div>
     <p id="namePop"></p>
     <p id="emailPop"></p>
+
+   </Div>
+
     
     
   </div>
