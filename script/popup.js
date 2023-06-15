@@ -18,3 +18,10 @@ function showPopup() {
     popupContainer.style.display = 'block';
   }
   
+  const closePopUp=document.getElementById('closePopUp');
+  closePopUp.addEventListener('click',
+function()
+  {
+    popupContainer.style.display = 'none';
+   
+  });

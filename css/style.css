@@ -453,8 +453,12 @@ text-transform: capitalize;
   text-transform: capitalize;
 }
 
+#closePopUp
+{
+vertical-align: middle;
+cursor: pointer;
 
-
+}
 @media only screen and (max-width: 768px) {
   /* CSS styles for smaller screens */
 
