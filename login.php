@@ -13,8 +13,8 @@
 <div class="centered">
 <form  method="post" name="login">
         <h1>Realtime Chat App</h1>
-        <input type="text"  name="username" placeholder="Username"/>
-        <input type="password" name="password" placeholder="Password"/>
+        <input type="text"  name="username" placeholder="Username" required/>
+        <input type="password" name="password" placeholder="Password" required/>
         <button type="submit" name="submit">Continue to chat</button>
   </form>
   <span>Not yet signed up?<a href="./register.php">Signup Now</a></span>

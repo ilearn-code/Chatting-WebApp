@@ -67,6 +67,17 @@ span {
   font-size: 17px;
 }
 
+
+#errorMessage
+{
+color: red;
+}
+
+
+
+
+
+
 /* Media queries for tablet screens */
 @media screen and (max-width: 768px) {
 

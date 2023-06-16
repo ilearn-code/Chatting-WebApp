@@ -14,15 +14,15 @@
         <div class="centered">
         <form   name="register" enctype="multipart/form-data" >
                 <h1>Realtime Chat App</h1>
-                <input type="text"  name="username" placeholder="Username" />
+                <input type="text"  name="username" placeholder="Username" required/>
                 <br>
-                <input type="email"  name="email" placeholder="email" />
+                <input type="email"  name="email" placeholder="email" required/>
                 <br>
-                <input type="password" name="password" placeholder="Password" />
+                <input type="password" name="password" placeholder="Password" required/>
                 <br>
-                <input type="password" name="confirm" placeholder="Confirm Password" />
+                <input type="password" name="confirm" placeholder="Confirm Password" required />
                 <br>
-                <input type="file" name="profile_pic" placeholder="Select profile pic" >
+                <input type="file" name="profile_pic" placeholder="Select profile pic" required>
                 <br>
                 <!-- <input type="submit"  name="submit"/> -->
                 <button type="submit" name="submit">Continue to chat</button>
