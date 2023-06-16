@@ -84,14 +84,21 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 // Insert data into database if all validations are passed
 if ($uploadOK == 1 && empty($response) && isset($file_path) && isset($name) && isset($email) && isset($pass)) {
-  $secure_pass = password_hash($pass, PASSWORD_DEFAULT);
+  // Check if username or email already exists in the database
+  $query = "SELECT * FROM `user` WHERE `user`='$name' OR `email`='$email'";
+  $result = mysqli_query($conn, $query);
+  if (mysqli_num_rows($result) > 0) {
+    $response['error_exists'] = "Username or email already exists";
+  } else {
+    $secure_pass = password_hash($pass, PASSWORD_DEFAULT);
 
-  $query = "INSERT INTO `user` (`id`, `user`, `password`, `email`, `img_path`) VALUES (UUID(), '$name', '$secure_pass', '$email', '$file_path2');";
-  move_uploaded_file($file_tmp, $file_path);
-  mysqli_query($conn, $query);
+    $insert_query = "INSERT INTO `user` (`id`, `user`, `password`, `email`, `img_path`) VALUES (UUID(), '$name', '$secure_pass', '$email', '$file_path2');";
+    move_uploaded_file($file_tmp, $file_path);
+    mysqli_query($conn, $insert_query);
 
-  $response['success'] = true;
-  $response['message'] = "Registration successful";
+    $response['success'] = true;
+    $response['message'] = "Registration successful";
+  }
 }
 
 mysqli_close($conn);
