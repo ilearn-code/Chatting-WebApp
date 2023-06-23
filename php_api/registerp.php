@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     } else {
         $name = testInput($_POST['username']);
         if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
-            $response['error_name'] = "Only letters and white space allowed";
+            $response['error_name'] = "Only letters and white space allowed in username";
         }
     }
 
@@ -105,12 +105,15 @@ if ($uploadOK == 1 && empty($response) && isset($file_path) && isset($name) && i
         $insert_query = "INSERT INTO `user` (`id`, `user`, `password`, `email`, `img_path`) VALUES (UUID(), ?, ?, ?, ?)";
         $stmt = mysqli_prepare($conn, $insert_query);
         mysqli_stmt_bind_param($stmt, "ssss", $name, $secure_pass, $email, $file_path2);
-        mysqli_stmt_execute($stmt);
+        if(mysqli_stmt_execute($stmt))
+{
 
-        move_uploaded_file($file_tmp, $file_path);
+    move_uploaded_file($file_tmp, $file_path);
 
-        $response['success'] = true;
-        $response['message'] = "Registration successful";
+    $response['success'] = true;
+    $response['message'] = "Registration successful";
+}
+      
     }
 }
 

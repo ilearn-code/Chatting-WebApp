@@ -29,11 +29,11 @@
                 
           </form>
           <span>already signed up?<a href="./login.php">Signed Now</a></span>
-<span id="errorMessage"></span>
+               <span id="errorMessage"></span>
         </div>
  
         
-        
+
         </div>
 </body>
 <script src="script\register.js"></script>
