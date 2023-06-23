@@ -11,7 +11,7 @@
 
 <div class="loginForm">
 <div class="centered">
-<form  method="post" name="login">
+<form   name="login">
         <h1>Realtime Chat App</h1>
         <input type="text"  name="username" placeholder="Username" required/>
         <input type="password" name="password" placeholder="Password" required/>
