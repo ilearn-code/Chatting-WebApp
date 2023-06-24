@@ -32,6 +32,68 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $response['error_email'] = "Invalid email format";
         }
+        else {
+            $allowedDomains = array(
+                'gmail.com',
+                'yahoo.com',
+                'outlook.com',
+                'hotmail.com',
+                'aol.com',
+                'icloud.com',
+                'mail.com',
+                'gmx.com',
+                'zoho.com',
+                'yandex.com',
+                'protonmail.com',
+                'mail.ru',
+                'live.com',
+                'yahoo.co.jp',
+                'rediffmail.com',
+                'cox.net',
+                'msn.com',
+                'sbcglobal.net',
+                'verizon.net',
+                'att.net',
+                'mac.com',
+                'me.com',
+                'optonline.net',
+                'earthlink.net',
+                'rocketmail.com',
+                'mailinator.com',
+                'inbox.com',
+                'comcast.net',
+                'shaw.ca',
+                'bellsouth.net',
+                'charter.net',
+                'juno.com',
+                'roadrunner.com',
+                'windstream.net',
+                'frontier.com',
+                'aim.com',
+                'zoho.eu',
+                'outlook.co.id',
+                'bluewin.ch',
+                'web.de',
+                't-online.de',
+                'telus.net',
+                'sympatico.ca',
+                'icloud.de',
+                'gmx.de',
+                'libero.it',
+                'o2.pl',
+                'naver.com',
+                'hanmail.net',
+                'daum.net',
+                'netzero.net',
+                'yahoo.com.tw'
+            );
+          
+            $domain = substr(strrchr($email, "@"), 1);
+            if (!in_array($domain, $allowedDomains)) {
+                $response['error_email'] = "Email domain is not allowed";
+            }
+        }
+        
     }
 
     if (empty($_POST['password'])) {
@@ -119,7 +181,12 @@ if ($uploadOK == 1 && empty($response) && isset($file_path) && isset($name) && i
 
 mysqli_close($conn);
 
+header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
+header("Pragma: no-cache"); // HTTP 1.0.
+header("Expires: 0"); // Proxies.
+
 // Send JSON response
+
 header('Content-Type: application/json');
 echo json_encode($response);
 ?>
