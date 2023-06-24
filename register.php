@@ -14,17 +14,23 @@
         <div class="centered">
         <form   name="register" enctype="multipart/form-data" >
                 <h1>Realtime Chat App</h1>
-                <input type="text"  name="username" placeholder="Username" required/>
+                <label for="username">Enter Username</label>
+                <input type="text" id="username" name="username" placeholder="Username" required/>
                 <br>
-                <input type="email"  name="email" placeholder="email" required/>
+                <label for="email">Enter Email</label>
+                <input type="email"  id="email"name="email" placeholder="email" required/>
                 <br>
-                <input type="password" name="password" placeholder="Password" required/>
+                <label for="pass">Enter Passowrd</label>
+                <input type="password" id="pass"name="password" placeholder="Password" required/>
                 <br>
-                <input type="password" name="confirm" placeholder="Confirm Password" required />
+                <label for="repass">Enter Re-enter Password</label>
+                <input type="password" id="repass" name="confirm" placeholder="Confirm Password" required />
                 <br>
-                <input type="file" name="profile_pic" placeholder="Select profile pic" required>
+                <label for="profile_pic">Select Profile Picture</label>
+                 <input type="file" name="profile_pic" id="profile_pic" accept="image/*">
+
                 <br>
-                <!-- <input type="submit"  name="submit"/> -->
+             
                 <button type="submit" name="submit">Continue to chat</button>
                 
           </form>

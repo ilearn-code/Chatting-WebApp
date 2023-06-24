@@ -17,13 +17,16 @@
   /* background-color: rgba(0,0,0,0.4); */
 }
 
+
+
+
 .centered {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background: #fff;
-  height: 80vh;
+  height: 90vh;
   width: 70vw;
   border-radius: 16px;
 

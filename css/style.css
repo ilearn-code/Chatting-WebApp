@@ -285,6 +285,20 @@ h3 {
   vertical-align: middle; 
   
   }
+.file-input-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 7px;
+  color: #aaa;
+  font-size: 16px;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+#profile_pic:not(:placeholder-shown) + .file-input-label {
+  display: none;
+}
 
 
 
