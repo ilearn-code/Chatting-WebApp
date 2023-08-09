@@ -1,4 +1,4 @@
-Live Link(might show deceptive site in google chrome)- 
+Live Link( <B>might show deceptive site in google chrome. Please open Link in Other Browsers. <B>)- 
 https://immane-adjustments.000webhostapp.com/login.php
 # Chat-Web-App
 
