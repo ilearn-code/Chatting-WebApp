@@ -1,5 +1,4 @@
-https://immane-adjustments.000webhostapp.com/login.php
-(The links show decepltive site) ( only way to open is disable browser protection)
+
 # Chat-Web-App
 
 This is a dynamic chatting website built using PHP and Ajax technology. 
