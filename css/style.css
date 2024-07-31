@@ -4,18 +4,28 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-:root{
+
+:root {
   --bg-color: #4CAF50;
   --white: #ffffff;
   --black: #000000;
   --light-bg: #D1EAFB;
 }
-a{
+
+a {
   /* display: inline-block; */
   cursor: pointer;
   text-decoration: none;
 }
-
+[ng-cloak] {
+  display: none !important;
+}
+.no-user {
+  font-size: 20px;
+  padding: 1rem;
+  text-align: center;
+  color: rgb(190, 2, 2);
+}
 
 .continer {
   display: flex;
@@ -118,7 +128,7 @@ a{
   text-transform: capitalize;
 }
 
-.online{
+.online {
   font-size: 14px;
   letter-spacing: 1px;
 }

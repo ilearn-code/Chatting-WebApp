@@ -20,24 +20,24 @@
 
 </head>
 
-<body ng-app="index-app" ng-controller="index-controller">
+<body ng-app="index-app" ng-controller="index-controller" ng-cloak>
 
   <header class="continer">
 
     <div class="left">
       <div class="img_n_name" ng-click="showProfilePopup()">
-        <img id="login_user_image_id" src="" alt="">
+        <img id="login_user_image_id" ng-src="{{currentUserImage}}" alt="{{currentUserName}}">
         <div>
-          <p id=""><strong id="userName"></strong></p>
+          <p id=""><strong id="userName">{{currentUserName}}</strong></p>
           <p class="online">Online</p>
         </div>
       </div>
 
-      <div class="dropdown" >
+      <div class="dropdown">
         <a class="dropdown-button" ng-click="showDropdownMenu()">
           <i class="fi fi-rr-menu-dots-vertical"></i>
         </a>
-        <div class="dropdown-content" ng-show="isDropdownMenu" ng-cloak>
+        <div class="dropdown-content" ng-show="isDropdownMenu">
           <a id="logout">Logout</a>
           <a id="profileUpdate" ng-click="showProfilePopup()">Profile</a>
         </div>
@@ -58,13 +58,21 @@
       <div class="search">
 
         <form class="searchform">
-          <input type="text" placeholder="Search">
+          <input type="text" placeholder="Search" ng-model="filterName" ng-change="filterUser()">
           <button class="search_button"><i class="fa fa-search"></i></button>
         </form>
 
       </div>
 
-      <div class="listscroll"></div>
+      <div class="listscroll">
+        <p class="no-user" ng-if="showingEmpty">There's no user</p>
+        <a ng-repeat="user in FilteredUserList" ng-click="getChats(user.uniqueId, user.name, user.img_path)">
+          <div class="listuser">
+            <img ng-src="{{user.img_path}}">
+            <strong id="nn">{{user.name}}</strong>
+          </div>
+        </a>
+      </div>
 
     </div>
 
@@ -83,7 +91,7 @@
 
     </div>
 
-    <div id="popupContainer" ng-if="isPopUp" ng-cloak>
+    <div id="popupContainer" ng-if="isPopUp">
       <div id="popupContent">
 
         <div class="popup_tittle">
