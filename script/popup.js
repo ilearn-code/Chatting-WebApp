@@ -87,7 +87,9 @@ angular.module('index-app', [])
     // end
 
     // showing particular chats
+    $scope.isInput = true;
     $scope.getChats = function (userId, name, img_path) {
+      $scope.isInput = false;
       console.log(userId, "userId")
       $scope.receiverId = userId;
       $scope.receiverName = name;
@@ -112,6 +114,21 @@ angular.module('index-app', [])
     };
     // end
 
+    // Establish WebSocket connection
+    const socket = new WebSocket('ws://local.chatting-webapp/ws');
+    socket.onmessage = function (event) {
+      const newMessage = JSON.parse(event.data);
+      $scope.$apply(function () {
+        $scope.allMessages.push(newMessage);
+        // Scroll to the bottom
+        $timeout(function () {
+          const userDataElement = document.getElementById('user-data');
+          userDataElement.scrollTop = userDataElement.scrollHeight;
+        }, 0);
+      });
+    };
+    // end
+
     // sending latest message
     $scope.sendNewMessage = function () {
 
@@ -119,7 +136,7 @@ angular.module('index-app', [])
 
       formData.append('receiver_id', $scope.receiverId);
       formData.append('msg', $scope.newMsg);
-      
+
       // for(let entry of formData.entries()){
       //   console.log(entry[0], ": ", entry[1])
       // }
