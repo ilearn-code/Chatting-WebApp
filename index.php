@@ -68,7 +68,7 @@
         <p class="no-user" ng-if="showingEmpty">There's no user</p>
         <a ng-repeat="user in FilteredUserList" ng-click="getChats(user.uniqueId, user.name, user.img_path)">
           <div class="listuser">
-            <img ng-src="{{user.img_path}}">
+            <img ng-src="{{user.img_path}}" ng-alt="{{user.name}}" width="48" height="48">
             <strong id="nn">{{user.name}}</strong>
           </div>
         </a>
@@ -81,7 +81,11 @@
       <div id="user-data">
 
         <div class="message" ng-repeat="message in allMessages" ng-class="message.sender_id != receiverId ? 'self' : 'other'">
-          <span class="message__content">{{message.message}}</span>
+          <div class="message__wrapper">
+            <img width="48" height="48" ng-src="{{receiverImg}}" alt="{{receiverName}}" class="receiverImg"> 
+            <span class="message__content">{{message.message}}</span>
+            <img width="48" height="48" ng-src="{{currentUserImage}}" alt="{{currentUserName}}" class="currentUserImage">
+          </div>
         </div>
 
       </div>
@@ -91,7 +95,7 @@
         <form id="myForm" ng-submit="sendNewMessage()">
           <input type="text" id="input_message_id" name="msg" placeholder="Type a message" ng-model="newMsg" ng-disabled="isInput">
           <input type="hidden" name="receiver_id" id="receiverIdField" ng-model="receiverId">
-          <button type="submit" id="input_user_message_button" ng-disabled="isInput">
+          <button type="submit" id="input_user_message_button" ng-disabled="isInput" ng-if="newMsg">
             <i class="uil uil-message"></i>
           </button>
         </form>
@@ -124,13 +128,9 @@
 
     <!-- JS files -->
 
-    <script src="script/popup.js"></script>
+    <script src="script/App.js"></script>
     <script src="script\login_redirect_page.js"></script>
-    <script src="script\list_user_fetch.js"></script>
-    <script src="script\select_list_user.js"></script>
-    <script src="script\send_chat_data.js"></script>
     <script src="script\logout_fetch.js"></script>
-    <script src="script/dropdown.js"></script>
 
 </body>
 

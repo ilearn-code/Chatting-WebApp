@@ -3,13 +3,16 @@
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: sans-serif;
 }
 
 :root {
   --bg-color: #4CAF50;
+  --bg-secondary: #F2E9EA;
   --white: #ffffff;
   --black: #000000;
   --light-bg: #D1EAFB;
+  --profile-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
 a {
@@ -17,9 +20,11 @@ a {
   cursor: pointer;
   text-decoration: none;
 }
+
 [ng-cloak] {
   display: none !important;
 }
+
 .no-user {
   font-size: 20px;
   padding: 1rem;
@@ -69,7 +74,7 @@ a {
   height: 90%;
   width: 3rem;
   border-radius: 50%;
-
+  object-fit: cover;
 }
 
 .dropdown {
@@ -101,7 +106,7 @@ a {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 120px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--profile-shadow);
   z-index: 1;
 }
 
@@ -154,7 +159,7 @@ a {
 }
 
 #image_chatting_user {
-  /* display: none; */
+  object-fit: cover;
   height: 90%;
   width: 3rem;
   border-radius: 50%;
@@ -182,7 +187,7 @@ a {
   flex-direction: column;
   width: 30%;
   height: calc(100vh - 4rem);
-  background-color: #F2E9EA;
+  background-color: var(--bg-secondary);
 }
 
 .r1 {
@@ -199,9 +204,22 @@ a {
   display: flex;
   flex-direction: column;
   height: 90%;
-  overflow-y: scroll;
+  overflow-y: auto;
   background-color: var(--light-bg);
+}
 
+#user-data::-webkit-scrollbar {
+  background-color: var(--light-bg);
+  width: 5px;
+}
+
+#user-data::-webkit-scrollbar-thumb {
+  /* border-radius: 10px; */
+  background-color: var(--bg-color);
+}
+
+#user-data::-webkit-scrollbar-button {
+  height: 0px;
 }
 
 .message {
@@ -210,14 +228,46 @@ a {
   flex-direction: column;
   margin: 10px;
   padding: 10px;
+  font-size: 1rem;
+}
 
+.message__wrapper {
+  max-width: 80%;
+  display: flex;
+  gap: .5rem;
+}
+
+.message__content {
+  position: relative;
+}
+
+.other .message__content::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 0;
+  border: 10px solid white;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.self .message__content::before {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 0;
+  border: 10px solid var(--bg-color);
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.message__wrapper img {
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
 }
 
 .self {
-
   align-items: flex-end;
-  /* background-color: var(--bg-color); */
-
 }
 
 
@@ -226,28 +276,30 @@ a {
 }
 
 .self .message__content {
-  width: auto;
-  height: auto;
-  max-width: 90%;
-  background: #25D366;
-  color: black;
+  display: flex;
+  align-items: center;
+  background: var(--bg-color);
+  color: var(--white);
   padding: 0.5rem;
   border-radius: 0.3rem;
-  font-size: 1.2em;
+}
+
+.self .receiverImg {
+  display: none !important;
 }
 
 .other .message__content {
   display: flex;
-  flex-wrap: wrap;
-  width: auto;
-  height: auto;
-  max-width: 90%;
-  font-size: 1.2em;
+  align-items: center;
   background-color: white;
   color: black;
   padding: 0.5rem;
   border-radius: 0.3rem;
 
+}
+
+.other .currentUserImage {
+  display: none !important;
 }
 
 
@@ -267,8 +319,6 @@ h3 {
 
 
 .search {
-
-  background-color: #DCDCDC;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -328,49 +378,51 @@ h3 {
 
 
 .listscroll {
-  display: block;
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
   height: 90%;
   overflow-y: scroll;
 }
 
+.listscroll::-webkit-scrollbar {
+  background-color: var(--bg-secondary);
+  width: 5px;
+}
 
+.listscroll::-webkit-scrollbar-thumb {
+  background-color: var(--bg-color);
+}
+
+.listscroll::-webkit-scrollbar-button {
+  height: 0px;
+}
 
 .listuser {
   display: flex;
-  height: 4rem;
-  width: 100%;
-  border: 5px solid white;
-  background-color: var(--bg-color);
+  gap: 1rem;
   align-items: center;
-
+  padding: .5rem;
+  transition: all .1s;
 }
 
 .listuser:hover {
-  background-color: #fff;
+  background-color: var(--bg-color);
 }
 
-.listuser a {
-  display: block;
-  text-decoration: none;
-  color: aliceblue;
+.listuser:hover strong {
+  color: var(--white);
 }
 
 .listuser img {
-  margin-left: 2%;
-
-  height: 90%;
-  width: 3rem;
+  object-fit: cover;
   border-radius: 50%;
 }
 
 .listuser strong {
-  padding-left: 2%;
   text-transform: capitalize;
+  transition: all .1s;
 }
-
-
-
 
 .search i {
   font-size: 1.2em;
@@ -378,46 +430,57 @@ h3 {
   padding-left: 1vw;
 }
 
-
-
-
-
+/* css for send message input form */
 
 .input_message_div {
   display: flex;
+
   width: 100%;
   height: 10%;
   background-color: var(--bg-color);
-  justify-content: center;
+}
 
-
+#myForm {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
 }
 
 #input_message_id {
-  height: 5vh;
-  width: 40vw;
-  border: 0.1rem solid #ccc;
-  padding-left: 0.5vw;
-  border-radius: 0.5rem;
+  width: 80%;
+  background-color: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  color: var(--white);
+  outline: 0;
+  padding: 1rem;
+}
 
+#input_message_id::placeholder {
+  color: var(--light-bg);
+}
+
+#input_message_id:focus {
+  outline: 0;
 }
 
 #input_user_message_button {
+  width: 10%;
   display: inline-block;
   border: none;
   padding: 0;
   background-color: transparent;
-  /* Remove the background color */
   color: #fff;
   margin-top: 0.5rem;
-
 }
 
 #input_user_message_button i {
   font-size: 2.5rem;
-  /* Adjust the font size of the icon */
   vertical-align: middle;
-
 }
 
 
@@ -557,8 +620,7 @@ h3 {
 
   .l1 {
     width: 17%;
-    height: calc(100vh - 4rem);
-    background-color: #F2E9EA;
+    height: calc(100vh - 4rem);    
   }
 
   .r1 {
