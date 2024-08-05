@@ -46,9 +46,9 @@
     </div>
 
     <div class="right" id="right">
-      <div class=img_n_name2>
-        <img id="image_chatting_user" src="" alt="">
-        <strong id="chatting_user_name"></strong>
+      <div class="img_n_name2" ng-if="receiverImg">
+        <img id="image_chatting_user" ng-src="{{receiverImg}}" alt="{{receiverName}}">
+        <strong id="chatting_user_name">{{receiverName}}</strong>
       </div>
     </div>
 
@@ -78,15 +78,23 @@
 
     <div class="r1">
 
-      <div id="user-data"> </div>
+      <div id="user-data">
+
+        <div class="message" ng-repeat="message in allMessages" ng-class="message.sender_id != receiverId ? 'self' : 'other'">
+          <span class="message__content">{{message.message}}</span>
+        </div>
+
+      </div>
 
       <div class="input_message_div">
-        <form id="myForm">
-          <input type="text" id="input_message_id" name="msg" placeholder="Type a message">
-          <input type="hidden" name="receiver_id" id="receiverIdField">
+
+        <form id="myForm" ng-submit="sendNewMessage()">
+          <input type="text" id="input_message_id" name="msg" placeholder="Type a message" ng-model="newMsg">
+          <input type="hidden" name="receiver_id" id="receiverIdField" ng-model="receiverId">
           <button type="submit" id="input_user_message_button"><i class="uil uil-message">
             </i></button>
         </form>
+
       </div>
 
     </div>

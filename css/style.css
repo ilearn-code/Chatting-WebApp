@@ -154,7 +154,7 @@ a {
 }
 
 #image_chatting_user {
-  display: none;
+  /* display: none; */
   height: 90%;
   width: 3rem;
   border-radius: 50%;
@@ -225,9 +225,10 @@ a {
   align-items: flex-start;
 }
 
-#message_self_para {
+.self .message__content {
   width: auto;
   height: auto;
+  max-width: 90%;
   background: #25D366;
   color: black;
   padding: 0.5rem;
@@ -235,11 +236,12 @@ a {
   font-size: 1.2em;
 }
 
-#message_other_para {
+.other .message__content {
   display: flex;
   flex-wrap: wrap;
   width: auto;
   height: auto;
+  max-width: 90%;
   font-size: 1.2em;
   background-color: white;
   color: black;
